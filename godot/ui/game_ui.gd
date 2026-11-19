@@ -1031,14 +1031,14 @@ func _upgrade(id: String) -> void:
 
 func _ask_retire() -> void:
 	var dialog:=ConfirmationDialog.new()
-	dialog.title="현재 회차를 종료할까요?"
-	dialog.dialog_text="현재 회차를 마치고 달성한 과업만큼 공훈을 받습니다.\n13주를 채우기 전에는 공훈을 받지 않습니다."
-	dialog.ok_button_text="회차 결산"
+	dialog.title="이번 통치를 끝낼까요?"
+	dialog.dialog_text="지금까지 달성한 만큼 공훈을 받고 결산합니다.\n13주를 채우기 전에 끝내면 공훈을 받지 못합니다.\n끝낸 통치는 되돌릴 수 없습니다."
+	dialog.ok_button_text="통치 끝내고 결산"
 	dialog.cancel_button_text="계속 통치"
-	dialog.confirmed.connect(func(): session.settle("은퇴"); page="result"; _changed("회차를 종료했습니다."); dialog.queue_free())
+	dialog.confirmed.connect(func(): session.settle("은퇴"); page="result"; _changed("통치를 끝냈습니다."); dialog.queue_free())
 	dialog.canceled.connect(dialog.queue_free)
 	add_child(dialog)
-	dialog.popup_centered(Vector2i(500,180))
+	dialog.popup_centered(Vector2i(520,210))
 
 
 func _save() -> bool:

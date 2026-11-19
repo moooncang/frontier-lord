@@ -744,7 +744,9 @@ func _management_menu() -> void:
 		var button := _button(grid,entry[1],func(): management_open = false; _go(target),false,"nav_"+target if target in ["policy","people","boons","sanctuary"] else "more_"+target)
 		button.size_flags_horizontal = SIZE_EXPAND_FILL
 		button.size_flags_vertical = SIZE_EXPAND_FILL
-	_button(box,"닫기",func(): management_open = false; _render(),false,"CloseManagement")
+	var closing := _row(box)
+	_button(closing,"닫기",func(): management_open = false; _render(),false,"CloseManagement").size_flags_horizontal = SIZE_EXPAND_FILL
+	_quiet(_button(closing,"이번 통치 끝내기",func(): management_open = false; _render(); _ask_retire(),not _is_active(),"EndRunFromOffice"))
 
 
 ## ---------- 옆 패널: 이번 주 ----------

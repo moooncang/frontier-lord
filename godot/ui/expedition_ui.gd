@@ -137,6 +137,7 @@ func _title_hub() -> void:
 	if _is_active():
 		_label(box,"진행 중 · %d회차 %d주\n주민 %d명 · 식량 %.1f주분" % [session.profile.runs,session.state.week,session.state.pop,WeekSim.food_weeks(session.state)],19,TycoonTheme.NAV_TEXT)
 		_primary(_button(box,"집무실로 · 통치 이어 하기",_continue,load_blocked,"ContinueRun"))
+		_button(box,"이번 통치 끝내기",_ask_retire,load_blocked,"EndRun").tooltip_text = "지금까지의 성과로 결산하고 통치를 마칩니다. 되돌릴 수 없습니다."
 	else:
 		_primary(_button(box,"새 영지에 부임",_open_prepare,load_blocked,"NewRun"))
 	_button(box,"가문 강화 · 공훈 %d" % session.profile.points,func(): _go("archive"),false,"OpenArchive")
