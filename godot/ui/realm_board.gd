@@ -245,7 +245,7 @@ func _create_shrine() -> void:
 	ready.text = "성물 선택"
 	ready.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	ready.mouse_filter = MOUSE_FILTER_IGNORE
-	ready.add_theme_font_size_override("font_size", 15)
+	ready.add_theme_font_size_override("font_size", 16)
 	ready.add_theme_color_override("font_color", GOLD)
 	ready.add_theme_stylebox_override("normal", GameTheme.panel(INK, GOLD, 0, 1, 4))
 	shrine.add_child(ready)

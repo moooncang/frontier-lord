@@ -11,6 +11,7 @@ class ExitProbe:
 var screen: Control
 var checks := 0
 var failures := 0
+var small_text := {}
 
 func _init() -> void:
 	call_deferred("_run")
@@ -105,8 +106,15 @@ func _key(code: Key) -> void:
 		root.push_input(event)
 	await _frames()
 
+func _small_text() -> void:
+	for item in screen.find_children("*", "Control", true, false):
+		if not (item is Label or item is Button) or not item.is_visible_in_tree() or str(item.text).strip_edges() == "": continue
+		var px: int = item.get_theme_font_size("font_size")
+		if px < 16: small_text["%s %dpx '%s'" % [item.name, px, str(item.text).left(14)]] = true
+
 func _shot(tag: String) -> void:
 	await _frames(8)
+	_small_text()
 	if screen.page == "estate" and screen.selected_lot == "" and screen.side_page == "overview" and not is_instance_valid(screen.current_modal):
 		_overview_bounds(tag)
 	if DisplayServer.get_name() == "headless": return
@@ -475,6 +483,7 @@ func _modal_decisions() -> void:
 	_check(SaveStore.valid(screen.session.bundle()), "event decision and result stay saveable")
 
 func _finish() -> void:
+	_check(small_text.is_empty(), "every visible text is at least 16px: " + ", ".join(small_text.keys()))
 	print("REALM PLAYFLOW: %d checks, %d failures" % [checks, failures])
 	if is_instance_valid(screen):
 		root.remove_child(screen)

@@ -132,7 +132,7 @@ func _run() -> void:
 	if screen.session == null:
 		quit(1)
 		return
-	_check(screen.theme.get_font("font", "Button") is SystemFont, "readable native control font")
+	_check(screen.theme.get_font("font", "Button") == PixelTheme.font(), "controls use the bundled pixel font, which also exists in browsers")
 	_check(screen.theme.get_font_size("font_size", "Button") >= 19, "readable buttons")
 	_check(screen.find_child("StudyBackdrop", true, false) != null, "pixel study frames game menu")
 	await _shot("01_menu")

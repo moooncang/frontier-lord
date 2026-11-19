@@ -61,7 +61,7 @@ func _run() -> void:
 	_check(screen.pixel_ready, "current pixel UI entrypoint")
 	_check(ProjectSettings.get_setting("application/config/name") == "변경의 신임 영주가 되었다", "updated game title")
 	_check(OS.get_user_data_dir().replace("\\", "/").ends_with("Godot/app_userdata/영주의 사계"), "renaming preserves previous save location")
-	_check(screen.theme.get_font("font", "Button") is SystemFont, "normal controls use readable system font")
+	_check(screen.theme.get_font("font", "Button") == PixelTheme.font(), "normal controls use the bundled pixel font, which also exists in browsers")
 	_check(root.content_scale_mode == Window.CONTENT_SCALE_MODE_DISABLED, "resizing does not shrink text")
 	for id in screen.session.content.chronicle.characters:
 		_check(screen.assets.texture("portrait_" + id) != null, "canonical portrait " + id)

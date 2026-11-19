@@ -4,24 +4,20 @@ extends RefCounted
 static var regular: Font
 static var bold: Font
 static var frames: Dictionary = {}
-static var heading: SystemFont
 
 static func heading_font() -> Font:
-	if OS.has_feature("web"): return font(true)
-	if heading == null:
-		heading = SystemFont.new()
-		heading.font_names = PackedStringArray(["Malgun Gothic", "Noto Sans CJK KR", "sans-serif"])
-		heading.font_weight = 700
-	return heading
+	return font(true)
 
 static func font(strong: bool = false) -> Font:
 	if regular == null:
-		regular = load("res://assets/fonts/Galmuri11.ttf")
 		bold = load("res://assets/fonts/Galmuri11-Bold.ttf")
-		for face in [regular, bold]:
-			if face is FontFile:
-				face.antialiasing = TextServer.FONT_ANTIALIASING_NONE
-				face.subpixel_positioning = TextServer.SUBPIXEL_POSITIONING_DISABLED
+		# 가는 글꼴은 12의 배수가 아닌 크기에서 획이 끊기거나 흐려진다. 본문도 굵은 글꼴로 쓴다.
+		regular = bold
+		if bold is FontFile:
+			# 크기와 화면 배율이 제각각이라 계단 처리를 끄면 획 굵기가 들쭉날쭉해진다.
+			bold.antialiasing = TextServer.FONT_ANTIALIASING_GRAY
+			bold.hinting = TextServer.HINTING_NONE
+			bold.subpixel_positioning = TextServer.SUBPIXEL_POSITIONING_DISABLED
 	return bold if strong else regular
 
 static func frame(fill: Color, edge: Color, inset: int = 16) -> StyleBoxTexture:

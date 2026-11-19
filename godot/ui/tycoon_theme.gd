@@ -4,7 +4,7 @@ extends RefCounted
 
 const PAPER := Color("f0e3c6")
 const INK := Color("30271f")
-const MUTED := Color("6d5d4b")
+const MUTED := Color("57483a")
 const ACCENT := Color("793c32")
 const NAV := Color("33241e")
 const NAV_TEXT := Color("f3e7cd")

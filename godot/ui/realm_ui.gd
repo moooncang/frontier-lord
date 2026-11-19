@@ -5,7 +5,7 @@ extends "res://ui/expedition_ui.gd"
 const SIDE := 392.0
 const TOP := 134.0
 const LIT := Color("f3e7cd")
-const LIT_MUTED := Color("b9c2bd")
+const LIT_MUTED := Color("ccd4cf")
 const LIT_GOOD := Color("9fd48f")
 const LIT_WARN := Color("f0c060")
 const LIT_BAD := Color("f4a08a")
@@ -244,7 +244,7 @@ func _go(target: String) -> void:
 func _lit(parent: Node, text: String, px: int, color: Color = LIT, strong: bool = false) -> Label:
 	var label := Label.new()
 	label.text = text
-	label.add_theme_font_size_override("font_size", px)
+	label.add_theme_font_size_override("font_size", maxi(px, 16))
 	label.add_theme_color_override("font_color", color)
 	if strong: label.add_theme_font_override("font", PixelTheme.heading_font())
 	parent.add_child(label)

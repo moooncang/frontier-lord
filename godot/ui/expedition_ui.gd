@@ -126,6 +126,10 @@ func _window(title: String, dimensions: Vector2, closable: bool = true, modal: b
 		_rule(box)
 	return box
 
+func _toggle_fullscreen() -> void:
+	var full := DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED if full else DisplayServer.WINDOW_MODE_FULLSCREEN)
+
 func _title_hub() -> void:
 	var box := _plate(Rect2(48,40,430,size.y-80),true,24)
 	box.get_parent().name = "TitleHub"
@@ -144,7 +148,8 @@ func _title_hub() -> void:
 	_button(box,"발견과 통치 기록",func(): _go("catalog"),false,"OpenCodex")
 	var row := _row(box)
 	_button(row,"플레이 안내",_help,false,"OpenHelp").size_flags_horizontal = SIZE_EXPAND_FILL
-	_button(row,"종료",_quit_game,false,"QuitGame")
+	if OS.has_feature("web"): _button(row,"전체 화면",_toggle_fullscreen,false,"Fullscreen")
+	else: _button(row,"종료",_quit_game,false,"QuitGame")
 	if load_blocked: _label(box,notice,18,TycoonTheme.NAV_TEXT)
 	var plaque := _plate(Rect2(size.x-380,size.y-132,332,84),true,12)
 	_label(plaque,"52주 · 네 계절의 통치",22,TycoonTheme.NAV_TEXT)

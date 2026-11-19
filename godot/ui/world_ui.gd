@@ -28,6 +28,7 @@ func _heading(parent: Node, text: String, large: bool = false, color: Color = Ga
 func _ready() -> void:
 	super._ready()
 	resized.connect(_resize_interface)
+	add_child(ScreenFit.new())
 
 func _resize_interface() -> void:
 	# 레이아웃 갱신은 폰트를 축소하지 않는다.
