@@ -30,6 +30,8 @@ func body_font() -> Font:
 		var resource := load(path)
 		if resource is Font:
 			return resource
+	# 브라우저에는 시스템 글꼴이 없어 한글이 네모로 나온다. 웹에서는 함께 싣는 글꼴을 쓴다.
+	if OS.has_feature("web"): return PixelTheme.font()
 	var system := SystemFont.new()
 	system.font_names = PackedStringArray(["Malgun Gothic", "Noto Sans CJK KR", "sans-serif"])
 	return system

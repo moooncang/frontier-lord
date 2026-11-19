@@ -8,3 +8,6 @@ godot/tests/*.log
 # 에셋 생성 기록 가운데 이 PC의 사용자 폴더 경로가 적힌 파일은 올리지 않는다
 godot/assets/relics/generation_prompts_builds.json
 에셋 원본/generation*.json
+
+# 웹 내보내기 결과물은 gh-pages 브랜치로만 올린다
+web-build/

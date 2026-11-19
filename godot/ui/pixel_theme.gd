@@ -7,6 +7,7 @@ static var frames: Dictionary = {}
 static var heading: SystemFont
 
 static func heading_font() -> Font:
+	if OS.has_feature("web"): return font(true)
 	if heading == null:
 		heading = SystemFont.new()
 		heading.font_names = PackedStringArray(["Malgun Gothic", "Noto Sans CJK KR", "sans-serif"])
