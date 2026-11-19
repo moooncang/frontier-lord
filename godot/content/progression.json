@@ -1,0 +1,1345 @@
+{
+  "origins": {
+    "settler": {
+      "name": "개척형",
+      "subtitle": "건설·목재 중심",
+      "description": "벌목 +10% · 시작 목재 +20 / 공공 급여 +10%",
+      "wood": 20,
+      "logging": 1.1,
+      "wages": 1.1
+    },
+    "steward": {
+      "name": "재정형",
+      "subtitle": "자금·유지비 중심",
+      "description": "시작 금고 +10% · 유지비 -15% / 채집 -10%",
+      "money": 1.1,
+      "maintenance": 0.85,
+      "gather": 0.9
+    },
+    "grower": {
+      "name": "농업형",
+      "subtitle": "수확·종자 중심",
+      "description": "수확 +5% · 파종 종자 -10% / 구매 가격 +10%",
+      "harvest": 1.05,
+      "seed": 0.9,
+      "buy": 1.1
+    }
+  },
+  "upgrades": {
+    "M01": {
+      "name": "초기 자금 증가",
+      "cost": 8,
+      "requires": "",
+      "description": "다음 회차의 기본 금고 +5%"
+    },
+    "M02": {
+      "name": "초기 식량 증가",
+      "cost": 16,
+      "requires": "M01",
+      "description": "다음 회차의 기본 식량 +5%"
+    },
+    "M03": {
+      "name": "초기 도구 증가",
+      "cost": 24,
+      "requires": "M02",
+      "description": "시작 도구 +10%, 최소 1개"
+    },
+    "M04": {
+      "name": "농지 설계 개선",
+      "cost": 32,
+      "requires": "M03",
+      "description": "첫 농지 공사의 작업량 -15%"
+    },
+    "M13": {
+      "name": "이민 지원금",
+      "cost": 8,
+      "requires": "",
+      "description": "첫 이민 사건 정착 비용 -20%"
+    },
+    "M14": {
+      "name": "행정관 추천서",
+      "cost": 16,
+      "requires": "M13",
+      "description": "오딜의 시작 신뢰 +3"
+    },
+    "M20": {
+      "name": "부임 물자 한도 증가",
+      "cost": 12,
+      "requires": "",
+      "description": "부임 물자 선택 한도 3 → 4"
+    },
+    "M21": {
+      "name": "특전 교환 횟수 증가",
+      "cost": 18,
+      "requires": "M20",
+      "description": "다음 통치 특전 새로고침 +1회"
+    }
+  },
+  "perks": {
+    "P01": {
+      "name": "파종 조직화",
+      "tag": "농업",
+      "description": "파종 노동 수요 -15%",
+      "effect": "sow_labor",
+      "value": 0.85,
+      "family": "agriculture"
+    },
+    "P03": {
+      "name": "저장 시설 확장",
+      "tag": "보존",
+      "description": "식량 저장 용량 +15%",
+      "effect": "storage",
+      "value": 1.15,
+      "family": "provisions"
+    },
+    "P04": {
+      "name": "겨울 채집",
+      "tag": "보존",
+      "description": "겨울에도 채집터가 봄 산출의 15%를 생산",
+      "effect": "winter_gather",
+      "value": 0.15,
+      "family": "provisions"
+    },
+    "P09": {
+      "name": "도구 관리",
+      "tag": "생산",
+      "description": "벌목·채석의 도구 소모 -12%",
+      "effect": "tool_use",
+      "value": 0.88,
+      "family": "industry"
+    },
+    "P21": {
+      "name": "징세 개선",
+      "tag": "행정",
+      "description": "세금 수금률 +5%p",
+      "effect": "tax",
+      "value": 0.05,
+      "family": "court"
+    },
+    "P43": {
+      "name": "면담 숙련",
+      "tag": "행정",
+      "description": "가신 면담의 신뢰 회복 +2",
+      "effect": "trust",
+      "value": 2,
+      "family": "court"
+    },
+    "P1_REPAIR": {
+      "name": "시설 예방 정비",
+      "tag": "생산",
+      "description": "시설 유지비 -15%",
+      "effect": "maintenance",
+      "value": 0.85,
+      "family": "industry"
+    },
+    "P1_TIMBER": {
+      "name": "효율적인 벌목",
+      "tag": "생산",
+      "description": "벌목 생산 +10%",
+      "effect": "logging",
+      "value": 1.1,
+      "family": "industry"
+    },
+    "P50": {
+      "name": "토양 관리",
+      "tag": "농업",
+      "family": "agriculture",
+      "description": "수확 +8%",
+      "effect": "harvest",
+      "value": 1.08,
+      "chronicle_only": true
+    },
+    "P51": {
+      "name": "종자 선별",
+      "tag": "농업",
+      "family": "agriculture",
+      "description": "파종 종자 -15%",
+      "effect": "seed",
+      "value": 0.85,
+      "chronicle_only": true
+    },
+    "P52": {
+      "name": "파종 도구 개선",
+      "tag": "농업",
+      "family": "agriculture",
+      "description": "파종 노동 -10%",
+      "effect": "sow_labor",
+      "value": 0.9,
+      "chronicle_only": true
+    },
+    "P53": {
+      "name": "수확 기술",
+      "tag": "농업",
+      "family": "agriculture",
+      "description": "수확 +6%",
+      "effect": "harvest",
+      "value": 1.06,
+      "chronicle_only": true
+    },
+    "P54": {
+      "name": "채집 교육",
+      "tag": "농업",
+      "family": "agriculture",
+      "description": "채집 +12%",
+      "effect": "gather",
+      "value": 1.12,
+      "chronicle_only": true
+    },
+    "P55": {
+      "name": "단열 보강",
+      "tag": "보존",
+      "family": "provisions",
+      "description": "난방 장작 소비 -15%",
+      "effect": "heating",
+      "value": 0.85,
+      "chronicle_only": true
+    },
+    "P56": {
+      "name": "창고 증축",
+      "tag": "보존",
+      "family": "provisions",
+      "description": "저장 용량 +20%",
+      "effect": "storage",
+      "value": 1.2,
+      "chronicle_only": true
+    },
+    "P57": {
+      "name": "동절기 채집 훈련",
+      "tag": "보존",
+      "family": "provisions",
+      "description": "겨울 채집 +10%p",
+      "effect": "winter_gather",
+      "value": 0.1,
+      "chronicle_only": true
+    },
+    "P58": {
+      "name": "비축 물자 계약",
+      "tag": "보존",
+      "family": "provisions",
+      "description": "물자 구매가 -10%",
+      "effect": "buy",
+      "value": 0.9,
+      "chronicle_only": true
+    },
+    "P59": {
+      "name": "벌목 장비 개선",
+      "tag": "생산",
+      "family": "industry",
+      "description": "벌목 +15%",
+      "effect": "logging",
+      "value": 1.15,
+      "chronicle_only": true
+    },
+    "P60": {
+      "name": "공용 도구 관리",
+      "tag": "생산",
+      "family": "industry",
+      "description": "도구 소모 -18%",
+      "effect": "tool_use",
+      "value": 0.82,
+      "chronicle_only": true
+    },
+    "P61": {
+      "name": "정기 수리",
+      "tag": "생산",
+      "family": "industry",
+      "description": "유지비 -12%",
+      "effect": "maintenance",
+      "value": 0.88,
+      "chronicle_only": true
+    },
+    "P62": {
+      "name": "급여 계약 개선",
+      "tag": "행정",
+      "family": "court",
+      "description": "공공 급여 -10%",
+      "effect": "wages",
+      "value": 0.9,
+      "chronicle_only": true
+    },
+    "P63": {
+      "name": "면담 준비",
+      "tag": "행정",
+      "family": "court",
+      "description": "면담 신뢰 +3",
+      "effect": "trust",
+      "value": 3,
+      "chronicle_only": true
+    },
+    "P64": {
+      "name": "세금 장부 정리",
+      "tag": "행정",
+      "family": "court",
+      "description": "세금 수금률 +4%p",
+      "effect": "tax",
+      "value": 0.04,
+      "chronicle_only": true
+    },
+    "P65": {
+      "name": "상단 거래 할인",
+      "tag": "행정",
+      "family": "court",
+      "description": "물자 구매가 -8%",
+      "effect": "buy",
+      "value": 0.92,
+      "chronicle_only": true
+    },
+    "P70": {
+      "name": "밭 집중 투자",
+      "tag": "농업",
+      "family": "agriculture",
+      "description": "수확 +18% · 채집 -8%",
+      "effect": "harvest",
+      "value": 1.18,
+      "extra_bonuses": {
+        "gather": 0.92
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 33
+    },
+    "P71": {
+      "name": "숲밭 교대",
+      "tag": "농업",
+      "family": "agriculture",
+      "description": "채집 +18% · 수확 -8%",
+      "effect": "gather",
+      "value": 1.18,
+      "extra_bonuses": {
+        "harvest": 0.92
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 26
+    },
+    "P72": {
+      "name": "공동 파종",
+      "tag": "농업",
+      "family": "agriculture",
+      "description": "파종 노동 -25% · 공공 급여 +8%",
+      "effect": "sow_labor",
+      "value": 0.75,
+      "extra_bonuses": {
+        "wages": 1.08
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 1
+    },
+    "P73": {
+      "name": "종자 공동 구매",
+      "tag": "농업",
+      "family": "agriculture",
+      "description": "파종 종자 -25% · 물자값 +6% (운송료 제외)",
+      "effect": "seed",
+      "value": 0.75,
+      "extra_bonuses": {
+        "buy": 1.06
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 1
+    },
+    "P74": {
+      "name": "수확 선금",
+      "tag": "농업",
+      "family": "agriculture",
+      "description": "수확 +24% · 물자값 +12% (운송료 제외)",
+      "effect": "harvest",
+      "value": 1.24,
+      "extra_bonuses": {
+        "buy": 1.12
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 33
+    },
+    "P75": {
+      "name": "농기구 우선 배정",
+      "tag": "농업",
+      "family": "agriculture",
+      "description": "수확 +10% · 벌목·채석 도구 소모 +15%",
+      "effect": "harvest",
+      "value": 1.1,
+      "extra_bonuses": {
+        "tool_use": 1.15
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 33
+    },
+    "P76": {
+      "name": "임시 창고 증설",
+      "tag": "보존",
+      "family": "provisions",
+      "description": "식량 저장량 +40% · 시설 유지비 +12%",
+      "effect": "storage",
+      "value": 1.4,
+      "extra_bonuses": {
+        "maintenance": 1.12
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 52
+    },
+    "P77": {
+      "name": "겨울 수색대",
+      "tag": "보존",
+      "family": "provisions",
+      "description": "겨울 채집 +25%p (봄 기준) · 공공 급여 +12%",
+      "effect": "winter_gather",
+      "value": 0.25,
+      "extra_bonuses": {
+        "wages": 1.12
+      },
+      "plus_only": true,
+      "pool_min_week": 14,
+      "pool_max_week": 52
+    },
+    "P78": {
+      "name": "창고 임대 교역",
+      "tag": "보존",
+      "family": "provisions",
+      "description": "물자값 -18% (운송료 제외) · 식량 저장량 -10%",
+      "effect": "buy",
+      "value": 0.82,
+      "extra_bonuses": {
+        "storage": 0.9
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 52
+    },
+    "P79": {
+      "name": "난방 관리인",
+      "tag": "보존",
+      "family": "provisions",
+      "description": "난방 장작 소비 -28% · 공공 급여 +8%",
+      "effect": "heating",
+      "value": 0.72,
+      "extra_bonuses": {
+        "wages": 1.08
+      },
+      "plus_only": true,
+      "pool_min_week": 14,
+      "pool_max_week": 52
+    },
+    "P80": {
+      "name": "단열 공동창고",
+      "tag": "보존",
+      "family": "provisions",
+      "description": "식량 저장량 +18% · 난방 장작 소비 -10%",
+      "effect": "storage",
+      "value": 1.18,
+      "extra_bonuses": {
+        "heating": 0.9
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 52
+    },
+    "P81": {
+      "name": "겨울 물자 조달",
+      "tag": "보존",
+      "family": "provisions",
+      "description": "난방 장작 소비 -10% · 물자값 -8% (운송료 제외)",
+      "effect": "heating",
+      "value": 0.9,
+      "extra_bonuses": {
+        "buy": 0.92
+      },
+      "plus_only": true,
+      "pool_min_week": 14,
+      "pool_max_week": 52
+    },
+    "P82": {
+      "name": "벌목 작업 연장",
+      "tag": "생산",
+      "family": "industry",
+      "description": "벌목 +30% · 공공 급여 +15%",
+      "effect": "logging",
+      "value": 1.3,
+      "extra_bonuses": {
+        "wages": 1.15
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 52
+    },
+    "P83": {
+      "name": "정밀 절삭",
+      "tag": "생산",
+      "family": "industry",
+      "description": "벌목·채석 도구 소모 -30% · 벌목 -10%",
+      "effect": "tool_use",
+      "value": 0.7,
+      "extra_bonuses": {
+        "logging": 0.9
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 52
+    },
+    "P84": {
+      "name": "공용 장비 규격화",
+      "tag": "생산",
+      "family": "industry",
+      "description": "벌목·채석 도구 소모 -15% · 시설 유지비 -8%",
+      "effect": "tool_use",
+      "value": 0.85,
+      "extra_bonuses": {
+        "maintenance": 0.92
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 52
+    },
+    "P85": {
+      "name": "시설 관리 위탁",
+      "tag": "생산",
+      "family": "industry",
+      "description": "공공 급여 -20% · 시설 유지비 +15%",
+      "effect": "wages",
+      "value": 0.8,
+      "extra_bonuses": {
+        "maintenance": 1.15
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 52
+    },
+    "P86": {
+      "name": "밭옆 산림 확대",
+      "tag": "생산",
+      "family": "industry",
+      "description": "벌목 +18% · 수확 -7%",
+      "effect": "logging",
+      "value": 1.18,
+      "extra_bonuses": {
+        "harvest": 0.93
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 26
+    },
+    "P87": {
+      "name": "소규모 작업반 계약",
+      "tag": "생산",
+      "family": "industry",
+      "description": "공공 급여 -10% · 시설 유지비 -12% · 벌목 -10%",
+      "effect": "wages",
+      "value": 0.9,
+      "extra_bonuses": {
+        "maintenance": 0.88,
+        "logging": 0.9
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 52
+    },
+    "P88": {
+      "name": "창고 사용료 징수",
+      "tag": "행정",
+      "family": "court",
+      "description": "세금 수금률 +6%p · 식량 저장량 -10%",
+      "effect": "tax",
+      "value": 0.06,
+      "extra_bonuses": {
+        "storage": 0.9
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 26
+    },
+    "P89": {
+      "name": "노역세 감면",
+      "tag": "행정",
+      "family": "court",
+      "description": "공공 급여 -18% · 세금 수금률 -5%p",
+      "effect": "wages",
+      "value": 0.82,
+      "extra_bonuses": {
+        "tax": -0.05
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 26
+    },
+    "P90": {
+      "name": "상단 벌목권 계약",
+      "tag": "행정",
+      "family": "court",
+      "description": "물자값 -16% (운송료 제외) · 벌목 -10%",
+      "effect": "buy",
+      "value": 0.84,
+      "extra_bonuses": {
+        "logging": 0.9
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 52
+    },
+    "P91": {
+      "name": "행정관 현장 감독",
+      "tag": "행정",
+      "family": "court",
+      "description": "면담 신뢰 회복 +4 · 공공 급여 +10%",
+      "effect": "trust",
+      "value": 4,
+      "extra_bonuses": {
+        "wages": 1.1
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 52
+    },
+    "P92": {
+      "name": "검소한 관청",
+      "tag": "행정",
+      "family": "court",
+      "description": "시설 유지비 -22% · 면담 신뢰 회복 -2",
+      "effect": "maintenance",
+      "value": 0.78,
+      "extra_bonuses": {
+        "trust": -2
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 52
+    },
+    "P93": {
+      "name": "급여 정산 개선",
+      "tag": "행정",
+      "family": "court",
+      "description": "공공 급여 -10% · 세금 수금률 +3%p",
+      "effect": "wages",
+      "value": 0.9,
+      "extra_bonuses": {
+        "tax": 0.03
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 26
+    },
+    "P100": {
+      "name": "대형 수확반",
+      "tag": "농업",
+      "family": "agriculture",
+      "build_id": "harvest_trade",
+      "description": "수확 +18% · 공공 급여 +6%",
+      "effect": "harvest",
+      "value": 1.18,
+      "extra_bonuses": {
+        "wages": 1.06
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 33
+    },
+    "P101": {
+      "name": "수출용 곡물 선별",
+      "tag": "농업",
+      "family": "agriculture",
+      "build_id": "harvest_trade",
+      "description": "수확 +10% · 식량 저장량 +10%",
+      "effect": "harvest",
+      "value": 1.1,
+      "extra_bonuses": {
+        "storage": 1.1
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 33
+    },
+    "P102": {
+      "name": "곡물 보관 계약",
+      "tag": "농업",
+      "family": "agriculture",
+      "build_id": "harvest_trade",
+      "description": "식량 저장량 +25% · 시설 유지비 +8%",
+      "effect": "storage",
+      "value": 1.25,
+      "extra_bonuses": {
+        "maintenance": 1.08
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 52
+    },
+    "P103": {
+      "name": "곡물 거래망",
+      "tag": "농업",
+      "family": "agriculture",
+      "build_id": "harvest_trade",
+      "description": "물자 구매가 −10% · 채집 −6%",
+      "effect": "buy",
+      "value": 0.9,
+      "extra_bonuses": {
+        "gather": 0.94
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 52
+    },
+    "P104": {
+      "name": "분산 채소 재배",
+      "tag": "농업",
+      "family": "agriculture",
+      "build_id": "market_garden",
+      "description": "채소 생산 +18% · 공공 급여 +6%",
+      "effect": "garden",
+      "value": 1.18,
+      "extra_bonuses": {
+        "wages": 1.06
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 33
+    },
+    "P105": {
+      "name": "채소 선별 작업대",
+      "tag": "농업",
+      "family": "agriculture",
+      "build_id": "market_garden",
+      "description": "채소 생산 +12% · 식량 저장량 +10%",
+      "effect": "garden",
+      "value": 1.12,
+      "extra_bonuses": {
+        "storage": 1.1
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 33
+    },
+    "P106": {
+      "name": "물 절약 경작",
+      "tag": "농업",
+      "family": "agriculture",
+      "build_id": "market_garden",
+      "description": "채소 생산 +10% · 시설 유지비 −6%",
+      "effect": "garden",
+      "value": 1.1,
+      "extra_bonuses": {
+        "maintenance": 0.94
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 33
+    },
+    "P107": {
+      "name": "텃밭 공동 보관",
+      "tag": "농업",
+      "family": "agriculture",
+      "build_id": "market_garden",
+      "description": "식량 저장량 +18% · 채소 생산 +8%",
+      "effect": "storage",
+      "value": 1.18,
+      "extra_bonuses": {
+        "garden": 1.08
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 33
+    },
+    "P108": {
+      "name": "대형 저장 구획",
+      "tag": "보존",
+      "family": "provisions",
+      "build_id": "granary",
+      "description": "식량 저장량 +25% · 시설 유지비 +6%",
+      "effect": "storage",
+      "value": 1.25,
+      "extra_bonuses": {
+        "maintenance": 1.06
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 52
+    },
+    "P109": {
+      "name": "운송 포장 규격",
+      "tag": "보존",
+      "family": "provisions",
+      "build_id": "granary",
+      "description": "식량 저장량 +15% · 물자 구매가 −4%",
+      "effect": "storage",
+      "value": 1.15,
+      "extra_bonuses": {
+        "buy": 0.96
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 52
+    },
+    "P110": {
+      "name": "재고 조사 체계",
+      "tag": "보존",
+      "family": "provisions",
+      "build_id": "granary",
+      "description": "시설 유지비 −10% · 식량 저장량 +10%",
+      "effect": "maintenance",
+      "value": 0.9,
+      "extra_bonuses": {
+        "storage": 1.1
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 52
+    },
+    "P111": {
+      "name": "창고 공동 구매",
+      "tag": "보존",
+      "family": "provisions",
+      "build_id": "granary",
+      "description": "물자 구매가 −10% · 난방 소비 +5%",
+      "effect": "buy",
+      "value": 0.9,
+      "extra_bonuses": {
+        "heating": 1.05
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 52
+    },
+    "P112": {
+      "name": "공동 식량 조달",
+      "tag": "농업",
+      "family": "agriculture",
+      "build_id": "commons",
+      "description": "채집 +18% · 겨울 채집 +5%p(봄 기준)",
+      "effect": "gather",
+      "value": 1.18,
+      "extra_bonuses": {
+        "winter_gather": 0.05
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 52
+    },
+    "P113": {
+      "name": "취사 장작 절약",
+      "tag": "농업",
+      "family": "agriculture",
+      "build_id": "commons",
+      "description": "난방 장작 소비 −12% · 공공 급여 +5%",
+      "effect": "heating",
+      "value": 0.88,
+      "extra_bonuses": {
+        "wages": 1.05
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 52
+    },
+    "P114": {
+      "name": "식탁 공동 구매",
+      "tag": "농업",
+      "family": "agriculture",
+      "build_id": "commons",
+      "description": "물자 구매가 −8% · 채소 생산 +8%",
+      "effect": "buy",
+      "value": 0.92,
+      "extra_bonuses": {
+        "garden": 1.08
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 52
+    },
+    "P115": {
+      "name": "공동 작업 계약",
+      "tag": "농업",
+      "family": "agriculture",
+      "build_id": "commons",
+      "description": "공공 급여 −8% · 채집 +8%",
+      "effect": "wages",
+      "value": 0.92,
+      "extra_bonuses": {
+        "gather": 1.08
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 52
+    },
+    "P116": {
+      "name": "선별 벌목반",
+      "tag": "생산",
+      "family": "industry",
+      "build_id": "timber_trade",
+      "description": "벌목 +20% · 도구 소모 +10%",
+      "effect": "logging",
+      "value": 1.2,
+      "extra_bonuses": {
+        "tool_use": 1.1
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 52
+    },
+    "P117": {
+      "name": "목재 운반 분담",
+      "tag": "생산",
+      "family": "industry",
+      "build_id": "timber_trade",
+      "description": "벌목 +12% · 공공 급여 −5%",
+      "effect": "logging",
+      "value": 1.12,
+      "extra_bonuses": {
+        "wages": 0.95
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 52
+    },
+    "P118": {
+      "name": "톱날 교체 주기",
+      "tag": "생산",
+      "family": "industry",
+      "build_id": "timber_trade",
+      "description": "벌목·채석 도구 소모 −18% · 유지비 +6%",
+      "effect": "tool_use",
+      "value": 0.82,
+      "extra_bonuses": {
+        "maintenance": 1.06
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 52
+    },
+    "P119": {
+      "name": "목재 납품 장부",
+      "tag": "생산",
+      "family": "industry",
+      "build_id": "timber_trade",
+      "description": "물자 구매가 −6% · 벌목 +8%",
+      "effect": "buy",
+      "value": 0.94,
+      "extra_bonuses": {
+        "logging": 1.08
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 52
+    },
+    "P120": {
+      "name": "넓은 채석면",
+      "tag": "생산",
+      "family": "industry",
+      "build_id": "stoneworks",
+      "description": "채석 +20% · 도구 소모 +10%",
+      "effect": "quarry",
+      "value": 1.2,
+      "extra_bonuses": {
+        "tool_use": 1.1
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 52
+    },
+    "P121": {
+      "name": "중량 운반반",
+      "tag": "생산",
+      "family": "industry",
+      "build_id": "stoneworks",
+      "description": "채석 +15% · 공공 급여 +5%",
+      "effect": "quarry",
+      "value": 1.15,
+      "extra_bonuses": {
+        "wages": 1.05
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 52
+    },
+    "P122": {
+      "name": "채석 도구 회수",
+      "tag": "생산",
+      "family": "industry",
+      "build_id": "stoneworks",
+      "description": "도구 소모 −10% · 채석 +8%",
+      "effect": "tool_use",
+      "value": 0.9,
+      "extra_bonuses": {
+        "quarry": 1.08
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 52
+    },
+    "P123": {
+      "name": "채석장 수리 일정",
+      "tag": "생산",
+      "family": "industry",
+      "build_id": "stoneworks",
+      "description": "시설 유지비 −10% · 채석 +6%",
+      "effect": "maintenance",
+      "value": 0.9,
+      "extra_bonuses": {
+        "quarry": 1.06
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 52
+    },
+    "P124": {
+      "name": "공방 대량 제작",
+      "tag": "생산",
+      "family": "industry",
+      "build_id": "prefab",
+      "description": "대장간 도구 생산 +20% · 공공 급여 +6%",
+      "effect": "smithy",
+      "value": 1.2,
+      "extra_bonuses": {
+        "wages": 1.06
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 52
+    },
+    "P125": {
+      "name": "규격 부품 분류",
+      "tag": "생산",
+      "family": "industry",
+      "build_id": "prefab",
+      "description": "대장간 도구 생산 +12% · 유지비 −5%",
+      "effect": "smithy",
+      "value": 1.12,
+      "extra_bonuses": {
+        "maintenance": 0.95
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 52
+    },
+    "P126": {
+      "name": "건설 인력 공동 계약",
+      "tag": "생산",
+      "family": "industry",
+      "build_id": "prefab",
+      "description": "공공 급여 −12% · 도구 소모 +6%",
+      "effect": "wages",
+      "value": 0.88,
+      "extra_bonuses": {
+        "tool_use": 1.06
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 52
+    },
+    "P127": {
+      "name": "공구 보관 작업장",
+      "tag": "생산",
+      "family": "industry",
+      "build_id": "prefab",
+      "description": "시설 유지비 −12% · 벌목 −4%",
+      "effect": "maintenance",
+      "value": 0.88,
+      "extra_bonuses": {
+        "logging": 0.96
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 52
+    },
+    "P128": {
+      "name": "상단 공동 발주",
+      "tag": "행정",
+      "family": "court",
+      "build_id": "caravan",
+      "description": "물자 구매가 −12% · 시설 유지비 +5%",
+      "effect": "buy",
+      "value": 0.88,
+      "extra_bonuses": {
+        "maintenance": 1.05
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 52
+    },
+    "P129": {
+      "name": "하역 인력 계약",
+      "tag": "행정",
+      "family": "court",
+      "build_id": "caravan",
+      "description": "물자 구매가 −6% · 공공 급여 −6%",
+      "effect": "buy",
+      "value": 0.94,
+      "extra_bonuses": {
+        "wages": 0.94
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 52
+    },
+    "P130": {
+      "name": "수입 물자 신고",
+      "tag": "행정",
+      "family": "court",
+      "build_id": "caravan",
+      "description": "세금 수금률 +4%p · 물자 구매가 −3%",
+      "effect": "tax",
+      "value": 0.04,
+      "extra_bonuses": {
+        "buy": 0.97
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 33
+    },
+    "P131": {
+      "name": "운송 장비 정비",
+      "tag": "행정",
+      "family": "court",
+      "build_id": "caravan",
+      "description": "시설 유지비 −10% · 물자 구매가 −4%",
+      "effect": "maintenance",
+      "value": 0.9,
+      "extra_bonuses": {
+        "buy": 0.96
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 52
+    },
+    "P132": {
+      "name": "경비 재정 확보",
+      "tag": "행정",
+      "family": "court",
+      "build_id": "garrison",
+      "description": "세금 수금률 +5%p · 채집 −5%",
+      "effect": "tax",
+      "value": 0.05,
+      "extra_bonuses": {
+        "gather": 0.95
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 33
+    },
+    "P133": {
+      "name": "경비 작업 급여표",
+      "tag": "행정",
+      "family": "court",
+      "build_id": "garrison",
+      "description": "공공 급여 −12% · 난방 소비 +6%",
+      "effect": "wages",
+      "value": 0.88,
+      "extra_bonuses": {
+        "heating": 1.06
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 52
+    },
+    "P134": {
+      "name": "초소 땔감 준비",
+      "tag": "행정",
+      "family": "court",
+      "build_id": "garrison",
+      "description": "난방 소비 −10% · 벌목 +8%",
+      "effect": "heating",
+      "value": 0.9,
+      "extra_bonuses": {
+        "logging": 1.08
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 52
+    },
+    "P135": {
+      "name": "경비대 공구 수리",
+      "tag": "행정",
+      "family": "court",
+      "build_id": "garrison",
+      "description": "도구 소모 −10% · 공공 급여 −4%",
+      "effect": "tool_use",
+      "value": 0.9,
+      "extra_bonuses": {
+        "wages": 0.96
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 52
+    },
+    "P136": {
+      "name": "진료 물자 계약",
+      "tag": "보존",
+      "family": "provisions",
+      "build_id": "infirmary",
+      "description": "물자 구매가 −10% · 시설 유지비 +6%",
+      "effect": "buy",
+      "value": 0.9,
+      "extra_bonuses": {
+        "maintenance": 1.06
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 52
+    },
+    "P137": {
+      "name": "따뜻한 병실 관리",
+      "tag": "보존",
+      "family": "provisions",
+      "build_id": "infirmary",
+      "description": "난방 소비 −12% · 공공 급여 +4%",
+      "effect": "heating",
+      "value": 0.88,
+      "extra_bonuses": {
+        "wages": 1.04
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 52
+    },
+    "P138": {
+      "name": "겨울 약초 수색",
+      "tag": "보존",
+      "family": "provisions",
+      "build_id": "infirmary",
+      "description": "채집 +10% · 겨울 채집 +8%p(봄 기준)",
+      "effect": "gather",
+      "value": 1.1,
+      "extra_bonuses": {
+        "winter_gather": 0.08
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 52
+    },
+    "P139": {
+      "name": "진료 식량 비축",
+      "tag": "보존",
+      "family": "provisions",
+      "build_id": "infirmary",
+      "description": "식량 저장량 +20% · 시설 유지비 −4%",
+      "effect": "storage",
+      "value": 1.2,
+      "extra_bonuses": {
+        "maintenance": 0.96
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 52
+    },
+    "P140": {
+      "name": "공동 난방 배관",
+      "tag": "보존",
+      "family": "provisions",
+      "build_id": "winter_hearth",
+      "description": "난방 소비 −20% · 시설 유지비 +8%",
+      "effect": "heating",
+      "value": 0.8,
+      "extra_bonuses": {
+        "maintenance": 1.08
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 52
+    },
+    "P141": {
+      "name": "동절기 채집 장비",
+      "tag": "보존",
+      "family": "provisions",
+      "build_id": "winter_hearth",
+      "description": "겨울 채집 +15%p(봄 기준) · 공공 급여 +5%",
+      "effect": "winter_gather",
+      "value": 0.15,
+      "extra_bonuses": {
+        "wages": 1.05
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 52
+    },
+    "P142": {
+      "name": "겨울용 목재 선별",
+      "tag": "보존",
+      "family": "provisions",
+      "build_id": "winter_hearth",
+      "description": "벌목 +15% · 난방 소비 −6%",
+      "effect": "logging",
+      "value": 1.15,
+      "extra_bonuses": {
+        "heating": 0.94
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 52
+    },
+    "P143": {
+      "name": "겨울 물자 공동 계약",
+      "tag": "보존",
+      "family": "provisions",
+      "build_id": "winter_hearth",
+      "description": "물자 구매가 −8% · 식량 저장량 +12%",
+      "effect": "buy",
+      "value": 0.92,
+      "extra_bonuses": {
+        "storage": 1.12
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 52
+    },
+    "P144": {
+      "name": "행정 급여 감사",
+      "tag": "행정",
+      "family": "court",
+      "build_id": "civic",
+      "description": "공공 급여 −10% · 세금 수금률 +3%p",
+      "effect": "wages",
+      "value": 0.9,
+      "extra_bonuses": {
+        "tax": 0.03
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 33
+    },
+    "P145": {
+      "name": "시설 예산 심사",
+      "tag": "행정",
+      "family": "court",
+      "build_id": "civic",
+      "description": "시설 유지비 −12% · 물자 구매가 +4%",
+      "effect": "maintenance",
+      "value": 0.88,
+      "extra_bonuses": {
+        "buy": 1.04
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 52
+    },
+    "P146": {
+      "name": "평의회 면담 기록",
+      "tag": "행정",
+      "family": "court",
+      "build_id": "civic",
+      "description": "면담 신뢰 +2 · 시설 유지비 −5%",
+      "effect": "trust",
+      "value": 2,
+      "extra_bonuses": {
+        "maintenance": 0.95
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 52
+    },
+    "P147": {
+      "name": "징수 창구 통합",
+      "tag": "행정",
+      "family": "court",
+      "build_id": "civic",
+      "description": "세금 수금률 +4%p · 물자 구매가 −5%",
+      "effect": "tax",
+      "value": 0.04,
+      "extra_bonuses": {
+        "buy": 0.95
+      },
+      "plus_only": true,
+      "pool_min_week": 1,
+      "pool_max_week": 33
+    }
+  }
+}

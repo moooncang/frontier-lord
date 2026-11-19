@@ -1,0 +1,1196 @@
+{
+  "RX_TIMBER_ORDER": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "title": "목재 납품 주문",
+    "speaker": "베아트릭스 코른",
+    "portrait": "CH04",
+    "body": "상단이 목재를 선매입합니다. 돈으로 받으면 2주, 도구로 받으면 3주 뒤에 도착합니다.",
+    "options": [
+      {
+        "label": "목재 24를 현금 계약",
+        "effects": {},
+        "cost": {
+          "wood": 24
+        },
+        "followup": {
+          "id": "RX_TIMBER_CASH",
+          "delay": 2
+        }
+      },
+      {
+        "label": "목재 18을 도구 계약",
+        "effects": {},
+        "cost": {
+          "wood": 18
+        },
+        "followup": {
+          "id": "RX_TIMBER_TOOLS",
+          "delay": 3
+        }
+      },
+      {
+        "label": "목재를 남겨 둔다",
+        "effects": {}
+      }
+    ],
+    "pool": {
+      "weight": 3,
+      "min": 4,
+      "max": 40,
+      "once": true,
+      "facility": "B25"
+    }
+  },
+  "RX_TIMBER_CASH": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "title": "납품 대금 도착",
+    "speaker": "베아트릭스 코른",
+    "portrait": "CH04",
+    "body": "목재 대금 4금을 받았습니다. 일부를 상단 거래망에 투자할 수도 있습니다.",
+    "options": [
+      {
+        "label": "대금 전액을 받는다",
+        "effects": {
+          "money": 400
+        }
+      },
+      {
+        "label": "거래망에 재투자",
+        "effects": {
+          "money": 200,
+          "perm": {
+            "buy": 0.98
+          }
+        }
+      }
+    ]
+  },
+  "RX_TIMBER_TOOLS": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "title": "교환한 도구 도착",
+    "speaker": "두르간",
+    "portrait": "CH08",
+    "body": "납품한 목재로 만든 도구 4개가 도착했습니다. 창고에 넣거나 장인에게 관리를 맡길 수 있습니다.",
+    "options": [
+      {
+        "label": "도구 4개를 받는다",
+        "effects": {
+          "tools": 4
+        }
+      },
+      {
+        "label": "2개를 정비용으로",
+        "effects": {
+          "tools": 2,
+          "perm": {
+            "tool_use": 0.96
+          }
+        }
+      }
+    ]
+  },
+  "RX_ORCHARD": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "title": "공동 경작지 제안",
+    "speaker": "요스트",
+    "portrait": "CH09",
+    "body": "농부들은 밭의 거름을, 채집꾼은 숲길 울타리를 요청합니다. 한쪽을 지원하면 3주 뒤 결과를 확인합니다.",
+    "options": [
+      {
+        "label": "밭에 거름을 댄다",
+        "effects": {},
+        "cost": {
+          "money": 180,
+          "food": 15
+        },
+        "followup": {
+          "id": "RX_ORCHARD_FIELD",
+          "delay": 3
+        }
+      },
+      {
+        "label": "숲길에 울타리 설치",
+        "effects": {},
+        "cost": {
+          "wood": 16
+        },
+        "followup": {
+          "id": "RX_ORCHARD_FOREST",
+          "delay": 3
+        }
+      },
+      {
+        "label": "올해는 보류한다",
+        "effects": {}
+      }
+    ],
+    "pool": {
+      "weight": 3,
+      "min": 4,
+      "max": 26,
+      "once": true,
+      "facility": "B13"
+    }
+  },
+  "RX_ORCHARD_FIELD": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "title": "거름 작업 완료",
+    "speaker": "요스트",
+    "portrait": "CH09",
+    "body": "밭에 거름을 모두 댔습니다. 올해 수확을 늘리거나 일부를 텃밭에 돌려 식량을 바로 얻습니다.",
+    "options": [
+      {
+        "label": "밭에 모두 사용",
+        "effects": {
+          "crop": 0.07
+        }
+      },
+      {
+        "label": "텃밭에도 나눈다",
+        "effects": {
+          "crop": 0.03,
+          "food": 28
+        }
+      }
+    ]
+  },
+  "RX_ORCHARD_FOREST": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "title": "숲길 울타리 완성",
+    "speaker": "시아렐",
+    "portrait": "CH06",
+    "body": "울타리가 채집길을 지켜 줍니다. 열매 채집에 쓰거나 일부를 목재 운반로로 바꿀 수 있습니다.",
+    "options": [
+      {
+        "label": "채집길로 사용",
+        "effects": {
+          "perm": {
+            "gather": 1.07
+          }
+        }
+      },
+      {
+        "label": "목재 운반로로 사용",
+        "effects": {
+          "perm": {
+            "logging": 1.08
+          }
+        }
+      }
+    ]
+  },
+  "RX_APPRENTICE": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "title": "장인의 수습생",
+    "speaker": "두르간",
+    "portrait": "CH08",
+    "body": "수습생 둘을 가르칠 자재가 필요합니다. 대장간 수리와 건축 중 배울 일을 정해 주십시오.",
+    "options": [
+      {
+        "label": "장비 수리를 가르친다",
+        "effects": {},
+        "cost": {
+          "tools": 2,
+          "money": 120
+        },
+        "followup": {
+          "id": "RX_APPRENTICE_TOOLS",
+          "delay": 4
+        }
+      },
+      {
+        "label": "건축을 가르친다",
+        "effects": {},
+        "cost": {
+          "wood": 12,
+          "money": 160
+        },
+        "followup": {
+          "id": "RX_APPRENTICE_BUILD",
+          "delay": 4
+        }
+      },
+      {
+        "label": "이번 모집은 보낸다",
+        "effects": {}
+      }
+    ],
+    "pool": {
+      "weight": 3,
+      "min": 6,
+      "max": 38,
+      "once": true
+    }
+  },
+  "RX_APPRENTICE_TOOLS": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "title": "수습생의 첫 수리",
+    "speaker": "두르간",
+    "portrait": "CH08",
+    "body": "수습생들이 낡은 도구를 고쳤습니다. 수리 도구를 받거나 시설 관리법을 보급할 수 있습니다.",
+    "options": [
+      {
+        "label": "수리 도구를 받는다",
+        "effects": {
+          "tools": 4
+        }
+      },
+      {
+        "label": "관리법을 보급한다",
+        "effects": {
+          "perm": {
+            "maintenance": 0.94
+          }
+        }
+      }
+    ]
+  },
+  "RX_APPRENTICE_BUILD": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "title": "수습생의 건축 도면",
+    "speaker": "두르간",
+    "portrait": "CH08",
+    "body": "수습생들이 자재 낭비를 줄인 도면을 완성했습니다. 도면을 쓰거나 판자를 회수하십시오.",
+    "options": [
+      {
+        "label": "도면을 공사에 쓴다",
+        "effects": {
+          "perm": {
+            "build_work": 0.95
+          }
+        }
+      },
+      {
+        "label": "남은 판자를 회수",
+        "effects": {
+          "wood": 28,
+          "stone": 12
+        }
+      }
+    ]
+  },
+  "RX_GRAIN_LOAN": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "title": "이웃 마을의 곡식 대여",
+    "speaker": "클로틸드 드 레이벡",
+    "portrait": "CH07",
+    "body": "이웃 마을이 식량 45를 빌려 달라고 합니다. 4주 뒤 식량이나 대금으로 돌려받습니다.",
+    "options": [
+      {
+        "label": "식량 45를 빌려준다",
+        "effects": {},
+        "cost": {
+          "food": 45
+        },
+        "followup": {
+          "id": "RX_GRAIN_RETURN",
+          "delay": 4
+        }
+      },
+      {
+        "label": "작게 교환한다",
+        "effects": {
+          "money": 200
+        },
+        "cost": {
+          "food": 20
+        }
+      },
+      {
+        "label": "비축분을 지킨다",
+        "effects": {}
+      }
+    ],
+    "pool": {
+      "weight": 3,
+      "min": 4,
+      "max": 30,
+      "once": true
+    }
+  },
+  "RX_GRAIN_RETURN": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "title": "이웃 마을의 상환",
+    "speaker": "클로틸드 드 레이벡",
+    "portrait": "CH07",
+    "body": "빌려 준 곡식의 상환일입니다. 식량 65와 대금 5금 중 하나를 받습니다.",
+    "options": [
+      {
+        "label": "식량 65를 받는다",
+        "effects": {
+          "food": 65
+        }
+      },
+      {
+        "label": "대금 5금을 받는다",
+        "effects": {
+          "money": 500
+        }
+      }
+    ]
+  },
+  "RX_CONVOY_SHARE": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "title": "공동 수레 계약",
+    "speaker": "베아트릭스 코른",
+    "portrait": "CH04",
+    "body": "상단의 빈 수레 한 칸을 예약할 수 있습니다. 4금이면 3주 뒤 물자를 고르고, 반값 계약은 도착이 불확실합니다.",
+    "options": [
+      {
+        "label": "정식 계약을 맺는다",
+        "effects": {},
+        "cost": {
+          "money": 400
+        },
+        "followup": {
+          "id": "RX_CONVOY_ARRIVAL",
+          "delay": 3
+        }
+      },
+      {
+        "label": "반값 운송에 건다",
+        "effects": {},
+        "cost": {
+          "money": 200
+        },
+        "chance": {
+          "base": 0.6,
+          "win": {
+            "text": "다른 상단이 짐을 받아 주었습니다.",
+            "effects": {
+              "wood": 40,
+              "fuel": 30
+            }
+          },
+          "lose": {
+            "text": "수레 자리를 구하지 못해 계약금이 소진됐습니다.",
+            "effects": {}
+          },
+          "stat": "guild",
+          "per": 0.004,
+          "facility": {
+            "B52": 0.1
+          }
+        }
+      },
+      {
+        "label": "계약하지 않는다",
+        "effects": {}
+      }
+    ],
+    "pool": {
+      "weight": 3,
+      "min": 8,
+      "max": 42,
+      "once": true
+    }
+  },
+  "RX_CONVOY_ARRIVAL": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "title": "예약한 수레 도착",
+    "speaker": "베아트릭스 코른",
+    "portrait": "CH04",
+    "body": "예약한 수레가 도착했습니다. 계약한 몫으로 물자 한 종류를 골라 받으십시오.",
+    "options": [
+      {
+        "label": "식량 90을 받는다",
+        "effects": {
+          "food": 90
+        }
+      },
+      {
+        "label": "목재 40을 받는다",
+        "effects": {
+          "wood": 40
+        }
+      },
+      {
+        "label": "장작 110을 받는다",
+        "effects": {
+          "fuel": 110
+        }
+      }
+    ]
+  },
+  "RX_LEDGER_COPY": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "title": "마을 장부 정리",
+    "speaker": "오딜 마르센",
+    "portrait": "CH01",
+    "body": "새 장부를 만들면 거래 증빙을 남길 수 있습니다. 서기관에게 2금을 지급하면 2주 뒤 완성됩니다.",
+    "options": [
+      {
+        "label": "새 장부를 작성한다",
+        "effects": {},
+        "cost": {
+          "money": 200
+        },
+        "followup": {
+          "id": "RX_LEDGER_COMPLETE",
+          "delay": 2
+        }
+      },
+      {
+        "label": "기존 장부를 공개",
+        "effects": {
+          "trust": 3,
+          "guild": -2
+        }
+      },
+      {
+        "label": "현재 장부를 쓴다",
+        "effects": {}
+      }
+    ],
+    "pool": {
+      "weight": 3,
+      "min": 5,
+      "max": 36,
+      "once": true
+    }
+  },
+  "RX_LEDGER_COMPLETE": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "title": "완성된 거래 장부",
+    "speaker": "오딜 마르센",
+    "portrait": "CH01",
+    "body": "외상과 재고가 모두 대조됐습니다. 상단과 가격 협상에 쓰거나 주민에게 공개할 수 있습니다.",
+    "options": [
+      {
+        "label": "구매 계약을 정리",
+        "effects": {
+          "perm": {
+            "buy": 0.96
+          },
+          "guild": 2
+        }
+      },
+      {
+        "label": "주민에게 공개",
+        "effects": {
+          "trust": 5,
+          "village": 3
+        }
+      }
+    ]
+  },
+  "RX_WELL_LESSON": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "title": "급수 담당 교육",
+    "speaker": "아녜스",
+    "portrait": "CH03",
+    "body": "우물 담당자들에게 물 보관법을 가르치려 합니다. 교육 식량 20을 지원하면 2주 뒤 마칩니다.",
+    "options": [
+      {
+        "label": "교육 식량을 지원",
+        "effects": {},
+        "cost": {
+          "food": 20
+        },
+        "followup": {
+          "id": "RX_WELL_COMPLETE",
+          "delay": 2
+        }
+      },
+      {
+        "label": "주민에게만 안내",
+        "effects": {
+          "health": 2,
+          "trust": -1
+        }
+      },
+      {
+        "label": "교육을 미룬다",
+        "effects": {}
+      }
+    ],
+    "pool": {
+      "weight": 3,
+      "min": 5,
+      "max": 42,
+      "once": true,
+      "facility": "B06"
+    }
+  },
+  "RX_WELL_COMPLETE": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "title": "급수 교육 수료",
+    "speaker": "아녜스",
+    "portrait": "CH03",
+    "body": "담당자들이 교육을 마쳤습니다. 공동 우물을 관리하거나 가정을 방문하도록 배치하십시오.",
+    "options": [
+      {
+        "label": "공동 우물을 관리",
+        "effects": {
+          "health": 6
+        }
+      },
+      {
+        "label": "가정 방문을 맡긴다",
+        "effects": {
+          "health": 3,
+          "village": 4
+        }
+      }
+    ]
+  },
+  "RX_QUARRY_TEST": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "title": "새 채석면 시험",
+    "speaker": "이네스 라우",
+    "portrait": "CH05",
+    "body": "얕은 돌층을 찾았습니다. 도구 2개로 안전하게 조사하면 3주 뒤 결과를 받습니다.",
+    "options": [
+      {
+        "label": "도구를 지급한다",
+        "effects": {},
+        "cost": {
+          "tools": 2
+        },
+        "followup": {
+          "id": "RX_QUARRY_RESULT",
+          "delay": 3
+        }
+      },
+      {
+        "label": "표면만 시험한다",
+        "effects": {},
+        "chance": {
+          "base": 0.55,
+          "win": {
+            "text": "표면의 돌이 쉽게 떨어졌습니다.",
+            "effects": {
+              "stone": 22
+            }
+          },
+          "lose": {
+            "text": "작업자가 손을 다쳐 쉬게 됐습니다.",
+            "effects": {
+              "health": -3
+            }
+          },
+          "facility": {
+            "B27": 0.15
+          }
+        }
+      },
+      {
+        "label": "지금은 파지 않는다",
+        "effects": {}
+      }
+    ],
+    "pool": {
+      "weight": 3,
+      "min": 7,
+      "max": 40,
+      "once": true
+    }
+  },
+  "RX_QUARRY_RESULT": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "title": "채석 시험 완료",
+    "speaker": "이네스 라우",
+    "portrait": "CH05",
+    "body": "기초 공사에 쓸 수 있는 돌층입니다. 돌을 바로 캐거나 기초 설계에 활용할 수 있습니다.",
+    "options": [
+      {
+        "label": "석재 45를 확보",
+        "effects": {
+          "stone": 45
+        }
+      },
+      {
+        "label": "기초 설계에 반영",
+        "effects": {
+          "stone": 15,
+          "perm": {
+            "build_work": 0.96
+          }
+        }
+      }
+    ]
+  },
+  "RX_KILN_TRIAL": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "title": "장작 건조 시험",
+    "speaker": "두르간",
+    "portrait": "CH08",
+    "body": "목재 20으로 건조대를 시험할 수 있습니다. 3주 뒤 장작을 받거나 난방법을 배웁니다.",
+    "options": [
+      {
+        "label": "건조대를 시험한다",
+        "effects": {},
+        "cost": {
+          "wood": 20
+        },
+        "followup": {
+          "id": "RX_KILN_RESULT",
+          "delay": 3
+        }
+      },
+      {
+        "label": "노천에서 급히 말린다",
+        "effects": {},
+        "cost": {
+          "wood": 10
+        },
+        "chance": {
+          "base": 0.6,
+          "win": {
+            "text": "목재가 잘 말랐습니다.",
+            "effects": {
+              "fuel": 65
+            }
+          },
+          "lose": {
+            "text": "비를 맞아 일부만 말랐습니다.",
+            "effects": {
+              "fuel": 15
+            }
+          }
+        }
+      },
+      {
+        "label": "현재 장작을 쓴다",
+        "effects": {}
+      }
+    ],
+    "pool": {
+      "weight": 3,
+      "min": 14,
+      "max": 43,
+      "once": true
+    }
+  },
+  "RX_KILN_RESULT": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "title": "건조 시험 결과",
+    "speaker": "두르간",
+    "portrait": "CH08",
+    "body": "시험용 장작이 잘 말랐습니다. 장작을 비축하거나 연소법을 주민에게 가르칠 수 있습니다.",
+    "options": [
+      {
+        "label": "장작 100을 받는다",
+        "effects": {
+          "fuel": 100
+        }
+      },
+      {
+        "label": "절약 난방법을 보급",
+        "effects": {
+          "fuel": 30,
+          "perm": {
+            "heating": 0.95
+          }
+        }
+      }
+    ]
+  },
+  "RX_WEAVER": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "title": "주민 직조 주문",
+    "speaker": "요스트",
+    "portrait": "CH09",
+    "body": "주민들이 상단에 납품할 천을 짭니다. 작업 식량 30을 주면 3주 뒤 대금을 나눠 받습니다.",
+    "options": [
+      {
+        "label": "작업 식량을 댄다",
+        "effects": {},
+        "cost": {
+          "food": 30
+        },
+        "followup": {
+          "id": "RX_WEAVER_PAYMENT",
+          "delay": 3
+        }
+      },
+      {
+        "label": "직접 납품을 허용",
+        "effects": {
+          "village": 3,
+          "guild": 1
+        }
+      },
+      {
+        "label": "주민 생업에 맡긴다",
+        "effects": {}
+      }
+    ],
+    "pool": {
+      "weight": 3,
+      "min": 6,
+      "max": 41,
+      "once": true
+    }
+  },
+  "RX_WEAVER_PAYMENT": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "title": "천 납품 대금",
+    "speaker": "요스트",
+    "portrait": "CH09",
+    "body": "천을 납품해 대금 5금이 들어왔습니다. 영지 몫을 정하면 나머지는 주민에게 돌아갑니다.",
+    "options": [
+      {
+        "label": "전액을 금고에 넣는다",
+        "effects": {
+          "money": 500,
+          "village": -3
+        }
+      },
+      {
+        "label": "절반을 주민에게",
+        "effects": {
+          "money": 250,
+          "village": 5,
+          "mood": 2
+        }
+      }
+    ]
+  },
+  "RX_MARKET_DAY": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "title": "순회 장날 유치",
+    "speaker": "베아트릭스 코른",
+    "portrait": "CH04",
+    "body": "순회 상인들이 장터를 빌리려 합니다. 준비금 2.5금을 내면 2주 뒤 장날을 엽니다.",
+    "options": [
+      {
+        "label": "정식 장날을 연다",
+        "effects": {},
+        "cost": {
+          "money": 250
+        },
+        "followup": {
+          "id": "RX_MARKET_RESULT",
+          "delay": 2
+        }
+      },
+      {
+        "label": "빈터만 빌려준다",
+        "effects": {
+          "money": 100,
+          "guild": -2
+        }
+      },
+      {
+        "label": "이번에는 받지 않는다",
+        "effects": {}
+      }
+    ],
+    "pool": {
+      "weight": 3,
+      "min": 8,
+      "max": 42,
+      "once": true,
+      "facility": "B49"
+    }
+  },
+  "RX_MARKET_RESULT": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "title": "순회 장날 개장",
+    "speaker": "베아트릭스 코른",
+    "portrait": "CH04",
+    "body": "장터가 손님으로 찼습니다. 통행료 수입을 챙기거나 상인에게 재방문 혜택을 줄 수 있습니다.",
+    "options": [
+      {
+        "label": "통행료를 걷는다",
+        "effects": {
+          "money": 450,
+          "guild": 1
+        }
+      },
+      {
+        "label": "다음 거래를 할인",
+        "effects": {
+          "money": 100,
+          "perm": {
+            "buy": 0.96
+          },
+          "guild": 3
+        }
+      }
+    ]
+  },
+  "RX_PATH_SCOUT": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "title": "숲길 안내 의뢰",
+    "speaker": "시아렐",
+    "portrait": "CH06",
+    "body": "숲길을 아는 안내자가 왔습니다. 식량 20을 지급하면 2주 뒤 채집 위치나 사냥감을 가져옵니다.",
+    "options": [
+      {
+        "label": "안내자를 보낸다",
+        "effects": {},
+        "cost": {
+          "food": 20
+        },
+        "followup": {
+          "id": "RX_PATH_RESULT",
+          "delay": 2
+        }
+      },
+      {
+        "label": "주민 탐색대를 보낸다",
+        "effects": {},
+        "chance": {
+          "base": 0.52,
+          "win": {
+            "text": "주민들이 버섯 군락을 찾았습니다.",
+            "effects": {
+              "food": 38
+            }
+          },
+          "lose": {
+            "text": "길을 헤매 식량만 썼습니다.",
+            "effects": {
+              "food": -10
+            }
+          },
+          "stat": "village",
+          "per": 0.004
+        }
+      },
+      {
+        "label": "탐색을 보류한다",
+        "effects": {}
+      }
+    ],
+    "pool": {
+      "weight": 3,
+      "min": 4,
+      "max": 32,
+      "once": true
+    }
+  },
+  "RX_PATH_RESULT": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "title": "숲길 안내 완료",
+    "speaker": "시아렐",
+    "portrait": "CH06",
+    "body": "안전한 채집길과 사냥감을 확인했습니다. 채집 지도를 남기거나 사냥감을 실어 올 수 있습니다.",
+    "options": [
+      {
+        "label": "채집 지도를 만든다",
+        "effects": {
+          "perm": {
+            "gather": 1.06
+          }
+        }
+      },
+      {
+        "label": "식량을 실어 온다",
+        "effects": {
+          "food": 55
+        }
+      }
+    ]
+  },
+  "RX_SETTLER_FAMILY": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "title": "목수 가족의 방문",
+    "speaker": "잉가",
+    "portrait": "CH12",
+    "body": "목수 부부가 빈집을 살펴보고 싶답니다. 목재 10과 식량 12를 주면 3주 뒤 정착 여부를 정합니다.",
+    "options": [
+      {
+        "label": "방문 비용을 지원",
+        "effects": {},
+        "cost": {
+          "wood": 10,
+          "food": 12
+        },
+        "followup": {
+          "id": "RX_SETTLER_REPLY",
+          "delay": 3
+        }
+      },
+      {
+        "label": "수리 일만 맡긴다",
+        "effects": {
+          "perm": {
+            "maintenance": 0.98
+          }
+        },
+        "cost": {
+          "money": 150
+        }
+      },
+      {
+        "label": "이번에는 보낸다",
+        "effects": {}
+      }
+    ],
+    "pool": {
+      "weight": 3,
+      "min": 6,
+      "max": 38,
+      "once": true,
+      "facility": "B01"
+    }
+  },
+  "RX_SETTLER_REPLY": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "title": "목수 가족의 답신",
+    "speaker": "잉가",
+    "portrait": "CH12",
+    "body": "부부가 정착을 원합니다. 빈집 두 자리와 정착금이 필요하며, 자리가 없으면 임시 수리만 맡길 수 있습니다.",
+    "options": [
+      {
+        "label": "두 사람을 받아들인다",
+        "effects": {
+          "pop": 2,
+          "village": 3
+        },
+        "cost": {
+          "money": 40
+        },
+        "requires_housing": 2
+      },
+      {
+        "label": "임시 수리를 맡긴다",
+        "effects": {
+          "perm": {
+            "maintenance": 0.96
+          }
+        }
+      }
+    ]
+  },
+  "RX_MEADOW_LEASE": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "title": "휴경지 임대 제안",
+    "speaker": "클로틸드 드 레이벡",
+    "portrait": "CH07",
+    "body": "이웃 영지가 풀밭을 빌리려 합니다. 임대료를 받으면 올해 수확 일부를 포기해야 합니다.",
+    "options": [
+      {
+        "label": "넓게 빌려준다",
+        "effects": {
+          "money": 600,
+          "crop": -0.06
+        }
+      },
+      {
+        "label": "작게 빌려준다",
+        "effects": {
+          "money": 250,
+          "crop": -0.02
+        }
+      },
+      {
+        "label": "농지로 남겨 둔다",
+        "effects": {}
+      }
+    ],
+    "pool": {
+      "weight": 3,
+      "min": 4,
+      "max": 26,
+      "once": true,
+      "facility": "B13"
+    }
+  },
+  "RX_TOOL_AUCTION": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "title": "중고 도구 경매",
+    "speaker": "두르간",
+    "portrait": "CH08",
+    "body": "상단이 중고 도구를 내놨습니다. 대장간이 있으면 직접 검수할 수 있고, 없으면 상태를 장담할 수 없습니다.",
+    "options": [
+      {
+        "label": "검수한 도구를 산다",
+        "effects": {
+          "tools": 5
+        },
+        "cost": {
+          "money": 330
+        },
+        "requires": {
+          "facility": "B33"
+        }
+      },
+      {
+        "label": "묶음으로 낙찰받는다",
+        "effects": {},
+        "cost": {
+          "money": 180
+        },
+        "chance": {
+          "base": 0.55,
+          "win": {
+            "text": "날만 갈면 쓸 수 있는 도구입니다.",
+            "effects": {
+              "tools": 5
+            }
+          },
+          "lose": {
+            "text": "대부분 금이 가 두 개만 쓸 수 있습니다.",
+            "effects": {
+              "tools": 2
+            }
+          },
+          "facility": {
+            "B33": 0.2
+          }
+        }
+      },
+      {
+        "label": "입찰하지 않는다",
+        "effects": {}
+      }
+    ],
+    "pool": {
+      "weight": 3,
+      "min": 8,
+      "max": 46,
+      "once": true
+    }
+  },
+  "RX_CHAPEL_MEAL": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "title": "공동 식사 요청",
+    "speaker": "아녜스",
+    "portrait": "CH03",
+    "body": "주민들이 함께 식사할 장소를 부탁했습니다. 예배당이 있으면 적은 식량으로 모임을 준비할 수 있습니다.",
+    "options": [
+      {
+        "label": "예배당에서 연다",
+        "effects": {
+          "mood": 6,
+          "village": 3
+        },
+        "cost": {
+          "food": 18
+        },
+        "requires": {
+          "facility": "B59"
+        }
+      },
+      {
+        "label": "빈터에서 연다",
+        "effects": {
+          "mood": 6,
+          "village": 3
+        },
+        "cost": {
+          "food": 32
+        }
+      },
+      {
+        "label": "각 가정에서 먹는다",
+        "effects": {}
+      }
+    ],
+    "pool": {
+      "weight": 3,
+      "min": 5,
+      "max": 46,
+      "once": true
+    }
+  },
+  "RX_TAX_REVIEW": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "title": "미납 장부 재검토",
+    "speaker": "마티아스 그렌",
+    "portrait": "CH10",
+    "body": "누락된 세금 4금을 찾았습니다. 바로 걷거나 서기관실에서 사정을 검토한 뒤 감면할 수 있습니다.",
+    "options": [
+      {
+        "label": "전액을 징수한다",
+        "effects": {
+          "money": 400,
+          "trust": -3,
+          "village": -2
+        }
+      },
+      {
+        "label": "절반을 감면한다",
+        "effects": {
+          "money": 200,
+          "trust": 3
+        },
+        "requires": {
+          "facility": "B63"
+        }
+      },
+      {
+        "label": "이번 몫은 면제한다",
+        "effects": {
+          "village": 2
+        }
+      }
+    ],
+    "pool": {
+      "weight": 3,
+      "min": 10,
+      "max": 36,
+      "once": true
+    }
+  }
+}

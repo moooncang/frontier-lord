@@ -1,0 +1,42 @@
+{
+  "RS_RUINS": {
+    "week": 4, "relic_only": true, "realm": true, "kind": "relic",
+    "title": "무너진 성소", "speaker": "이네스 라우", "portrait": "CH05",
+    "body": "개간지 아래에서 옛 성소가 나왔습니다. 보관함을 복원하면 성물 하나를 마을에 가져올 수 있습니다. 목재만 회수할 수도 있습니다.",
+    "options": [
+      {"label": "보관함을 복원한다", "cost": {"money": 200, "tools": 1}, "effects": {}, "relic_offer": true},
+      {"label": "목재를 회수한다", "effects": {"wood": 18}},
+      {"label": "현장을 그대로 둔다", "effects": {}}
+    ]
+  },
+  "RS_MERCHANT": {
+    "week": 16, "relic_only": true, "realm": true, "kind": "relic",
+    "title": "성물을 파는 행상", "speaker": "베아트릭스 코른", "portrait": "CH04",
+    "body": "행상이 세 지역에서 수집한 성물을 내놓았습니다. 금화로 사거나 도구와 바꿀 수 있습니다. 거래하면 제시된 성물 세 개 중 하나를 고릅니다.",
+    "options": [
+      {"label": "금화로 구매한다", "cost": {"money": 500}, "effects": {}, "relic_offer": true},
+      {"label": "도구와 교환한다", "cost": {"tools": 3}, "effects": {}, "relic_offer": true},
+      {"label": "거래하지 않는다", "effects": {}}
+    ]
+  },
+  "RS_FOUNDATION": {
+    "week": 29, "relic_only": true, "realm": true, "kind": "relic",
+    "title": "기초 아래의 봉인함", "speaker": "오딜 마르센", "portrait": "CH01",
+    "body": "오래된 기초 아래에서 봉인함을 발견했습니다. 목재와 석재로 현장을 보강하면 성물을 꺼낼 수 있습니다. 봉인함을 통째로 팔면 당장 금고를 채울 수 있습니다.",
+    "options": [
+      {"label": "현장을 보강하고 개봉한다", "cost": {"wood": 20, "stone": 8}, "effects": {}, "relic_offer": true},
+      {"label": "봉인함을 판매한다", "effects": {"money": 500}},
+      {"label": "조사를 중단한다", "effects": {}}
+    ]
+  },
+  "RS_PILGRIM": {
+    "week": 42, "relic_only": true, "realm": true, "kind": "relic",
+    "title": "눈길의 순례자", "speaker": "아녜스", "portrait": "CH03",
+    "body": "순례자들이 머물 곳과 겨울 물자를 요청했습니다. 식량과 장작을 내주면 보관하던 성물 하나를 마을에 맡기겠다고 합니다.",
+    "options": [
+      {"label": "겨울 물자를 나눈다", "cost": {"food": 50, "fuel": 12}, "effects": {"mood": 3}, "relic_offer": true},
+      {"label": "여비만 지원한다", "cost": {"money": 300}, "effects": {"village": 4}},
+      {"label": "이번에는 받지 않는다", "effects": {}}
+    ]
+  }
+}

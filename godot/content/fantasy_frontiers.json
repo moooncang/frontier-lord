@@ -1,0 +1,2300 @@
+{
+  "version": 1,
+  "paths": {
+    "grove": {
+      "name": "정령숲 협약",
+      "family": "agriculture",
+      "relic_family": "abundance",
+      "benefit": "식량과 물 공급을 늘리고 숲의 생산을 유지합니다.",
+      "tradeoff": "숲을 보호하는 만큼 벌목이나 공공 급여에 부담이 생깁니다.",
+      "branches": {
+        "care": {
+          "name": "정령과 공존",
+          "text": "채소 +20%·채집 +10% / 벌목 -15%",
+          "mods": {
+            "garden": 1.2,
+            "gather": 1.1,
+            "logging": 0.85
+          }
+        },
+        "drive": {
+          "name": "집중 재배",
+          "text": "채소 +20%·수확 +15% / 공공 급여 +8%",
+          "mods": {
+            "garden": 1.2,
+            "harvest": 1.15,
+            "wages": 1.08
+          }
+        }
+      },
+      "buildings": [
+        "FG01",
+        "FG02",
+        "FG03"
+      ],
+      "events": [
+        "FF_GROVE_1",
+        "FF_GROVE_2",
+        "FF_GROVE_3",
+        "FF_GROVE_4",
+        "FF_GROVE_5"
+      ],
+      "district": "realm_district_grove",
+      "completion_reward": {
+        "money": 100,
+        "food": 100
+      }
+    },
+    "ember": {
+      "name": "화룡 공생",
+      "family": "industry",
+      "relic_family": "craft",
+      "benefit": "목재를 장작과 도구로 가공하고 겨울 난방을 줄입니다.",
+      "tradeoff": "불길과 연기로 건강·유지비·도구 소모에 부담이 생깁니다.",
+      "branches": {
+        "care": {
+          "name": "온기 공유",
+          "text": "난방 -15% / 유지비 +8%",
+          "mods": {
+            "heating": 0.85,
+            "maintenance": 1.08
+          }
+        },
+        "drive": {
+          "name": "용열 산업",
+          "text": "도구 생산 +20%·벌목 +10% / 도구 소모 +10%",
+          "mods": {
+            "smithy": 1.2,
+            "logging": 1.1,
+            "tool_use": 1.1
+          }
+        }
+      },
+      "buildings": [
+        "FE01",
+        "FE02",
+        "FE03"
+      ],
+      "events": [
+        "FF_EMBER_1",
+        "FF_EMBER_2",
+        "FF_EMBER_3",
+        "FF_EMBER_4",
+        "FF_EMBER_5"
+      ],
+      "district": "realm_district_ember",
+      "completion_reward": {
+        "fuel": 60,
+        "tools": 2
+      }
+    },
+    "tide": {
+      "name": "달빛 수로",
+      "family": "provisions",
+      "relic_family": "abundance",
+      "benefit": "겨울에도 식량을 생산하고 교역·저장 조건을 개선합니다.",
+      "tradeoff": "물길 유지와 습기로 난방이나 유지비 부담이 늘어납니다.",
+      "branches": {
+        "care": {
+          "name": "주민 물길",
+          "text": "채집 +15%·저장 +15% / 난방 +8%",
+          "mods": {
+            "gather": 1.15,
+            "storage": 1.15,
+            "heating": 1.08
+          }
+        },
+        "drive": {
+          "name": "상단 운하",
+          "text": "구매가 -10%·저장 +10% / 공공 급여 +8%",
+          "mods": {
+            "buy": 0.9,
+            "storage": 1.1,
+            "wages": 1.08
+          }
+        }
+      },
+      "buildings": [
+        "FT01",
+        "FT02",
+        "FT03"
+      ],
+      "events": [
+        "FF_TIDE_1",
+        "FF_TIDE_2",
+        "FF_TIDE_3",
+        "FF_TIDE_4",
+        "FF_TIDE_5"
+      ],
+      "district": "realm_district_tide",
+      "completion_reward": {
+        "money": 100,
+        "food": 100
+      }
+    },
+    "clockwork": {
+      "name": "태엽 골렘",
+      "family": "industry",
+      "relic_family": "craft",
+      "benefit": "도구와 석재를 가공하고 새 건설의 작업량을 줄입니다.",
+      "tradeoff": "골렘을 움직이려면 장작·도구와 정비 비용이 필요합니다.",
+      "branches": {
+        "care": {
+          "name": "정비 우선",
+          "text": "도구 소모 -15% / 도구 생산 -8%",
+          "mods": {
+            "tool_use": 0.85,
+            "smithy": 0.92
+          }
+        },
+        "drive": {
+          "name": "연속 가동",
+          "text": "채석 +20%·도구 생산 +15% / 유지비 +12%",
+          "mods": {
+            "quarry": 1.2,
+            "smithy": 1.15,
+            "maintenance": 1.12
+          }
+        }
+      },
+      "buildings": [
+        "FC01",
+        "FC02",
+        "FC03"
+      ],
+      "events": [
+        "FF_CLOCKWORK_1",
+        "FF_CLOCKWORK_2",
+        "FF_CLOCKWORK_3",
+        "FF_CLOCKWORK_4",
+        "FF_CLOCKWORK_5"
+      ],
+      "district": "realm_district_clockwork",
+      "completion_reward": {
+        "wood": 20,
+        "stone": 16,
+        "tools": 1
+      }
+    },
+    "veil": {
+      "name": "황혼의 서약",
+      "family": "court",
+      "relic_family": "guard",
+      "benefit": "위협 증가를 늦추고 치안·저장·민심을 보완합니다.",
+      "tradeoff": "망령의 기운이 건강과 채소 생산에 부담을 줍니다.",
+      "branches": {
+        "care": {
+          "name": "망령 안식",
+          "text": "보관 손실 -20%·치안 목표 +5 / 채집 -8%",
+          "mods": {
+            "spoil": 0.8,
+            "gather": 0.92
+          },
+          "targets": {
+            "security": 5
+          }
+        },
+        "drive": {
+          "name": "수호 서약",
+          "text": "위협 증가 -25%·치안 목표 +8 / 건강 목표 -3",
+          "mods": {
+            "threat_growth": 0.75
+          },
+          "targets": {
+            "security": 8,
+            "health": -3
+          }
+        }
+      },
+      "buildings": [
+        "FV01",
+        "FV02",
+        "FV03"
+      ],
+      "events": [
+        "FF_VEIL_1",
+        "FF_VEIL_2",
+        "FF_VEIL_3",
+        "FF_VEIL_4",
+        "FF_VEIL_5"
+      ],
+      "district": "realm_district_veil",
+      "completion_reward": {
+        "money": 200,
+        "fuel": 30
+      }
+    },
+    "astral": {
+      "name": "별의 학당",
+      "family": "court",
+      "relic_family": "guard",
+      "benefit": "연료를 식량으로 바꾸고 저장·교역·도구 효율을 높입니다.",
+      "tradeoff": "관측과 마력 설비에 유지비·난방 비용이 듭니다.",
+      "branches": {
+        "care": {
+          "name": "관측과 보존",
+          "text": "저장 +20%·도구 소모 -10% / 유지비 +8%",
+          "mods": {
+            "storage": 1.2,
+            "tool_use": 0.9,
+            "maintenance": 1.08
+          }
+        },
+        "drive": {
+          "name": "공허 재배",
+          "text": "채소 생산 +25%·구매가 -5% / 난방 +12%",
+          "mods": {
+            "garden": 1.25,
+            "buy": 0.95,
+            "heating": 1.12
+          }
+        }
+      },
+      "buildings": [
+        "FA01",
+        "FA02",
+        "FA03"
+      ],
+      "events": [
+        "FF_ASTRAL_1",
+        "FF_ASTRAL_2",
+        "FF_ASTRAL_3",
+        "FF_ASTRAL_4",
+        "FF_ASTRAL_5"
+      ],
+      "district": "realm_district_astral",
+      "completion_reward": {
+        "tools": 2,
+        "food": 40,
+        "fuel": 20
+      }
+    }
+  },
+  "facilities": {
+    "FG01": {
+      "name": "정령 묘목원",
+      "grade": "A",
+      "stage": 1,
+      "kind": "fantasy:FG01",
+      "realm": true,
+      "fantasy": true,
+      "fantasy_path": "grove",
+      "fantasy_stage": 1,
+      "group": "이계 지구",
+      "sprite": "fantasy_grove_1",
+      "fallback": "chapel",
+      "max": 1,
+      "requires": [
+        "B13"
+      ],
+      "effect": "주민 2명으로 식량 +10/주(겨울 75%) · 벌목 -5%",
+      "jobs": 2,
+      "output": {
+        "food": 10
+      },
+      "account": "resident",
+      "winter": 0.75,
+      "output_bonus": "garden",
+      "mods": {
+        "logging": 0.95
+      }
+    },
+    "FG02": {
+      "name": "살아있는 수로",
+      "grade": "A",
+      "stage": 1,
+      "kind": "fantasy:FG02",
+      "realm": true,
+      "fantasy": true,
+      "fantasy_path": "grove",
+      "fantasy_stage": 2,
+      "group": "이계 지구",
+      "sprite": "fantasy_grove_2",
+      "fallback": "chapel",
+      "max": 1,
+      "requires": [
+        "FG01"
+      ],
+      "effect": "물 공급 +120명 · 채소 +15% · 건강 목표 +4 · 벌목 -10%",
+      "water": 120,
+      "mods": {
+        "garden": 1.15,
+        "logging": 0.9
+      },
+      "targets": {
+        "health": 4
+      }
+    },
+    "FG03": {
+      "name": "세계수 정원",
+      "grade": "B",
+      "stage": 1,
+      "kind": "fantasy:FG03",
+      "realm": true,
+      "fantasy": true,
+      "fantasy_path": "grove",
+      "fantasy_stage": 3,
+      "group": "이계 지구",
+      "sprite": "fantasy_grove_3",
+      "fallback": "chapel",
+      "max": 1,
+      "requires": [
+        "FG02"
+      ],
+      "effect": "주민 3명·장작 2 → 식량 20/주 · 수확 +12% · 공공 급여 +8%",
+      "jobs": 3,
+      "input": {
+        "fuel": 2
+      },
+      "output": {
+        "food": 20
+      },
+      "account": "resident",
+      "output_bonus": "garden",
+      "mods": {
+        "harvest": 1.12,
+        "wages": 1.08
+      }
+    },
+    "FE01": {
+      "name": "불씨 사육장",
+      "grade": "A",
+      "stage": 1,
+      "kind": "fantasy:FE01",
+      "realm": true,
+      "fantasy": true,
+      "fantasy_path": "ember",
+      "fantasy_stage": 1,
+      "group": "이계 지구",
+      "sprite": "fantasy_ember_1",
+      "fallback": "chapel",
+      "max": 1,
+      "requires": [
+        "B25"
+      ],
+      "effect": "공공 작업 2명·목재 3 → 장작 10/주 · 건강 목표 -2",
+      "jobs": 2,
+      "input": {
+        "wood": 3
+      },
+      "output": {
+        "fuel": 10
+      },
+      "account": "public",
+      "targets": {
+        "health": -2
+      }
+    },
+    "FE02": {
+      "name": "용열 가마",
+      "grade": "A",
+      "stage": 1,
+      "kind": "fantasy:FE02",
+      "realm": true,
+      "fantasy": true,
+      "fantasy_path": "ember",
+      "fantasy_stage": 2,
+      "group": "이계 지구",
+      "sprite": "fantasy_ember_2",
+      "fallback": "chapel",
+      "max": 1,
+      "requires": [
+        "FE01"
+      ],
+      "effect": "공공 작업 3명·장작 4·석재 2 → 도구 1.2/주 · 도구 소모 +5%",
+      "jobs": 3,
+      "input": {
+        "fuel": 4,
+        "stone": 2
+      },
+      "output": {
+        "tools": 1.2
+      },
+      "account": "public",
+      "output_bonus": "smithy",
+      "mods": {
+        "tool_use": 1.05
+      }
+    },
+    "FE03": {
+      "name": "화룡 대화로",
+      "grade": "B",
+      "stage": 1,
+      "kind": "fantasy:FE03",
+      "realm": true,
+      "fantasy": true,
+      "fantasy_path": "ember",
+      "fantasy_stage": 3,
+      "group": "이계 지구",
+      "sprite": "fantasy_ember_3",
+      "fallback": "chapel",
+      "max": 1,
+      "requires": [
+        "FE02"
+      ],
+      "effect": "난방 -25% · 도구 생산 +20% · 유지비 +12% · 건강 목표 -3",
+      "mods": {
+        "heating": 0.75,
+        "smithy": 1.2,
+        "maintenance": 1.12
+      },
+      "targets": {
+        "health": -3
+      }
+    },
+    "FT01": {
+      "name": "달빛 우물",
+      "grade": "A",
+      "stage": 1,
+      "kind": "fantasy:FT01",
+      "realm": true,
+      "fantasy": true,
+      "fantasy_path": "tide",
+      "fantasy_stage": 1,
+      "group": "이계 지구",
+      "sprite": "fantasy_tide_1",
+      "fallback": "chapel",
+      "max": 1,
+      "requires": [
+        "B06"
+      ],
+      "effect": "물 공급 +150명 · 건강 목표 +3 · 난방 +5%",
+      "water": 150,
+      "targets": {
+        "health": 3
+      },
+      "mods": {
+        "heating": 1.05
+      }
+    },
+    "FT02": {
+      "name": "수정 양식장",
+      "grade": "A",
+      "stage": 1,
+      "kind": "fantasy:FT02",
+      "realm": true,
+      "fantasy": true,
+      "fantasy_path": "tide",
+      "fantasy_stage": 2,
+      "group": "이계 지구",
+      "sprite": "fantasy_tide_2",
+      "fallback": "chapel",
+      "max": 1,
+      "requires": [
+        "FT01"
+      ],
+      "effect": "주민 4명·목재 1 → 식량 20/주 · 겨울에도 동일 생산",
+      "jobs": 4,
+      "input": {
+        "wood": 1
+      },
+      "output": {
+        "food": 20
+      },
+      "account": "resident",
+      "output_bonus": "gather"
+    },
+    "FT03": {
+      "name": "조수 성소",
+      "grade": "B",
+      "stage": 1,
+      "kind": "fantasy:FT03",
+      "realm": true,
+      "fantasy": true,
+      "fantasy_path": "tide",
+      "fantasy_stage": 3,
+      "group": "이계 지구",
+      "sprite": "fantasy_tide_3",
+      "fallback": "chapel",
+      "max": 1,
+      "requires": [
+        "FT02"
+      ],
+      "effect": "구매가 -10% · 보관 손실 -15% · 건강 목표 +3 · 유지비 +10%",
+      "mods": {
+        "buy": 0.9,
+        "spoil": 0.85,
+        "maintenance": 1.1
+      },
+      "targets": {
+        "health": 3
+      }
+    },
+    "FC01": {
+      "name": "태엽 작업장",
+      "grade": "A",
+      "stage": 1,
+      "kind": "fantasy:FC01",
+      "realm": true,
+      "fantasy": true,
+      "fantasy_path": "clockwork",
+      "fantasy_stage": 1,
+      "group": "이계 지구",
+      "sprite": "fantasy_clockwork_1",
+      "fallback": "chapel",
+      "max": 1,
+      "requires": [
+        "B25"
+      ],
+      "effect": "공공 작업 2명·목재 2·석재 1 → 도구 0.7/주 · 유지비 +5%",
+      "jobs": 2,
+      "input": {
+        "wood": 2,
+        "stone": 1
+      },
+      "output": {
+        "tools": 0.7
+      },
+      "account": "public",
+      "output_bonus": "smithy",
+      "mods": {
+        "maintenance": 1.05
+      }
+    },
+    "FC02": {
+      "name": "골렘 채석장",
+      "grade": "A",
+      "stage": 1,
+      "kind": "fantasy:FC02",
+      "realm": true,
+      "fantasy": true,
+      "fantasy_path": "clockwork",
+      "fantasy_stage": 2,
+      "group": "이계 지구",
+      "sprite": "fantasy_clockwork_2",
+      "fallback": "chapel",
+      "max": 1,
+      "requires": [
+        "FC01"
+      ],
+      "effect": "공공 작업 3명·도구 0.15·장작 2 → 석재 16/주 · 도구 소모 +8%",
+      "jobs": 3,
+      "input": {
+        "tools": 0.15,
+        "fuel": 2
+      },
+      "output": {
+        "stone": 16
+      },
+      "account": "public",
+      "output_bonus": "quarry",
+      "mods": {
+        "tool_use": 1.08
+      }
+    },
+    "FC03": {
+      "name": "자동공방",
+      "grade": "B",
+      "stage": 1,
+      "kind": "fantasy:FC03",
+      "realm": true,
+      "fantasy": true,
+      "fantasy_path": "clockwork",
+      "fantasy_stage": 3,
+      "group": "이계 지구",
+      "sprite": "fantasy_clockwork_3",
+      "fallback": "chapel",
+      "max": 1,
+      "requires": [
+        "FC02"
+      ],
+      "effect": "새 공사 작업량 -20% · 채석 +15% · 공공 급여 +10%",
+      "mods": {
+        "build_work": 0.8,
+        "quarry": 1.15,
+        "wages": 1.1
+      }
+    },
+    "FV01": {
+      "name": "납골 봉인소",
+      "grade": "A",
+      "stage": 1,
+      "kind": "fantasy:FV01",
+      "realm": true,
+      "fantasy": true,
+      "fantasy_path": "veil",
+      "fantasy_stage": 1,
+      "group": "이계 지구",
+      "sprite": "fantasy_veil_1",
+      "fallback": "chapel",
+      "max": 1,
+      "requires": [
+        "B01"
+      ],
+      "effect": "치안 목표 +8 · 위협 증가 -10% · 건강 목표 -2",
+      "targets": {
+        "security": 8,
+        "health": -2
+      },
+      "mods": {
+        "threat_growth": 0.9
+      }
+    },
+    "FV02": {
+      "name": "기억의 전당",
+      "grade": "A",
+      "stage": 1,
+      "kind": "fantasy:FV02",
+      "realm": true,
+      "fantasy": true,
+      "fantasy_path": "veil",
+      "fantasy_stage": 2,
+      "group": "이계 지구",
+      "sprite": "fantasy_veil_2",
+      "fallback": "chapel",
+      "max": 1,
+      "requires": [
+        "FV01"
+      ],
+      "effect": "저장 +20% · 보관 손실 -20% · 민심 목표 +5 · 건강 목표 -2",
+      "mods": {
+        "storage": 1.2,
+        "spoil": 0.8
+      },
+      "targets": {
+        "mood": 5,
+        "health": -2
+      }
+    },
+    "FV03": {
+      "name": "황혼 파수탑",
+      "grade": "B",
+      "stage": 1,
+      "kind": "fantasy:FV03",
+      "realm": true,
+      "fantasy": true,
+      "fantasy_path": "veil",
+      "fantasy_stage": 3,
+      "group": "이계 지구",
+      "sprite": "fantasy_veil_3",
+      "fallback": "chapel",
+      "max": 1,
+      "requires": [
+        "FV02"
+      ],
+      "effect": "위협 증가 -40% · 치안 목표 +12 · 채소 -10% · 유지비 +12%",
+      "mods": {
+        "threat_growth": 0.6,
+        "garden": 0.9,
+        "maintenance": 1.12
+      },
+      "targets": {
+        "security": 12
+      }
+    },
+    "FA01": {
+      "name": "별빛 관측소",
+      "grade": "A",
+      "stage": 1,
+      "kind": "fantasy:FA01",
+      "realm": true,
+      "fantasy": true,
+      "fantasy_path": "astral",
+      "fantasy_stage": 1,
+      "group": "이계 지구",
+      "sprite": "fantasy_astral_1",
+      "fallback": "chapel",
+      "max": 1,
+      "requires": [
+        "B22"
+      ],
+      "effect": "구매가 -5% · 유지비 +5%",
+      "mods": {
+        "buy": 0.95,
+        "maintenance": 1.05
+      }
+    },
+    "FA02": {
+      "name": "마력 온실",
+      "grade": "A",
+      "stage": 1,
+      "kind": "fantasy:FA02",
+      "realm": true,
+      "fantasy": true,
+      "fantasy_path": "astral",
+      "fantasy_stage": 2,
+      "group": "이계 지구",
+      "sprite": "fantasy_astral_2",
+      "fallback": "chapel",
+      "max": 1,
+      "requires": [
+        "FA01"
+      ],
+      "effect": "주민 3명·장작 3 → 식량 18/주 · 겨울에도 동일 생산",
+      "jobs": 3,
+      "input": {
+        "fuel": 3
+      },
+      "output": {
+        "food": 18
+      },
+      "account": "resident",
+      "output_bonus": "garden"
+    },
+    "FA03": {
+      "name": "천구 도서관",
+      "grade": "B",
+      "stage": 1,
+      "kind": "fantasy:FA03",
+      "realm": true,
+      "fantasy": true,
+      "fantasy_path": "astral",
+      "fantasy_stage": 3,
+      "group": "이계 지구",
+      "sprite": "fantasy_astral_3",
+      "fallback": "chapel",
+      "max": 1,
+      "requires": [
+        "FA02"
+      ],
+      "effect": "저장 +20% · 채소 +15% · 도구 소모 -10% · 유지비 +15%",
+      "mods": {
+        "storage": 1.2,
+        "garden": 1.15,
+        "tool_use": 0.9,
+        "maintenance": 1.15
+      }
+    }
+  },
+  "events": {
+    "FF_GROVE_1": {
+      "week": 999,
+      "realm": true,
+      "fantasy_only": true,
+      "fantasy_path": "grove",
+      "fantasy_stage": 1,
+      "title": "뿌리가 움직이는 숲",
+      "speaker": "요스트",
+      "portrait": "CH09",
+      "body": "숲의 정령이 빈 땅을 빌려 달라고 합니다. 협약하면 정령 묘목원을 지을 수 있습니다.",
+      "options": [
+        {
+          "label": "협약비를 낸다",
+          "effects": {},
+          "fantasy": {
+            "path": "grove",
+            "stage": 1,
+            "action": "accept"
+          },
+          "cost": {
+            "money": 80
+          }
+        },
+        {
+          "label": "성물로 협약한다",
+          "effects": {},
+          "fantasy": {
+            "path": "grove",
+            "stage": 1,
+            "action": "accept"
+          },
+          "requires": {
+            "relic_family": "abundance"
+          }
+        },
+        {
+          "label": "올해는 거리를 둔다",
+          "effects": {},
+          "fantasy": {
+            "path": "grove",
+            "stage": 1,
+            "action": "decline"
+          }
+        }
+      ],
+      "tone": "positive"
+    },
+    "FF_GROVE_2": {
+      "week": 999,
+      "realm": true,
+      "fantasy_only": true,
+      "fantasy_path": "grove",
+      "fantasy_stage": 2,
+      "title": "정령숲 운영 협약",
+      "speaker": "요스트",
+      "portrait": "CH09",
+      "body": "묘목원이 자리 잡았습니다. 숲을 보존할지, 주민과 함께 집중 재배할지 정해야 합니다.",
+      "options": [
+        {
+          "label": "정령과 공존",
+          "effects": {},
+          "fantasy": {
+            "path": "grove",
+            "stage": 2,
+            "action": "branch",
+            "branch": "care"
+          }
+        },
+        {
+          "label": "집중 재배 지원",
+          "effects": {},
+          "fantasy": {
+            "path": "grove",
+            "stage": 2,
+            "action": "branch",
+            "branch": "drive"
+          },
+          "cost": {
+            "money": 120
+          }
+        },
+        {
+          "label": "숙련된 인력을 보낸다",
+          "effects": {},
+          "fantasy": {
+            "path": "grove",
+            "stage": 2,
+            "action": "branch",
+            "branch": "drive"
+          },
+          "requires": {
+            "perk_family": {
+              "id": "agriculture",
+              "count": 2
+            }
+          }
+        }
+      ],
+      "tone": ""
+    },
+    "FF_GROVE_3": {
+      "week": 999,
+      "realm": true,
+      "fantasy_only": true,
+      "fantasy_path": "grove",
+      "fantasy_stage": 3,
+      "title": "수로를 뒤덮은 뿌리",
+      "speaker": "요스트",
+      "portrait": "CH09",
+      "body": "자란 뿌리가 수로를 막았습니다. 정비 도구를 쓰거나 정령에게 이동을 맡길 수 있습니다.",
+      "options": [
+        {
+          "label": "재료로 안전하게 수리",
+          "effects": {
+            "health": 1
+          },
+          "fantasy": {
+            "path": "grove",
+            "stage": 3,
+            "action": "resolve"
+          },
+          "cost": {
+            "wood": 8,
+            "tools": 1
+          }
+        },
+        {
+          "label": "현장의 판단에 맡긴다",
+          "effects": {},
+          "fantasy": {
+            "path": "grove",
+            "stage": 3,
+            "action": "resolve"
+          },
+          "chance": {
+            "base": 0.6,
+            "stat": "security",
+            "per": 0.002,
+            "facility": {
+              "FG01": 0.1
+            },
+            "win": {
+              "text": "뿌리가 안전하게 옮겨졌습니다. 열매와 목재를 회수했습니다.",
+              "effects": {
+                "food": 40,
+                "wood": 4
+              }
+            },
+            "lose": {
+              "text": "수로는 열었지만 식량을 잃고 주민들이 불안해합니다.",
+              "effects": {
+                "food": -30,
+                "mood": -2
+              }
+            }
+          }
+        },
+        {
+          "label": "손실을 감수하고 막는다",
+          "effects": {
+            "food": -20,
+            "mood": -2
+          },
+          "fantasy": {
+            "path": "grove",
+            "stage": 3,
+            "action": "resolve"
+          }
+        }
+      ],
+      "tone": "negative"
+    },
+    "FF_GROVE_4": {
+      "week": 999,
+      "realm": true,
+      "fantasy_only": true,
+      "fantasy_path": "grove",
+      "fantasy_stage": 4,
+      "title": "세계수 정원 허가",
+      "speaker": "요스트",
+      "portrait": "CH09",
+      "body": "정령이 세계수의 가지를 내주었습니다. 토대를 정비하거나 불안정한 땅에 그대로 심을 수 있습니다.",
+      "options": [
+        {
+          "label": "기초를 보강해 허가",
+          "effects": {},
+          "fantasy": {
+            "path": "grove",
+            "stage": 4,
+            "action": "permit"
+          },
+          "cost": {
+            "money": 120,
+            "stone": 6
+          }
+        },
+        {
+          "label": "위험을 남겨 허가",
+          "effects": {
+            "threat": 5,
+            "mood": -3
+          },
+          "fantasy": {
+            "path": "grove",
+            "stage": 4,
+            "action": "permit"
+          }
+        },
+        {
+          "label": "마지막 공사를 보류한다",
+          "effects": {},
+          "fantasy": {
+            "path": "grove",
+            "stage": 4,
+            "action": "close"
+          }
+        }
+      ],
+      "tone": ""
+    },
+    "FF_GROVE_5": {
+      "week": 999,
+      "realm": true,
+      "fantasy_only": true,
+      "fantasy_path": "grove",
+      "fantasy_stage": 5,
+      "title": "세계수 첫 개화",
+      "speaker": "요스트",
+      "portrait": "CH09",
+      "body": "세계수 정원이 완성됐습니다. 정령이 성물 한 점이나 수확물을 협약 보상으로 제안합니다.",
+      "options": [
+        {
+          "label": "협약 성물을 받는다",
+          "effects": {},
+          "fantasy": {
+            "path": "grove",
+            "stage": 5,
+            "action": "complete"
+          },
+          "relic_offer": true
+        },
+        {
+          "label": "비축 물자를 받는다",
+          "effects": {
+            "money": 100,
+            "food": 100
+          },
+          "fantasy": {
+            "path": "grove",
+            "stage": 5,
+            "action": "complete"
+          }
+        }
+      ],
+      "tone": "positive"
+    },
+    "FF_EMBER_1": {
+      "week": 999,
+      "realm": true,
+      "fantasy_only": true,
+      "fantasy_path": "ember",
+      "fantasy_stage": 1,
+      "title": "바위 속의 불씨 알",
+      "speaker": "두르간",
+      "portrait": "CH08",
+      "body": "채석꾼이 식지 않는 알을 가져왔습니다. 불씨 사육장을 지어 작은 화룡을 돌볼 수 있습니다.",
+      "options": [
+        {
+          "label": "협약비를 낸다",
+          "effects": {},
+          "fantasy": {
+            "path": "ember",
+            "stage": 1,
+            "action": "accept"
+          },
+          "cost": {
+            "money": 80
+          }
+        },
+        {
+          "label": "성물로 협약한다",
+          "effects": {},
+          "fantasy": {
+            "path": "ember",
+            "stage": 1,
+            "action": "accept"
+          },
+          "requires": {
+            "relic_family": "craft"
+          }
+        },
+        {
+          "label": "올해는 거리를 둔다",
+          "effects": {},
+          "fantasy": {
+            "path": "ember",
+            "stage": 1,
+            "action": "decline"
+          }
+        }
+      ],
+      "tone": "positive"
+    },
+    "FF_EMBER_2": {
+      "week": 999,
+      "realm": true,
+      "fantasy_only": true,
+      "fantasy_path": "ember",
+      "fantasy_stage": 2,
+      "title": "화룡의 첫 불길",
+      "speaker": "두르간",
+      "portrait": "CH08",
+      "body": "작은 화룡이 불을 다루기 시작했습니다. 주민 난방과 공업 생산 중 우선할 일을 정해야 합니다.",
+      "options": [
+        {
+          "label": "온기 공유",
+          "effects": {},
+          "fantasy": {
+            "path": "ember",
+            "stage": 2,
+            "action": "branch",
+            "branch": "care"
+          }
+        },
+        {
+          "label": "용열 산업 지원",
+          "effects": {},
+          "fantasy": {
+            "path": "ember",
+            "stage": 2,
+            "action": "branch",
+            "branch": "drive"
+          },
+          "cost": {
+            "money": 120
+          }
+        },
+        {
+          "label": "숙련된 인력을 보낸다",
+          "effects": {},
+          "fantasy": {
+            "path": "ember",
+            "stage": 2,
+            "action": "branch",
+            "branch": "drive"
+          },
+          "requires": {
+            "perk_family": {
+              "id": "industry",
+              "count": 2
+            }
+          }
+        }
+      ],
+      "tone": ""
+    },
+    "FF_EMBER_3": {
+      "week": 999,
+      "realm": true,
+      "fantasy_only": true,
+      "fantasy_path": "ember",
+      "fantasy_stage": 3,
+      "title": "가마의 역화",
+      "speaker": "두르간",
+      "portrait": "CH08",
+      "body": "용열 가마가 역화했습니다. 배관을 교체하거나 화룡에게 직접 불길을 거두게 할 수 있습니다.",
+      "options": [
+        {
+          "label": "재료로 안전하게 수리",
+          "effects": {
+            "health": 1
+          },
+          "fantasy": {
+            "path": "ember",
+            "stage": 3,
+            "action": "resolve"
+          },
+          "cost": {
+            "stone": 6,
+            "tools": 1
+          }
+        },
+        {
+          "label": "현장의 판단에 맡긴다",
+          "effects": {},
+          "fantasy": {
+            "path": "ember",
+            "stage": 3,
+            "action": "resolve"
+          },
+          "chance": {
+            "base": 0.6,
+            "stat": "security",
+            "per": 0.002,
+            "facility": {
+              "FE01": 0.1
+            },
+            "win": {
+              "text": "불길을 제어했습니다. 남은 장작과 정비 도구를 회수했습니다.",
+              "effects": {
+                "fuel": 20,
+                "tools": 1
+              }
+            },
+            "lose": {
+              "text": "불길은 껐지만 장작을 잃고 연기로 건강이 나빠졌습니다.",
+              "effects": {
+                "fuel": -20,
+                "health": -2
+              }
+            }
+          }
+        },
+        {
+          "label": "손실을 감수하고 막는다",
+          "effects": {
+            "fuel": -12,
+            "mood": -2
+          },
+          "fantasy": {
+            "path": "ember",
+            "stage": 3,
+            "action": "resolve"
+          }
+        }
+      ],
+      "tone": "negative"
+    },
+    "FF_EMBER_4": {
+      "week": 999,
+      "realm": true,
+      "fantasy_only": true,
+      "fantasy_path": "ember",
+      "fantasy_stage": 4,
+      "title": "대화로 축조 허가",
+      "speaker": "두르간",
+      "portrait": "CH08",
+      "body": "화룡이 대화로에 머물 준비가 됐습니다. 기초를 보강하거나 불안정한 가마를 먼저 열 수 있습니다.",
+      "options": [
+        {
+          "label": "기초를 보강해 허가",
+          "effects": {},
+          "fantasy": {
+            "path": "ember",
+            "stage": 4,
+            "action": "permit"
+          },
+          "cost": {
+            "money": 120,
+            "stone": 6
+          }
+        },
+        {
+          "label": "위험을 남겨 허가",
+          "effects": {
+            "threat": 5,
+            "mood": -3
+          },
+          "fantasy": {
+            "path": "ember",
+            "stage": 4,
+            "action": "permit"
+          }
+        },
+        {
+          "label": "마지막 공사를 보류한다",
+          "effects": {},
+          "fantasy": {
+            "path": "ember",
+            "stage": 4,
+            "action": "close"
+          }
+        }
+      ],
+      "tone": ""
+    },
+    "FF_EMBER_5": {
+      "week": 999,
+      "realm": true,
+      "fantasy_only": true,
+      "fantasy_path": "ember",
+      "fantasy_stage": 5,
+      "title": "화룡과의 공생",
+      "speaker": "두르간",
+      "portrait": "CH08",
+      "body": "화룡 대화로가 가동됐습니다. 장인이 화룡의 성물이나 남은 공업 물자를 가져왔습니다.",
+      "options": [
+        {
+          "label": "협약 성물을 받는다",
+          "effects": {},
+          "fantasy": {
+            "path": "ember",
+            "stage": 5,
+            "action": "complete"
+          },
+          "relic_offer": true
+        },
+        {
+          "label": "비축 물자를 받는다",
+          "effects": {
+            "fuel": 60,
+            "tools": 2
+          },
+          "fantasy": {
+            "path": "ember",
+            "stage": 5,
+            "action": "complete"
+          }
+        }
+      ],
+      "tone": "positive"
+    },
+    "FF_TIDE_1": {
+      "week": 999,
+      "realm": true,
+      "fantasy_only": true,
+      "fantasy_path": "tide",
+      "fantasy_stage": 1,
+      "title": "달빛이 고인 샘",
+      "speaker": "베아트릭스 코른",
+      "portrait": "CH04",
+      "body": "보름달 아래 새로운 샘이 나타났습니다. 물의 정령과 협약하면 달빛 우물을 지을 수 있습니다.",
+      "options": [
+        {
+          "label": "협약비를 낸다",
+          "effects": {},
+          "fantasy": {
+            "path": "tide",
+            "stage": 1,
+            "action": "accept"
+          },
+          "cost": {
+            "money": 80
+          }
+        },
+        {
+          "label": "성물로 협약한다",
+          "effects": {},
+          "fantasy": {
+            "path": "tide",
+            "stage": 1,
+            "action": "accept"
+          },
+          "requires": {
+            "relic_family": "abundance"
+          }
+        },
+        {
+          "label": "올해는 거리를 둔다",
+          "effects": {},
+          "fantasy": {
+            "path": "tide",
+            "stage": 1,
+            "action": "decline"
+          }
+        }
+      ],
+      "tone": "positive"
+    },
+    "FF_TIDE_2": {
+      "week": 999,
+      "realm": true,
+      "fantasy_only": true,
+      "fantasy_path": "tide",
+      "fantasy_stage": 2,
+      "title": "수로 이용권",
+      "speaker": "베아트릭스 코른",
+      "portrait": "CH04",
+      "body": "우물이 안정됐습니다. 주민의 먹거리와 상단의 운송 중 어느 쪽에 수로를 먼저 내줄지 정합니다.",
+      "options": [
+        {
+          "label": "주민 물길",
+          "effects": {},
+          "fantasy": {
+            "path": "tide",
+            "stage": 2,
+            "action": "branch",
+            "branch": "care"
+          }
+        },
+        {
+          "label": "상단 운하 지원",
+          "effects": {},
+          "fantasy": {
+            "path": "tide",
+            "stage": 2,
+            "action": "branch",
+            "branch": "drive"
+          },
+          "cost": {
+            "money": 120
+          }
+        },
+        {
+          "label": "숙련된 인력을 보낸다",
+          "effects": {},
+          "fantasy": {
+            "path": "tide",
+            "stage": 2,
+            "action": "branch",
+            "branch": "drive"
+          },
+          "requires": {
+            "perk_family": {
+              "id": "provisions",
+              "count": 2
+            }
+          }
+        }
+      ],
+      "tone": ""
+    },
+    "FF_TIDE_3": {
+      "week": 999,
+      "realm": true,
+      "fantasy_only": true,
+      "fantasy_path": "tide",
+      "fantasy_stage": 3,
+      "title": "양식장의 물결 이상",
+      "speaker": "베아트릭스 코른",
+      "portrait": "CH04",
+      "body": "수정 양식장의 물결이 거꾸로 흐릅니다. 수문을 수리하거나 물의 정령에게 바로잡게 할 수 있습니다.",
+      "options": [
+        {
+          "label": "재료로 안전하게 수리",
+          "effects": {
+            "health": 1
+          },
+          "fantasy": {
+            "path": "tide",
+            "stage": 3,
+            "action": "resolve"
+          },
+          "cost": {
+            "wood": 6,
+            "stone": 6
+          }
+        },
+        {
+          "label": "현장의 판단에 맡긴다",
+          "effects": {},
+          "fantasy": {
+            "path": "tide",
+            "stage": 3,
+            "action": "resolve"
+          },
+          "chance": {
+            "base": 0.6,
+            "stat": "security",
+            "per": 0.002,
+            "facility": {
+              "FT01": 0.1
+            },
+            "win": {
+              "text": "물결이 안정됐습니다. 양식 식량과 수문 석재를 회수했습니다.",
+              "effects": {
+                "food": 40,
+                "stone": 4
+              }
+            },
+            "lose": {
+              "text": "물결은 잡았지만 식량이 상하고 주민 건강이 나빠졌습니다.",
+              "effects": {
+                "food": -30,
+                "health": -2
+              }
+            }
+          }
+        },
+        {
+          "label": "손실을 감수하고 막는다",
+          "effects": {
+            "food": -20,
+            "health": -1
+          },
+          "fantasy": {
+            "path": "tide",
+            "stage": 3,
+            "action": "resolve"
+          }
+        }
+      ],
+      "tone": "negative"
+    },
+    "FF_TIDE_4": {
+      "week": 999,
+      "realm": true,
+      "fantasy_only": true,
+      "fantasy_path": "tide",
+      "fantasy_stage": 4,
+      "title": "조수 성소 허가",
+      "speaker": "베아트릭스 코른",
+      "portrait": "CH04",
+      "body": "샘 아래 조수의 핵이 발견됐습니다. 토대를 봉합하거나 흔들리는 물길에 성소를 세울 수 있습니다.",
+      "options": [
+        {
+          "label": "기초를 보강해 허가",
+          "effects": {},
+          "fantasy": {
+            "path": "tide",
+            "stage": 4,
+            "action": "permit"
+          },
+          "cost": {
+            "money": 120,
+            "stone": 6
+          }
+        },
+        {
+          "label": "위험을 남겨 허가",
+          "effects": {
+            "threat": 5,
+            "mood": -3
+          },
+          "fantasy": {
+            "path": "tide",
+            "stage": 4,
+            "action": "permit"
+          }
+        },
+        {
+          "label": "마지막 공사를 보류한다",
+          "effects": {},
+          "fantasy": {
+            "path": "tide",
+            "stage": 4,
+            "action": "close"
+          }
+        }
+      ],
+      "tone": ""
+    },
+    "FF_TIDE_5": {
+      "week": 999,
+      "realm": true,
+      "fantasy_only": true,
+      "fantasy_path": "tide",
+      "fantasy_stage": 5,
+      "title": "수로의 첫 만조",
+      "speaker": "베아트릭스 코른",
+      "portrait": "CH04",
+      "body": "조수 성소가 완성됐습니다. 수로 상단이 성물이나 비축 물자를 협약 보상으로 제안합니다.",
+      "options": [
+        {
+          "label": "협약 성물을 받는다",
+          "effects": {},
+          "fantasy": {
+            "path": "tide",
+            "stage": 5,
+            "action": "complete"
+          },
+          "relic_offer": true
+        },
+        {
+          "label": "비축 물자를 받는다",
+          "effects": {
+            "money": 100,
+            "food": 100
+          },
+          "fantasy": {
+            "path": "tide",
+            "stage": 5,
+            "action": "complete"
+          }
+        }
+      ],
+      "tone": "positive"
+    },
+    "FF_CLOCKWORK_1": {
+      "week": 999,
+      "realm": true,
+      "fantasy_only": true,
+      "fantasy_path": "clockwork",
+      "fantasy_stage": 1,
+      "title": "멈춰 선 골렘",
+      "speaker": "두르간",
+      "portrait": "CH08",
+      "body": "옛 채석장에 멈춘 골렘이 있습니다. 기술자를 지원하면 태엽 작업장을 지을 수 있습니다.",
+      "options": [
+        {
+          "label": "협약비를 낸다",
+          "effects": {},
+          "fantasy": {
+            "path": "clockwork",
+            "stage": 1,
+            "action": "accept"
+          },
+          "cost": {
+            "money": 80
+          }
+        },
+        {
+          "label": "성물로 협약한다",
+          "effects": {},
+          "fantasy": {
+            "path": "clockwork",
+            "stage": 1,
+            "action": "accept"
+          },
+          "requires": {
+            "relic_family": "craft"
+          }
+        },
+        {
+          "label": "올해는 거리를 둔다",
+          "effects": {},
+          "fantasy": {
+            "path": "clockwork",
+            "stage": 1,
+            "action": "decline"
+          }
+        }
+      ],
+      "tone": "positive"
+    },
+    "FF_CLOCKWORK_2": {
+      "week": 999,
+      "realm": true,
+      "fantasy_only": true,
+      "fantasy_path": "clockwork",
+      "fantasy_stage": 2,
+      "title": "태엽 작업 규정",
+      "speaker": "두르간",
+      "portrait": "CH08",
+      "body": "골렘이 명령을 알아듣습니다. 자주 정비하며 쓸지, 쉬지 않고 가동할지 규정을 정해야 합니다.",
+      "options": [
+        {
+          "label": "정비 우선",
+          "effects": {},
+          "fantasy": {
+            "path": "clockwork",
+            "stage": 2,
+            "action": "branch",
+            "branch": "care"
+          }
+        },
+        {
+          "label": "연속 가동 지원",
+          "effects": {},
+          "fantasy": {
+            "path": "clockwork",
+            "stage": 2,
+            "action": "branch",
+            "branch": "drive"
+          },
+          "cost": {
+            "money": 120
+          }
+        },
+        {
+          "label": "숙련된 인력을 보낸다",
+          "effects": {},
+          "fantasy": {
+            "path": "clockwork",
+            "stage": 2,
+            "action": "branch",
+            "branch": "drive"
+          },
+          "requires": {
+            "perk_family": {
+              "id": "industry",
+              "count": 2
+            }
+          }
+        }
+      ],
+      "tone": ""
+    },
+    "FF_CLOCKWORK_3": {
+      "week": 999,
+      "realm": true,
+      "fantasy_only": true,
+      "fantasy_path": "clockwork",
+      "fantasy_stage": 3,
+      "title": "골렘의 오작동",
+      "speaker": "두르간",
+      "portrait": "CH08",
+      "body": "골렘이 바위 대신 창고를 향합니다. 제어장치를 교체하거나 기술자에게 원격 정지를 맡길 수 있습니다.",
+      "options": [
+        {
+          "label": "재료로 안전하게 수리",
+          "effects": {
+            "health": 1
+          },
+          "fantasy": {
+            "path": "clockwork",
+            "stage": 3,
+            "action": "resolve"
+          },
+          "cost": {
+            "tools": 1,
+            "stone": 4
+          }
+        },
+        {
+          "label": "현장의 판단에 맡긴다",
+          "effects": {},
+          "fantasy": {
+            "path": "clockwork",
+            "stage": 3,
+            "action": "resolve"
+          },
+          "chance": {
+            "base": 0.6,
+            "stat": "security",
+            "per": 0.002,
+            "facility": {
+              "FC01": 0.1
+            },
+            "win": {
+              "text": "골렘이 멈췄습니다. 정비 도구와 남은 목재를 회수했습니다.",
+              "effects": {
+                "wood": 8,
+                "tools": 1
+              }
+            },
+            "lose": {
+              "text": "골렘을 멈췄지만 창고 자재가 부서지고 주민들이 불안해합니다.",
+              "effects": {
+                "wood": -10,
+                "stone": -8,
+                "mood": -2
+              }
+            }
+          }
+        },
+        {
+          "label": "손실을 감수하고 막는다",
+          "effects": {
+            "stone": -8,
+            "mood": -2
+          },
+          "fantasy": {
+            "path": "clockwork",
+            "stage": 3,
+            "action": "resolve"
+          }
+        }
+      ],
+      "tone": "negative"
+    },
+    "FF_CLOCKWORK_4": {
+      "week": 999,
+      "realm": true,
+      "fantasy_only": true,
+      "fantasy_path": "clockwork",
+      "fantasy_stage": 4,
+      "title": "자동공방 설계도",
+      "speaker": "두르간",
+      "portrait": "CH08",
+      "body": "작업장이 자동공방 설계도를 복원했습니다. 안전장치를 갖추거나 미완성 설계로 공사를 열 수 있습니다.",
+      "options": [
+        {
+          "label": "기초를 보강해 허가",
+          "effects": {},
+          "fantasy": {
+            "path": "clockwork",
+            "stage": 4,
+            "action": "permit"
+          },
+          "cost": {
+            "money": 120,
+            "stone": 6
+          }
+        },
+        {
+          "label": "위험을 남겨 허가",
+          "effects": {
+            "threat": 5,
+            "mood": -3
+          },
+          "fantasy": {
+            "path": "clockwork",
+            "stage": 4,
+            "action": "permit"
+          }
+        },
+        {
+          "label": "마지막 공사를 보류한다",
+          "effects": {},
+          "fantasy": {
+            "path": "clockwork",
+            "stage": 4,
+            "action": "close"
+          }
+        }
+      ],
+      "tone": ""
+    },
+    "FF_CLOCKWORK_5": {
+      "week": 999,
+      "realm": true,
+      "fantasy_only": true,
+      "fantasy_path": "clockwork",
+      "fantasy_stage": 5,
+      "title": "자동공방 첫 가동",
+      "speaker": "두르간",
+      "portrait": "CH08",
+      "body": "자동공방이 정상 가동됐습니다. 기술자들이 오래된 성물이나 여분의 자재를 가져왔습니다.",
+      "options": [
+        {
+          "label": "협약 성물을 받는다",
+          "effects": {},
+          "fantasy": {
+            "path": "clockwork",
+            "stage": 5,
+            "action": "complete"
+          },
+          "relic_offer": true
+        },
+        {
+          "label": "비축 물자를 받는다",
+          "effects": {
+            "wood": 20,
+            "stone": 16,
+            "tools": 1
+          },
+          "fantasy": {
+            "path": "clockwork",
+            "stage": 5,
+            "action": "complete"
+          }
+        }
+      ],
+      "tone": "positive"
+    },
+    "FF_VEIL_1": {
+      "week": 999,
+      "realm": true,
+      "fantasy_only": true,
+      "fantasy_path": "veil",
+      "fantasy_stage": 1,
+      "title": "옛 묘지의 파수꾼",
+      "speaker": "두르간",
+      "portrait": "CH08",
+      "body": "옛 묘지의 망령이 마을을 지켜보고 있습니다. 협약하면 납골 봉인소를 세울 수 있습니다.",
+      "options": [
+        {
+          "label": "협약비를 낸다",
+          "effects": {},
+          "fantasy": {
+            "path": "veil",
+            "stage": 1,
+            "action": "accept"
+          },
+          "cost": {
+            "money": 80
+          }
+        },
+        {
+          "label": "성물로 협약한다",
+          "effects": {},
+          "fantasy": {
+            "path": "veil",
+            "stage": 1,
+            "action": "accept"
+          },
+          "requires": {
+            "relic_family": "guard"
+          }
+        },
+        {
+          "label": "올해는 거리를 둔다",
+          "effects": {},
+          "fantasy": {
+            "path": "veil",
+            "stage": 1,
+            "action": "decline"
+          }
+        }
+      ],
+      "tone": "positive"
+    },
+    "FF_VEIL_2": {
+      "week": 999,
+      "realm": true,
+      "fantasy_only": true,
+      "fantasy_path": "veil",
+      "fantasy_stage": 2,
+      "title": "망령과의 서약",
+      "speaker": "두르간",
+      "portrait": "CH08",
+      "body": "망령이 주민의 기록을 기억합니다. 안식처를 지킬지, 변경의 파수꾼으로 삼을지 결정해야 합니다.",
+      "options": [
+        {
+          "label": "망령 안식",
+          "effects": {},
+          "fantasy": {
+            "path": "veil",
+            "stage": 2,
+            "action": "branch",
+            "branch": "care"
+          }
+        },
+        {
+          "label": "수호 서약 지원",
+          "effects": {},
+          "fantasy": {
+            "path": "veil",
+            "stage": 2,
+            "action": "branch",
+            "branch": "drive"
+          },
+          "cost": {
+            "money": 120
+          }
+        },
+        {
+          "label": "숙련된 인력을 보낸다",
+          "effects": {},
+          "fantasy": {
+            "path": "veil",
+            "stage": 2,
+            "action": "branch",
+            "branch": "drive"
+          },
+          "requires": {
+            "perk_family": {
+              "id": "court",
+              "count": 2
+            }
+          }
+        }
+      ],
+      "tone": ""
+    },
+    "FF_VEIL_3": {
+      "week": 999,
+      "realm": true,
+      "fantasy_only": true,
+      "fantasy_path": "veil",
+      "fantasy_stage": 3,
+      "title": "갈라진 봉인",
+      "speaker": "두르간",
+      "portrait": "CH08",
+      "body": "기억의 전당에서 봉인이 갈라졌습니다. 봉인을 수리하거나 망령에게 스스로 닫게 할 수 있습니다.",
+      "options": [
+        {
+          "label": "재료로 안전하게 수리",
+          "effects": {
+            "health": 1
+          },
+          "fantasy": {
+            "path": "veil",
+            "stage": 3,
+            "action": "resolve"
+          },
+          "cost": {
+            "fuel": 12,
+            "money": 60
+          }
+        },
+        {
+          "label": "현장의 판단에 맡긴다",
+          "effects": {},
+          "fantasy": {
+            "path": "veil",
+            "stage": 3,
+            "action": "resolve"
+          },
+          "chance": {
+            "base": 0.6,
+            "stat": "security",
+            "per": 0.002,
+            "facility": {
+              "FV01": 0.1
+            },
+            "win": {
+              "text": "봉인이 안정됐습니다. 파수꾼이 돌아오고 장작이 남았습니다.",
+              "effects": {
+                "security": 3,
+                "fuel": 12
+              }
+            },
+            "lose": {
+              "text": "봉인은 닫았지만 망령의 기운에 주민들이 지쳤습니다.",
+              "effects": {
+                "mood": -3,
+                "health": -1
+              }
+            }
+          }
+        },
+        {
+          "label": "손실을 감수하고 막는다",
+          "effects": {
+            "fuel": -8,
+            "mood": -2
+          },
+          "fantasy": {
+            "path": "veil",
+            "stage": 3,
+            "action": "resolve"
+          }
+        }
+      ],
+      "tone": "negative"
+    },
+    "FF_VEIL_4": {
+      "week": 999,
+      "realm": true,
+      "fantasy_only": true,
+      "fantasy_path": "veil",
+      "fantasy_stage": 4,
+      "title": "황혼 파수탑 허가",
+      "speaker": "두르간",
+      "portrait": "CH08",
+      "body": "망령이 황혼 파수탑의 터를 알려줬습니다. 땅을 정화하거나 남은 기운을 그대로 받아들일 수 있습니다.",
+      "options": [
+        {
+          "label": "기초를 보강해 허가",
+          "effects": {},
+          "fantasy": {
+            "path": "veil",
+            "stage": 4,
+            "action": "permit"
+          },
+          "cost": {
+            "money": 120,
+            "stone": 6
+          }
+        },
+        {
+          "label": "위험을 남겨 허가",
+          "effects": {
+            "threat": 5,
+            "mood": -3
+          },
+          "fantasy": {
+            "path": "veil",
+            "stage": 4,
+            "action": "permit"
+          }
+        },
+        {
+          "label": "마지막 공사를 보류한다",
+          "effects": {},
+          "fantasy": {
+            "path": "veil",
+            "stage": 4,
+            "action": "close"
+          }
+        }
+      ],
+      "tone": ""
+    },
+    "FF_VEIL_5": {
+      "week": 999,
+      "realm": true,
+      "fantasy_only": true,
+      "fantasy_path": "veil",
+      "fantasy_stage": 5,
+      "title": "밤을 지키는 서약",
+      "speaker": "두르간",
+      "portrait": "CH08",
+      "body": "황혼 파수탑이 완성됐습니다. 옛 수호자가 성물이나 묻어 두었던 비축품을 내놓았습니다.",
+      "options": [
+        {
+          "label": "협약 성물을 받는다",
+          "effects": {},
+          "fantasy": {
+            "path": "veil",
+            "stage": 5,
+            "action": "complete"
+          },
+          "relic_offer": true
+        },
+        {
+          "label": "비축 물자를 받는다",
+          "effects": {
+            "money": 200,
+            "fuel": 30
+          },
+          "fantasy": {
+            "path": "veil",
+            "stage": 5,
+            "action": "complete"
+          }
+        }
+      ],
+      "tone": "positive"
+    },
+    "FF_ASTRAL_1": {
+      "week": 999,
+      "realm": true,
+      "fantasy_only": true,
+      "fantasy_path": "astral",
+      "fantasy_stage": 1,
+      "title": "떨어진 별의 좌표",
+      "speaker": "베아트릭스 코른",
+      "portrait": "CH04",
+      "body": "행상이 떨어진 별의 좌표를 가져왔습니다. 관측대를 세우면 별빛 기술을 연구할 수 있습니다.",
+      "options": [
+        {
+          "label": "협약비를 낸다",
+          "effects": {},
+          "fantasy": {
+            "path": "astral",
+            "stage": 1,
+            "action": "accept"
+          },
+          "cost": {
+            "money": 80
+          }
+        },
+        {
+          "label": "성물로 협약한다",
+          "effects": {},
+          "fantasy": {
+            "path": "astral",
+            "stage": 1,
+            "action": "accept"
+          },
+          "requires": {
+            "relic_family": "guard"
+          }
+        },
+        {
+          "label": "올해는 거리를 둔다",
+          "effects": {},
+          "fantasy": {
+            "path": "astral",
+            "stage": 1,
+            "action": "decline"
+          }
+        }
+      ],
+      "tone": "positive"
+    },
+    "FF_ASTRAL_2": {
+      "week": 999,
+      "realm": true,
+      "fantasy_only": true,
+      "fantasy_path": "astral",
+      "fantasy_stage": 2,
+      "title": "학당의 연구 방향",
+      "speaker": "베아트릭스 코른",
+      "portrait": "CH04",
+      "body": "관측대가 별의 움직임을 읽었습니다. 자원 보존과 공허 재배 중 연구 방향을 정해야 합니다.",
+      "options": [
+        {
+          "label": "관측과 보존",
+          "effects": {},
+          "fantasy": {
+            "path": "astral",
+            "stage": 2,
+            "action": "branch",
+            "branch": "care"
+          }
+        },
+        {
+          "label": "공허 재배 지원",
+          "effects": {},
+          "fantasy": {
+            "path": "astral",
+            "stage": 2,
+            "action": "branch",
+            "branch": "drive"
+          },
+          "cost": {
+            "money": 120
+          }
+        },
+        {
+          "label": "숙련된 인력을 보낸다",
+          "effects": {},
+          "fantasy": {
+            "path": "astral",
+            "stage": 2,
+            "action": "branch",
+            "branch": "drive"
+          },
+          "requires": {
+            "perk_family": {
+              "id": "court",
+              "count": 2
+            }
+          }
+        }
+      ],
+      "tone": ""
+    },
+    "FF_ASTRAL_3": {
+      "week": 999,
+      "realm": true,
+      "fantasy_only": true,
+      "fantasy_path": "astral",
+      "fantasy_stage": 3,
+      "title": "온실의 공허 균열",
+      "speaker": "베아트릭스 코른",
+      "portrait": "CH04",
+      "body": "마력 온실에 작은 균열이 생겼습니다. 장치를 교체하거나 연구자에게 직접 봉합을 맡길 수 있습니다.",
+      "options": [
+        {
+          "label": "재료로 안전하게 수리",
+          "effects": {
+            "health": 1
+          },
+          "fantasy": {
+            "path": "astral",
+            "stage": 3,
+            "action": "resolve"
+          },
+          "cost": {
+            "money": 100,
+            "tools": 1
+          }
+        },
+        {
+          "label": "현장의 판단에 맡긴다",
+          "effects": {},
+          "fantasy": {
+            "path": "astral",
+            "stage": 3,
+            "action": "resolve"
+          },
+          "chance": {
+            "base": 0.6,
+            "stat": "security",
+            "per": 0.002,
+            "facility": {
+              "FA01": 0.1
+            },
+            "win": {
+              "text": "균열을 닫았습니다. 온실 식량과 정비 도구를 회수했습니다.",
+              "effects": {
+                "food": 25,
+                "tools": 1
+              }
+            },
+            "lose": {
+              "text": "균열은 닫았지만 장작을 잃고 주민들이 불안해합니다.",
+              "effects": {
+                "fuel": -12,
+                "mood": -2
+              }
+            }
+          }
+        },
+        {
+          "label": "손실을 감수하고 막는다",
+          "effects": {
+            "fuel": -8,
+            "health": -1
+          },
+          "fantasy": {
+            "path": "astral",
+            "stage": 3,
+            "action": "resolve"
+          }
+        }
+      ],
+      "tone": "negative"
+    },
+    "FF_ASTRAL_4": {
+      "week": 999,
+      "realm": true,
+      "fantasy_only": true,
+      "fantasy_path": "astral",
+      "fantasy_stage": 4,
+      "title": "천구 도서관 허가",
+      "speaker": "베아트릭스 코른",
+      "portrait": "CH04",
+      "body": "별빛 기록이 도서관 설계로 이어졌습니다. 기초를 안정시키거나 흔들리는 마력을 먼저 쓸 수 있습니다.",
+      "options": [
+        {
+          "label": "기초를 보강해 허가",
+          "effects": {},
+          "fantasy": {
+            "path": "astral",
+            "stage": 4,
+            "action": "permit"
+          },
+          "cost": {
+            "money": 120,
+            "stone": 6
+          }
+        },
+        {
+          "label": "위험을 남겨 허가",
+          "effects": {
+            "threat": 5,
+            "mood": -3
+          },
+          "fantasy": {
+            "path": "astral",
+            "stage": 4,
+            "action": "permit"
+          }
+        },
+        {
+          "label": "마지막 공사를 보류한다",
+          "effects": {},
+          "fantasy": {
+            "path": "astral",
+            "stage": 4,
+            "action": "close"
+          }
+        }
+      ],
+      "tone": ""
+    },
+    "FF_ASTRAL_5": {
+      "week": 999,
+      "realm": true,
+      "fantasy_only": true,
+      "fantasy_path": "astral",
+      "fantasy_stage": 5,
+      "title": "별의 기록 완성",
+      "speaker": "베아트릭스 코른",
+      "portrait": "CH04",
+      "body": "천구 도서관이 완성됐습니다. 학자들이 관측 성물이나 연구 물자를 보상으로 제안합니다.",
+      "options": [
+        {
+          "label": "협약 성물을 받는다",
+          "effects": {},
+          "fantasy": {
+            "path": "astral",
+            "stage": 5,
+            "action": "complete"
+          },
+          "relic_offer": true
+        },
+        {
+          "label": "비축 물자를 받는다",
+          "effects": {
+            "tools": 2,
+            "food": 40,
+            "fuel": 20
+          },
+          "fantasy": {
+            "path": "astral",
+            "stage": 5,
+            "action": "complete"
+          }
+        }
+      ],
+      "tone": "positive"
+    }
+  }
+}

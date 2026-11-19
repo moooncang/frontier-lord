@@ -1,0 +1,90 @@
+{
+  "created": "2026-11-18",
+  "tool": "image_gen.imagegen (built-in)",
+  "assets": [
+    {
+      "id": "F01",
+      "prompt": "Use case: stylized-concept. Asset type: inventory relic sprite for a medieval village management roguelite. ONE centered collectible object: a single bronze harvesting sickle with a curved golden blade and a dark wooden handle, a small red cloth tie. Strict authentic 16-bit GAME PIXEL ART. Draw on a coarse 64x64 logical pixel grid, enlarged with nearest-neighbor into the output. Every edge must be a clearly stepped square-pixel cluster. Limited palette approximately 16 colors. Thick dark 1-2 pixel outline, readable large silhouette, 3 tone cel pixel shading, upper-left light. Front three-quarter view. Small deliberate details only. This must resemble an actual tiny game item sprite, NOT a painting or smooth illustration. Transparent background. Full object fits within the central 75% of the square canvas with generous clear margins. No ground, no cast shadow outside object, no glow haze, no labels, no letters, no border, no watermark.",
+      "path": "res://assets/relics/F01.png",
+      "transparent_background": true
+    },
+    {
+      "id": "F02",
+      "prompt": "Use case: stylized-concept. Asset type: inventory relic sprite for a medieval village management roguelite. ONE centered collectible object: a single sturdy wicker foraging basket filled with a few red berries and green leaves, a curved carrying handle. Strict authentic 16-bit GAME PIXEL ART. Draw on a coarse 64x64 logical pixel grid, enlarged with nearest-neighbor into the output. Every edge must be a clearly stepped square-pixel cluster. Limited palette approximately 16 colors. Thick dark 1-2 pixel outline, readable large silhouette, 3 tone cel pixel shading, upper-left light. Front three-quarter view. Small deliberate details only. This must resemble an actual tiny game item sprite, NOT a painting or smooth illustration. Transparent background. Full object fits within the central 75% of the square canvas with generous clear margins. No ground, no cast shadow outside object, no glow haze, no labels, no letters, no border, no watermark.",
+      "path": "res://assets/relics/F02.png",
+      "transparent_background": true
+    },
+    {
+      "id": "F03",
+      "prompt": "Use case: stylized-concept. Asset type: inventory relic sprite for a medieval village management roguelite. ONE centered collectible object: a single green ceramic storage jar sealed with a thick amber wax cap and a small wheat emblem engraved on its front. Strict authentic 16-bit GAME PIXEL ART. Draw on a coarse 64x64 logical pixel grid, enlarged with nearest-neighbor into the output. Every edge must be a clearly stepped square-pixel cluster. Limited palette approximately 16 colors. Thick dark 1-2 pixel outline, readable large silhouette, 3 tone cel pixel shading, upper-left light. Front three-quarter view. Small deliberate details only. This must resemble an actual tiny game item sprite, NOT a painting or smooth illustration. Transparent background. Full object fits within the central 75% of the square canvas with generous clear margins. No ground, no cast shadow outside object, no glow haze, no labels, no letters, no border, no watermark.",
+      "path": "res://assets/relics/F03.png",
+      "transparent_background": true
+    },
+    {
+      "id": "F04",
+      "prompt": "Use case: stylized-concept. Asset type: inventory relic sprite for a medieval village management roguelite. ONE centered collectible object: a single pilgrim's wooden bowl filled with golden grain, a wooden spoon resting diagonally in the bowl. Strict authentic 16-bit GAME PIXEL ART. Draw on a coarse 64x64 logical pixel grid, enlarged with nearest-neighbor into the output. Every edge must be a clearly stepped square-pixel cluster. Limited palette approximately 16 colors. Thick dark 1-2 pixel outline, readable large silhouette, 3 tone cel pixel shading, upper-left light. Front three-quarter view. Small deliberate details only. This must resemble an actual tiny game item sprite, NOT a painting or smooth illustration. Transparent background. Full object fits within the central 75% of the square canvas with generous clear margins. No ground, no cast shadow outside object, no glow haze, no labels, no letters, no border, no watermark.",
+      "path": "res://assets/relics/F04.png",
+      "transparent_background": true
+    },
+    {
+      "id": "C01",
+      "prompt": "Use case: stylized-concept. Asset type: inventory relic sprite for a medieval village management roguelite. ONE centered collectible object: a single sturdy stone mason's hammer with a broad grey iron head, dark oak handle and tiny brass rivets. Strict authentic 16-bit GAME PIXEL ART. Draw on a coarse 64x64 logical pixel grid, enlarged with nearest-neighbor into the output. Every edge must be a clearly stepped square-pixel cluster. Limited palette approximately 16 colors. Thick dark 1-2 pixel outline, readable large silhouette, 3 tone cel pixel shading, upper-left light. Front three-quarter view. Small deliberate details only. This must resemble an actual tiny game item sprite, NOT a painting or smooth illustration. Transparent background. Full object fits within the central 75% of the square canvas with generous clear margins. No ground, no cast shadow outside object, no glow haze, no labels, no letters, no border, no watermark.",
+      "path": "res://assets/relics/C01.png",
+      "transparent_background": true
+    },
+    {
+      "id": "C02",
+      "prompt": "Use case: stylized-concept. Asset type: inventory relic sprite for a medieval village management roguelite. ONE centered collectible object: a single rectangular blue-grey whetstone resting in a small wooden holder, with one bright beveled edge. Strict authentic 16-bit GAME PIXEL ART. Draw on a coarse 64x64 logical pixel grid, enlarged with nearest-neighbor into the output. Every edge must be a clearly stepped square-pixel cluster. Limited palette approximately 16 colors. Thick dark 1-2 pixel outline, readable large silhouette, 3 tone cel pixel shading, upper-left light. Front three-quarter view. Small deliberate details only. This must resemble an actual tiny game item sprite, NOT a painting or smooth illustration. Transparent background. Full object fits within the central 75% of the square canvas with generous clear margins. No ground, no cast shadow outside object, no glow haze, no labels, no letters, no border, no watermark.",
+      "path": "res://assets/relics/C02.png",
+      "transparent_background": true
+    },
+    {
+      "id": "C03",
+      "prompt": "Use case: stylized-concept. Asset type: inventory relic sprite for a medieval village management roguelite. ONE centered collectible object: a single brass surveyor's plumb bob, pointed teardrop weight hanging from a short loop of coiled cord. Strict authentic 16-bit GAME PIXEL ART. Draw on a coarse 64x64 logical pixel grid, enlarged with nearest-neighbor into the output. Every edge must be a clearly stepped square-pixel cluster. Limited palette approximately 16 colors. Thick dark 1-2 pixel outline, readable large silhouette, 3 tone cel pixel shading, upper-left light. Front three-quarter view. Small deliberate details only. This must resemble an actual tiny game item sprite, NOT a painting or smooth illustration. Transparent background. Full object fits within the central 75% of the square canvas with generous clear margins. No ground, no cast shadow outside object, no glow haze, no labels, no letters, no border, no watermark.",
+      "path": "res://assets/relics/C03.png",
+      "transparent_background": true
+    },
+    {
+      "id": "C04",
+      "prompt": "Use case: stylized-concept. Asset type: inventory relic sprite for a medieval village management roguelite. ONE centered collectible object: a single artisan's hourglass in an aged copper frame, aqua glass and golden sand visibly falling inside. Strict authentic 16-bit GAME PIXEL ART. Draw on a coarse 64x64 logical pixel grid, enlarged with nearest-neighbor into the output. Every edge must be a clearly stepped square-pixel cluster. Limited palette approximately 16 colors. Thick dark 1-2 pixel outline, readable large silhouette, 3 tone cel pixel shading, upper-left light. Front three-quarter view. Small deliberate details only. This must resemble an actual tiny game item sprite, NOT a painting or smooth illustration. Transparent background. Full object fits within the central 75% of the square canvas with generous clear margins. No ground, no cast shadow outside object, no glow haze, no labels, no letters, no border, no watermark.",
+      "path": "res://assets/relics/C04.png",
+      "transparent_background": true
+    },
+    {
+      "id": "G01",
+      "prompt": "Use case: stylized-concept. Asset type: inventory relic sprite for a medieval village management roguelite. ONE centered collectible object: a single small wrought-iron brazier with three sturdy legs, glowing red coals and a compact orange flame, no glow outside its silhouette. Strict authentic 16-bit GAME PIXEL ART. Draw on a coarse 64x64 logical pixel grid, enlarged with nearest-neighbor into the output. Every edge must be a clearly stepped square-pixel cluster. Limited palette approximately 16 colors. Thick dark 1-2 pixel outline, readable large silhouette, 3 tone cel pixel shading, upper-left light. Front three-quarter view. Small deliberate details only. This must resemble an actual tiny game item sprite, NOT a painting or smooth illustration. Transparent background. Full object fits within the central 75% of the square canvas with generous clear margins. No ground, no cast shadow outside object, no glow haze, no labels, no letters, no border, no watermark.",
+      "path": "res://assets/relics/G01.png",
+      "transparent_background": true
+    },
+    {
+      "id": "G02",
+      "prompt": "Use case: stylized-concept. Asset type: inventory relic sprite for a medieval village management roguelite. ONE centered collectible object: a single antique silver medicine flask, rounded body, narrow capped neck, a small turquoise inset and simple engraved leaf. Strict authentic 16-bit GAME PIXEL ART. Draw on a coarse 64x64 logical pixel grid, enlarged with nearest-neighbor into the output. Every edge must be a clearly stepped square-pixel cluster. Limited palette approximately 16 colors. Thick dark 1-2 pixel outline, readable large silhouette, 3 tone cel pixel shading, upper-left light. Front three-quarter view. Small deliberate details only. This must resemble an actual tiny game item sprite, NOT a painting or smooth illustration. Transparent background. Full object fits within the central 75% of the square canvas with generous clear margins. No ground, no cast shadow outside object, no glow haze, no labels, no letters, no border, no watermark.",
+      "path": "res://assets/relics/G02.png",
+      "transparent_background": true
+    },
+    {
+      "id": "G03",
+      "prompt": "Use case: stylized-concept. Asset type: inventory relic sprite for a medieval village management roguelite. ONE centered collectible object: a single old bronze watchtower bell with a wooden mounting handle and visible clapper, a dark teal patina on the edges. Strict authentic 16-bit GAME PIXEL ART. Draw on a coarse 64x64 logical pixel grid, enlarged with nearest-neighbor into the output. Every edge must be a clearly stepped square-pixel cluster. Limited palette approximately 16 colors. Thick dark 1-2 pixel outline, readable large silhouette, 3 tone cel pixel shading, upper-left light. Front three-quarter view. Small deliberate details only. This must resemble an actual tiny game item sprite, NOT a painting or smooth illustration. Transparent background. Full object fits within the central 75% of the square canvas with generous clear margins. No ground, no cast shadow outside object, no glow haze, no labels, no letters, no border, no watermark.",
+      "path": "res://assets/relics/G03.png",
+      "transparent_background": true
+    },
+    {
+      "id": "G04",
+      "prompt": "Use case: stylized-concept. Asset type: inventory relic sprite for a medieval village management roguelite. ONE centered collectible object: a single winter talisman, a small folded blue wool pouch tied with a cord, a bone snowflake charm hanging from it. Strict authentic 16-bit GAME PIXEL ART. Draw on a coarse 64x64 logical pixel grid, enlarged with nearest-neighbor into the output. Every edge must be a clearly stepped square-pixel cluster. Limited palette approximately 16 colors. Thick dark 1-2 pixel outline, readable large silhouette, 3 tone cel pixel shading, upper-left light. Front three-quarter view. Small deliberate details only. This must resemble an actual tiny game item sprite, NOT a painting or smooth illustration. Transparent background. Full object fits within the central 75% of the square canvas with generous clear margins. No ground, no cast shadow outside object, no glow haze, no labels, no letters, no border, no watermark.",
+      "path": "res://assets/relics/G04.png",
+      "transparent_background": true
+    },
+    {
+      "id": "scene_relic_shrine",
+      "path": "res://assets/scenes/relic_shrine.png",
+      "prompt": "Use case: stylized-concept. Asset type: production game illustration for a Korean pixel-art medieval settlement roguelite. Create a wide 3:2 pixel-art interior of a small village reliquary, an empty carved stone altar with exactly three empty display recesses, candles, a heavy oak table, mossy old stone walls, amber candlelight and muted teal shadows. This is a grounded frontier village, not a cathedral. Strict handcrafted 16-bit pixel art, visibly chunky square pixels, limited 24-color palette, hard stair-step outlines, no anti-aliasing, no painterly brush strokes, no smooth gradients, no vector shapes. Readable silhouettes at small display size. Show the whole altar and architecture, no people, no items on the three display positions. Atmospheric but clean. Designed at approximately 384x256 logical pixels enlarged by nearest neighbor. No lettering, no symbols resembling text, no logos, no watermark. Fill the entire image with the scene.",
+      "transparent_background": false
+    },
+    {
+      "id": "building_relic_shrine",
+      "path": "res://assets/world/relic_shrine.png",
+      "prompt": "Use case: stylized-concept. Production pixel-art building sprite for a medieval village management game. One small village wayside reliquary shrine, grey stone base with three shallow arched display alcoves side by side, a small mossy dark teal tiled roof, tiny amber lamps on each side, two stone steps. Welcoming humble frontier construction, no cross, no writing. Three-quarter top-down view like a classic 16-bit town-building RPG, front faces lower right. Strict coarse 96x96 logical pixel grid enlarged by nearest neighbor, clearly square pixel clusters, crisp stepped dark outlines, limited 24-color palette, three shade levels. This is a real tiny game building sprite, not smooth illustration. Fully isolated on truly transparent background, no ground patch, no external shadow, no cast glow. Entire building centered within central 80%, square canvas. No characters, no text, no frame, no watermark.",
+      "transparent_background": true
+    }
+  ]
+}

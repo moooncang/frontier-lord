@@ -1,0 +1,15 @@
+{
+  "C01": {
+    "id": "C01",
+    "name": "하사",
+    "start": {
+      "week": 1, "pop": 80, "labor_ratio": 0.55,
+      "public": {"food": 600, "wood": 80, "stone": 20, "tools": 12, "money": 12000},
+      "resident": {"food": 1200, "money": 8000},
+      "facilities": {"T_HOUSING": 1, "T_GRANARY": 1, "T_ADMIN": 1, "B06": 1, "B13": 4, "B17": 1},
+      "soil": 1.0, "weather": 1.0,
+      "mood": 55, "health": 70, "security": 45,
+      "tribute_exempt_years": 1
+    }
+  }
+}

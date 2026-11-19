@@ -1,0 +1,1019 @@
+{
+  "version": 2,
+  "branches": {
+    "finance": {
+      "name": "재정",
+      "description": "부임 자금과 운영비를 관리합니다.",
+      "talents": [
+        "LF01",
+        "LF02",
+        "LF03",
+        "LF04",
+        "LF05",
+        "LF06",
+        "LF07",
+        "LF08"
+      ]
+    },
+    "agriculture": {
+      "name": "농업",
+      "description": "식량 생산과 특전 선택을 준비합니다.",
+      "talents": [
+        "LA01",
+        "LA02",
+        "LA03",
+        "LA04",
+        "LA05",
+        "LA06",
+        "LA07",
+        "LA08"
+      ]
+    },
+    "survival": {
+      "name": "생존",
+      "description": "겨울 비축과 성물 선택을 준비합니다.",
+      "talents": [
+        "LS01",
+        "LS02",
+        "LS03",
+        "LS04",
+        "LS05",
+        "LS06",
+        "LS07",
+        "LS08"
+      ]
+    },
+    "planning": {
+      "name": "건설",
+      "description": "건설 재료와 공사 방식을 준비합니다.",
+      "talents": [
+        "LP01",
+        "LP02",
+        "LP03",
+        "LP04",
+        "LP05",
+        "LP06",
+        "LP07",
+        "LP08"
+      ]
+    },
+    "industry": {
+      "name": "공업",
+      "description": "목재·석재·도구 생산을 강화합니다.",
+      "talents": [
+        "LI01",
+        "LI02",
+        "LI03",
+        "LI04",
+        "LI05",
+        "LI06",
+        "LI07",
+        "LI08"
+      ]
+    },
+    "diplomacy": {
+      "name": "외교",
+      "description": "거래 조건과 주민 지원을 강화합니다.",
+      "talents": [
+        "LD01",
+        "LD02",
+        "LD03",
+        "LD04",
+        "LD05",
+        "LD06",
+        "LD07",
+        "LD08"
+      ]
+    }
+  },
+  "talents": {
+    "LF01": {
+      "branch": "finance",
+      "tier": 1,
+      "name": "착수 자금",
+      "max_rank": 3,
+      "costs": [
+        2,
+        4,
+        6
+      ],
+      "requires": "",
+      "description": "부임 금고 +4금 / 단계",
+      "resources": {
+        "money": 400
+      },
+      "bonuses": {},
+      "kind": "foundation"
+    },
+    "LF02": {
+      "branch": "finance",
+      "tier": 2,
+      "name": "시설 회계",
+      "max_rank": 3,
+      "costs": [
+        3,
+        6,
+        9
+      ],
+      "requires": "LF01",
+      "description": "시설 유지비 −4% / 단계",
+      "resources": {},
+      "bonuses": {
+        "maintenance": -0.04
+      },
+      "kind": "foundation"
+    },
+    "LF03": {
+      "branch": "finance",
+      "tier": 3,
+      "name": "구매 협상",
+      "max_rank": 3,
+      "costs": [
+        4,
+        8,
+        12
+      ],
+      "requires": "LF02",
+      "description": "교역 구매 가격 −3% / 단계",
+      "resources": {},
+      "bonuses": {
+        "buy": -0.03
+      },
+      "kind": "foundation"
+    },
+    "LA01": {
+      "branch": "agriculture",
+      "tier": 1,
+      "name": "곡물 준비",
+      "max_rank": 3,
+      "costs": [
+        2,
+        4,
+        6
+      ],
+      "requires": "",
+      "description": "부임 식량 +80 / 단계",
+      "resources": {
+        "food": 80
+      },
+      "bonuses": {},
+      "kind": "foundation"
+    },
+    "LA02": {
+      "branch": "agriculture",
+      "tier": 2,
+      "name": "채집 지식",
+      "max_rank": 3,
+      "costs": [
+        3,
+        6,
+        9
+      ],
+      "requires": "LA01",
+      "description": "채집 생산량 +5% / 단계",
+      "resources": {},
+      "bonuses": {
+        "gather": 0.05
+      },
+      "kind": "foundation"
+    },
+    "LA03": {
+      "branch": "agriculture",
+      "tier": 3,
+      "name": "수확 관리",
+      "max_rank": 3,
+      "costs": [
+        4,
+        8,
+        12
+      ],
+      "requires": "LA02",
+      "description": "농지 수확량 +4% / 단계",
+      "resources": {},
+      "bonuses": {
+        "harvest": 0.04
+      },
+      "kind": "foundation"
+    },
+    "LS01": {
+      "branch": "survival",
+      "tier": 1,
+      "name": "장작 비축",
+      "max_rank": 3,
+      "costs": [
+        2,
+        4,
+        6
+      ],
+      "requires": "",
+      "description": "부임 장작 +24 / 단계",
+      "resources": {
+        "fuel": 24
+      },
+      "bonuses": {},
+      "kind": "foundation"
+    },
+    "LS02": {
+      "branch": "survival",
+      "tier": 2,
+      "name": "난방 절약",
+      "max_rank": 3,
+      "costs": [
+        3,
+        6,
+        9
+      ],
+      "requires": "LS01",
+      "description": "겨울 난방 장작 소모 −5% / 단계",
+      "resources": {},
+      "bonuses": {
+        "heating": -0.05
+      },
+      "kind": "foundation"
+    },
+    "LS03": {
+      "branch": "survival",
+      "tier": 3,
+      "name": "창고 정리",
+      "max_rank": 3,
+      "costs": [
+        4,
+        8,
+        12
+      ],
+      "requires": "LS02",
+      "description": "식량 저장 용량 +10% / 단계",
+      "resources": {},
+      "bonuses": {
+        "storage": 0.1
+      },
+      "kind": "foundation"
+    },
+    "LP01": {
+      "branch": "planning",
+      "tier": 1,
+      "name": "목재 준비",
+      "max_rank": 3,
+      "costs": [
+        2,
+        4,
+        6
+      ],
+      "requires": "",
+      "description": "부임 목재 +8 / 단계",
+      "resources": {
+        "wood": 8
+      },
+      "bonuses": {},
+      "kind": "foundation"
+    },
+    "LP02": {
+      "branch": "planning",
+      "tier": 2,
+      "name": "공구 준비",
+      "max_rank": 3,
+      "costs": [
+        3,
+        6,
+        9
+      ],
+      "requires": "LP01",
+      "description": "부임 도구 +1 / 단계",
+      "resources": {
+        "tools": 1
+      },
+      "bonuses": {},
+      "kind": "foundation"
+    },
+    "LP03": {
+      "branch": "planning",
+      "tier": 3,
+      "name": "공사 인력 운영",
+      "max_rank": 3,
+      "costs": [
+        4,
+        8,
+        12
+      ],
+      "requires": "LP02",
+      "description": "공공 작업 인건비 −4% / 단계",
+      "resources": {},
+      "bonuses": {
+        "wages": -0.04
+      },
+      "kind": "foundation"
+    },
+    "LF04": {
+      "branch": "finance",
+      "tier": 4,
+      "kind": "foundation",
+      "name": "징세 장부",
+      "max_rank": 2,
+      "costs": [
+        6,
+        10
+      ],
+      "requires": "LF03",
+      "description": "세금 수금률 +2%p / 단계",
+      "resources": {},
+      "bonuses": {},
+      "adds": {
+        "tax": 0.02
+      }
+    },
+    "LA04": {
+      "branch": "agriculture",
+      "tier": 4,
+      "kind": "foundation",
+      "name": "채소 재배법",
+      "max_rank": 2,
+      "costs": [
+        6,
+        10
+      ],
+      "requires": "LA03",
+      "description": "채소 생산량 +6% / 단계",
+      "resources": {},
+      "bonuses": {
+        "garden": 0.06
+      }
+    },
+    "LS04": {
+      "branch": "survival",
+      "tier": 4,
+      "kind": "foundation",
+      "name": "겨울 채집법",
+      "max_rank": 2,
+      "costs": [
+        6,
+        10
+      ],
+      "requires": "LS03",
+      "description": "겨울 채집률 +8%p / 단계",
+      "resources": {},
+      "bonuses": {},
+      "adds": {
+        "winter_gather": 0.08
+      }
+    },
+    "LP04": {
+      "branch": "planning",
+      "tier": 4,
+      "kind": "foundation",
+      "name": "공구 관리",
+      "max_rank": 2,
+      "costs": [
+        6,
+        10
+      ],
+      "requires": "LP03",
+      "description": "도구 소모 −5% / 단계",
+      "resources": {},
+      "bonuses": {
+        "tool_use": -0.05
+      }
+    },
+    "LI01": {
+      "branch": "industry",
+      "tier": 1,
+      "kind": "foundation",
+      "name": "벌목 기술",
+      "max_rank": 2,
+      "costs": [
+        2,
+        4
+      ],
+      "requires": "",
+      "description": "벌목 생산량 +6% / 단계",
+      "resources": {},
+      "bonuses": {
+        "logging": 0.06
+      }
+    },
+    "LI02": {
+      "branch": "industry",
+      "tier": 2,
+      "kind": "foundation",
+      "name": "채석 기술",
+      "max_rank": 2,
+      "costs": [
+        3,
+        6
+      ],
+      "requires": "LI01",
+      "description": "석재 생산량 +8% / 단계",
+      "resources": {},
+      "bonuses": {
+        "quarry": 0.08
+      }
+    },
+    "LI03": {
+      "branch": "industry",
+      "tier": 3,
+      "kind": "foundation",
+      "name": "대장 기술",
+      "max_rank": 2,
+      "costs": [
+        4,
+        8
+      ],
+      "requires": "LI02",
+      "description": "도구 생산량 +8% / 단계",
+      "resources": {},
+      "bonuses": {
+        "smithy": 0.08
+      }
+    },
+    "LI04": {
+      "branch": "industry",
+      "tier": 4,
+      "kind": "foundation",
+      "name": "설비 정비",
+      "max_rank": 2,
+      "costs": [
+        6,
+        10
+      ],
+      "requires": "LI03",
+      "description": "시설 유지비 −3% / 단계",
+      "resources": {},
+      "bonuses": {
+        "maintenance": -0.03
+      }
+    },
+    "LD01": {
+      "branch": "diplomacy",
+      "tier": 1,
+      "kind": "foundation",
+      "name": "행정관 인맥",
+      "max_rank": 2,
+      "costs": [
+        2,
+        4
+      ],
+      "requires": "",
+      "description": "행정관 접견·보좌관 신뢰 효과 +1 / 단계",
+      "resources": {},
+      "bonuses": {},
+      "adds": {
+        "trust": 1
+      }
+    },
+    "LD02": {
+      "branch": "diplomacy",
+      "tier": 2,
+      "kind": "foundation",
+      "name": "상단 협상",
+      "max_rank": 2,
+      "costs": [
+        3,
+        6
+      ],
+      "requires": "LD01",
+      "description": "물자 구매가 −2% / 단계",
+      "resources": {},
+      "bonuses": {
+        "buy": -0.02
+      }
+    },
+    "LD03": {
+      "branch": "diplomacy",
+      "tier": 3,
+      "kind": "foundation",
+      "name": "보관 협약",
+      "max_rank": 2,
+      "costs": [
+        4,
+        8
+      ],
+      "requires": "LD02",
+      "description": "식량 저장 용량 +8% / 단계",
+      "resources": {},
+      "bonuses": {
+        "storage": 0.08
+      }
+    },
+    "LD04": {
+      "branch": "diplomacy",
+      "tier": 4,
+      "kind": "foundation",
+      "name": "고용 계약",
+      "max_rank": 2,
+      "costs": [
+        6,
+        10
+      ],
+      "requires": "LD03",
+      "description": "작업 인건비 −3% / 단계",
+      "resources": {},
+      "bonuses": {
+        "wages": -0.03
+      }
+    },
+    "LF05": {
+      "branch": "finance",
+      "tier": 5,
+      "kind": "choice",
+      "name": "추가 자금",
+      "max_rank": 1,
+      "costs": [
+        8
+      ],
+      "requires": "LF01",
+      "description": "지원 물자: 금고 +6금 · 지원 물자 1개 선택",
+      "resources": {},
+      "bonuses": {},
+      "choice": {
+        "type": "supply_pack",
+        "resources": {
+          "money": 600
+        }
+      }
+    },
+    "LA05": {
+      "branch": "agriculture",
+      "tier": 5,
+      "kind": "choice",
+      "name": "식량 보급",
+      "max_rank": 1,
+      "costs": [
+        8
+      ],
+      "requires": "LA01",
+      "description": "지원 물자: 식량 +240 · 지원 물자 1개 선택",
+      "resources": {},
+      "bonuses": {},
+      "choice": {
+        "type": "supply_pack",
+        "resources": {
+          "food": 240
+        }
+      }
+    },
+    "LS05": {
+      "branch": "survival",
+      "tier": 5,
+      "kind": "choice",
+      "name": "겨울 보급",
+      "max_rank": 1,
+      "costs": [
+        8
+      ],
+      "requires": "LS01",
+      "description": "지원 물자: 장작 +120 · 식량 +40 · 지원 물자 1개 선택",
+      "resources": {},
+      "bonuses": {},
+      "choice": {
+        "type": "supply_pack",
+        "resources": {
+          "fuel": 120,
+          "food": 40
+        }
+      }
+    },
+    "LP05": {
+      "branch": "planning",
+      "tier": 5,
+      "kind": "choice",
+      "name": "건설 보급",
+      "max_rank": 1,
+      "costs": [
+        8
+      ],
+      "requires": "LP01",
+      "description": "지원 물자: 목재 +32 · 석재 +16 · 도구 +1 · 지원 물자 1개 선택",
+      "resources": {},
+      "bonuses": {},
+      "choice": {
+        "type": "supply_pack",
+        "resources": {
+          "wood": 32,
+          "stone": 16,
+          "tools": 1
+        }
+      }
+    },
+    "LI05": {
+      "branch": "industry",
+      "tier": 5,
+      "kind": "choice",
+      "name": "공업 보급",
+      "max_rank": 1,
+      "costs": [
+        8
+      ],
+      "requires": "LI01",
+      "description": "지원 물자: 도구 +4 · 목재 +12 · 지원 물자 1개 선택",
+      "resources": {},
+      "bonuses": {},
+      "choice": {
+        "type": "supply_pack",
+        "resources": {
+          "tools": 4,
+          "wood": 12
+        }
+      }
+    },
+    "LD05": {
+      "branch": "diplomacy",
+      "tier": 5,
+      "kind": "choice",
+      "name": "정착 보급",
+      "max_rank": 1,
+      "costs": [
+        8
+      ],
+      "requires": "LD01",
+      "description": "지원 물자: 금고 +3금 · 식량 +120 · 지원 물자 1개 선택",
+      "resources": {},
+      "bonuses": {},
+      "choice": {
+        "type": "supply_pack",
+        "resources": {
+          "money": 300,
+          "food": 120
+        }
+      }
+    },
+    "LF06": {
+      "branch": "finance",
+      "tier": 6,
+      "kind": "choice",
+      "name": "특전 새로고침",
+      "max_rank": 1,
+      "costs": [
+        10
+      ],
+      "requires": "LF02",
+      "description": "통치마다 특전 새로고침 +1회",
+      "resources": {},
+      "bonuses": {},
+      "choice": {
+        "type": "perk_refresh",
+        "amount": 1
+      }
+    },
+    "LA06": {
+      "branch": "agriculture",
+      "tier": 6,
+      "kind": "choice",
+      "name": "특전 계열 지정",
+      "max_rank": 1,
+      "costs": [
+        10
+      ],
+      "requires": "LA02",
+      "description": "첫 특전 제안: 지정 계열 1개 보장(후보가 남은 경우)",
+      "resources": {},
+      "bonuses": {},
+      "choice": {
+        "type": "perk_focus"
+      }
+    },
+    "LS06": {
+      "branch": "survival",
+      "tier": 6,
+      "kind": "choice",
+      "name": "성물 계열 지정",
+      "max_rank": 1,
+      "costs": [
+        10
+      ],
+      "requires": "LS02",
+      "description": "첫 성물 제안: 지정 계열 1개 보장(후보가 남은 경우)",
+      "resources": {},
+      "bonuses": {},
+      "choice": {
+        "type": "relic_focus"
+      }
+    },
+    "LP06": {
+      "branch": "planning",
+      "tier": 6,
+      "kind": "choice",
+      "name": "성물 새로고침",
+      "max_rank": 1,
+      "costs": [
+        10
+      ],
+      "requires": "LP02",
+      "description": "통치마다 성물 새로고침 +1회",
+      "resources": {},
+      "bonuses": {},
+      "choice": {
+        "type": "relic_refresh",
+        "amount": 1
+      }
+    },
+    "LI06": {
+      "branch": "industry",
+      "tier": 6,
+      "kind": "choice",
+      "name": "특전 제외",
+      "max_rank": 1,
+      "costs": [
+        10
+      ],
+      "requires": "LI02",
+      "description": "특전 1종 제외·해당 칸 교체(통치당 1회)",
+      "resources": {},
+      "bonuses": {},
+      "choice": {
+        "type": "perk_banish",
+        "amount": 1
+      }
+    },
+    "LD06": {
+      "branch": "diplomacy",
+      "tier": 6,
+      "kind": "choice",
+      "name": "보급 한도 확장",
+      "max_rank": 1,
+      "costs": [
+        10
+      ],
+      "requires": "LD02",
+      "description": "부임 물자 선택 한도 +1",
+      "resources": {},
+      "bonuses": {},
+      "choice": {
+        "type": "equipment_budget",
+        "amount": 1
+      }
+    },
+    "LF07": {
+      "branch": "finance",
+      "tier": 7,
+      "kind": "doctrine",
+      "name": "긴축 재정",
+      "max_rank": 1,
+      "costs": [
+        12
+      ],
+      "requires": "LF03",
+      "description": "유지비 −20% · 작업 인건비 −10% · 민심 목표 −5",
+      "resources": {},
+      "bonuses": {},
+      "doctrine": {
+        "resources": {},
+        "mods": {
+          "maintenance": 0.8,
+          "wages": 0.9
+        },
+        "targets": {
+          "mood": -5
+        }
+      }
+    },
+    "LF08": {
+      "branch": "finance",
+      "tier": 8,
+      "kind": "doctrine",
+      "name": "선투자",
+      "max_rank": 1,
+      "costs": [
+        12
+      ],
+      "requires": "LF04",
+      "description": "부임 금고 +10금 · 시설 유지비 +12%",
+      "resources": {},
+      "bonuses": {},
+      "doctrine": {
+        "resources": {
+          "money": 1000
+        },
+        "mods": {
+          "maintenance": 1.12
+        },
+        "targets": {}
+      }
+    },
+    "LA07": {
+      "branch": "agriculture",
+      "tier": 7,
+      "kind": "doctrine",
+      "name": "집약 농업",
+      "max_rank": 1,
+      "costs": [
+        12
+      ],
+      "requires": "LA03",
+      "description": "수확 +20% · 채소 생산 +15% · 벌목 −15%",
+      "resources": {},
+      "bonuses": {},
+      "doctrine": {
+        "resources": {},
+        "mods": {
+          "harvest": 1.2,
+          "garden": 1.15,
+          "logging": 0.85
+        },
+        "targets": {}
+      }
+    },
+    "LA08": {
+      "branch": "agriculture",
+      "tier": 8,
+      "kind": "doctrine",
+      "name": "채집 우선",
+      "max_rank": 1,
+      "costs": [
+        12
+      ],
+      "requires": "LA04",
+      "description": "채집 +25% · 수확 −10%",
+      "resources": {},
+      "bonuses": {},
+      "doctrine": {
+        "resources": {},
+        "mods": {
+          "gather": 1.25,
+          "harvest": 0.9
+        },
+        "targets": {}
+      }
+    },
+    "LS07": {
+      "branch": "survival",
+      "tier": 7,
+      "kind": "doctrine",
+      "name": "구휼 체계",
+      "max_rank": 1,
+      "costs": [
+        12
+      ],
+      "requires": "LS03",
+      "description": "저장 용량 +20% · 건강 목표 +4 · 물자 구매가 +10%",
+      "resources": {},
+      "bonuses": {},
+      "doctrine": {
+        "resources": {},
+        "mods": {
+          "storage": 1.2,
+          "buy": 1.1
+        },
+        "targets": {
+          "health": 4
+        }
+      }
+    },
+    "LS08": {
+      "branch": "survival",
+      "tier": 8,
+      "kind": "doctrine",
+      "name": "난방 우선",
+      "max_rank": 1,
+      "costs": [
+        12
+      ],
+      "requires": "LS04",
+      "description": "난방 장작 소비 −25% · 도구 소모 +10%",
+      "resources": {},
+      "bonuses": {},
+      "doctrine": {
+        "resources": {},
+        "mods": {
+          "heating": 0.75,
+          "tool_use": 1.1
+        },
+        "targets": {}
+      }
+    },
+    "LP07": {
+      "branch": "planning",
+      "tier": 7,
+      "kind": "doctrine",
+      "name": "속성 공사",
+      "max_rank": 1,
+      "costs": [
+        12
+      ],
+      "requires": "LP03",
+      "description": "새 공사 작업량 −20% · 작업 인건비 +15%",
+      "resources": {},
+      "bonuses": {},
+      "doctrine": {
+        "resources": {},
+        "mods": {
+          "build_work": 0.8,
+          "wages": 1.15
+        },
+        "targets": {}
+      }
+    },
+    "LP08": {
+      "branch": "planning",
+      "tier": 8,
+      "kind": "doctrine",
+      "name": "현장 재활용",
+      "max_rank": 1,
+      "costs": [
+        12
+      ],
+      "requires": "LP04",
+      "description": "도구 소모 −25% · 새 공사 작업량 +10%",
+      "resources": {},
+      "bonuses": {},
+      "doctrine": {
+        "resources": {},
+        "mods": {
+          "tool_use": 0.75,
+          "build_work": 1.1
+        },
+        "targets": {}
+      }
+    },
+    "LI07": {
+      "branch": "industry",
+      "tier": 7,
+      "kind": "doctrine",
+      "name": "집중 생산",
+      "max_rank": 1,
+      "costs": [
+        12
+      ],
+      "requires": "LI03",
+      "description": "벌목·채석 생산 +20% · 도구 소모 +20%",
+      "resources": {},
+      "bonuses": {},
+      "doctrine": {
+        "resources": {},
+        "mods": {
+          "logging": 1.2,
+          "quarry": 1.2,
+          "tool_use": 1.2
+        },
+        "targets": {}
+      }
+    },
+    "LI08": {
+      "branch": "industry",
+      "tier": 8,
+      "kind": "doctrine",
+      "name": "공방 지원",
+      "max_rank": 1,
+      "costs": [
+        12
+      ],
+      "requires": "LI04",
+      "description": "도구 생산 +35% · 시설 유지비 +15%",
+      "resources": {},
+      "bonuses": {},
+      "doctrine": {
+        "resources": {},
+        "mods": {
+          "smithy": 1.35,
+          "maintenance": 1.15
+        },
+        "targets": {}
+      }
+    },
+    "LD07": {
+      "branch": "diplomacy",
+      "tier": 7,
+      "kind": "doctrine",
+      "name": "상단 우대",
+      "max_rank": 1,
+      "costs": [
+        12
+      ],
+      "requires": "LD03",
+      "description": "물자 구매가 −18% · 민심 목표 −4",
+      "resources": {},
+      "bonuses": {},
+      "doctrine": {
+        "resources": {},
+        "mods": {
+          "buy": 0.82
+        },
+        "targets": {
+          "mood": -4
+        }
+      }
+    },
+    "LD08": {
+      "branch": "diplomacy",
+      "tier": 8,
+      "kind": "doctrine",
+      "name": "주민 우대",
+      "max_rank": 1,
+      "costs": [
+        12
+      ],
+      "requires": "LD04",
+      "description": "민심 목표 +6 · 건강 목표 +3 · 작업 인건비 +15%",
+      "resources": {},
+      "bonuses": {},
+      "doctrine": {
+        "resources": {},
+        "mods": {
+          "wages": 1.15
+        },
+        "targets": {
+          "mood": 6,
+          "health": 3
+        }
+      }
+    }
+  }
+}

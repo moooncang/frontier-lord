@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "project_limit": 3,
+  "policy_cooldown": 4,
+  "event": {"first_week": 4, "chance": 0.35, "gap": 2, "gap_spread": 2},
+  "threat": {"start_week": 6, "growth": 1.5, "max": 60, "raid_base": 0.03, "raid_gap": 7},
+  "immigration": {"weeks": [9, 22, 35], "base": 4, "max": 14},
+  "market_fee_per_person": 1,
+
+  "prices": {
+    "food":  [1.15, 1.0, 0.85, 1.25],
+    "fuel":  [0.9, 0.85, 1.1, 1.5],
+    "wood":  [1.0, 1.0, 1.0, 1.1],
+    "stone": [1.0, 1.0, 1.0, 1.0],
+    "tools": [1.0, 1.0, 1.0, 1.0]
+  },
+
+  "weather": {
+    "spring": [
+      {"id": "spring_fair", "name": "평년 봄", "weight": 5, "text": "특별한 변화 없음"},
+      {"id": "spring_rain", "name": "단비", "weight": 3, "mods": {"gather": 1.12}, "crop": 1.05, "text": "채집 +12% · 올해 수확 +5%"},
+      {"id": "spring_frost", "name": "늦서리", "weight": 2, "mods": {"sow_labor": 1.15}, "crop": 0.94, "text": "파종 노동 +15% · 올해 수확 -6%"}
+    ],
+    "summer": [
+      {"id": "summer_fair", "name": "평년 여름", "weight": 5, "text": "특별한 변화 없음"},
+      {"id": "summer_heat", "name": "폭염", "weight": 3, "mods": {"gather": 0.9}, "targets": {"health": -5}, "crop": 0.95, "text": "채집 -10% · 건강 -5 · 올해 수확 -5%"},
+      {"id": "summer_monsoon", "name": "장마", "weight": 2, "mods": {"logging": 0.85, "spoil": 1.3}, "crop": 0.92, "text": "벌목 -15% · 보관 손실 +30% · 올해 수확 -8%"}
+    ],
+    "autumn": [
+      {"id": "autumn_fair", "name": "평년 가을", "weight": 5, "text": "특별한 변화 없음"},
+      {"id": "autumn_bounty", "name": "풍작의 볕", "weight": 3, "crop": 1.12, "targets": {"mood": 3}, "text": "올해 수확 +12% · 민심 +3"},
+      {"id": "autumn_frost", "name": "이른 서리", "weight": 2, "crop": 0.9, "mods": {"heating": 1.1}, "text": "올해 수확 -10% · 난방 +10%"}
+    ],
+    "winter": [
+      {"id": "winter_fair", "name": "평년 겨울", "weight": 5, "text": "특별한 변화 없음"},
+      {"id": "winter_bitter", "name": "혹한", "weight": 3, "mods": {"heating": 1.25}, "targets": {"health": -4}, "text": "난방 장작 +25% · 건강 -4"},
+      {"id": "winter_mild", "name": "온화한 겨울", "weight": 2, "mods": {"heating": 0.85}, "targets": {"mood": 2}, "text": "난방 장작 -15% · 민심 +2"}
+    ]
+  },
+
+  "policies": {
+    "tax_relief": {"name": "수확세 감면", "tag": "재정", "adds": {"tax": -0.2}, "targets": {"mood": 6}, "weekly": {"village": 0.5},
+                   "good": "민심 +6 · 주민 관계 매주 +0.5", "bad": "세금 수금 -20%p"},
+    "tax_levy":   {"name": "특별 징수", "tag": "재정", "adds": {"tax": 0.1}, "targets": {"mood": -8}, "weekly": {"village": -0.5, "trust": 0.3},
+                   "good": "세금 수금 +10%p · 행정관 신뢰 매주 +0.3", "bad": "민심 -8 · 주민 관계 매주 -0.5"},
+    "commons":    {"name": "공동 경작", "tag": "농업", "mods": {"harvest": 1.08, "sow_labor": 0.9}, "adds": {"tax": -0.08},
+                   "good": "수확 +8% · 파종 노동 -10%", "bad": "세금 수금 -8%p"},
+    "forced_logging": {"name": "긴급 벌목", "tag": "생산", "mods": {"logging": 1.3}, "targets": {"mood": -3}, "weekly": {"village": -0.4},
+                   "good": "벌목 +30%", "bad": "민심 -3 · 주민 관계 매주 -0.4"},
+    "relief":     {"name": "공공 구휼", "tag": "생활", "targets": {"mood": 7, "health": 3}, "relief": 0.08,
+                   "good": "민심 +7 · 건강 +3", "bad": "매주 공공 식량을 주민 1인당 0.08씩 나눔"},
+    "hygiene":    {"name": "위생 의무", "tag": "생활", "targets": {"health": 9}, "labor": -0.02,
+                   "good": "건강 +9", "bad": "일할 수 있는 주민 -2%p"},
+    "militia":    {"name": "민병 등록", "tag": "치안", "targets": {"security": 14}, "labor": -0.03,
+                   "good": "치안 +14 · 습격 방어 성공률 +15%p", "bad": "일할 수 있는 주민 -3%p"},
+    "curfew":     {"name": "야간 통금", "tag": "치안", "targets": {"security": 8, "mood": -5},
+                   "good": "치안 +8", "bad": "민심 -5"},
+    "open_market": {"name": "자유 장시", "tag": "교역", "requires": "B49", "mods": {"buy": 0.9}, "adds": {"tax": -0.03}, "market": 1.5,
+                   "good": "구매가 -10% · 통행세 +50%", "bad": "세금 수금 -3%p"}
+  },
+
+  "ranks": [
+    {"name": "개척지", "points": 0},
+    {"name": "촌락", "points": 5, "pop": 100, "requires": ["B22"], "housing": true, "water": true,
+     "reward": {"money": 800, "mood": 5}, "text": "주민 100명 · 곳간 · 주거와 물 충족"},
+    {"name": "마을", "points": 7, "pop": 125, "requires": ["B49"], "any": ["B57", "B59"], "security": 50, "housing": true, "water": true,
+     "reward": {"money": 1500, "mood": 6}, "text": "주민 125명 · 장터 · 진료소나 예배당 · 치안 50"}
+  ],
+
+  "grades": [
+    {"grade": "S", "success": true, "points": 18, "title": "변경의 명군"},
+    {"grade": "A", "success": true, "points": 11, "title": "믿음직한 영주"},
+    {"grade": "B", "success": true, "points": 0, "title": "겨울을 넘긴 영주"},
+    {"grade": "C", "success": false, "weeks": 52, "title": "버텨 낸 영주"},
+    {"grade": "D", "success": false, "weeks": 0, "title": "미완의 통치"}
+  ]
+}

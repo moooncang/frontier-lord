@@ -1,0 +1,1685 @@
+{
+  "RB_DAMP_GRAIN": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "negative",
+    "title": "젖은 곡물 포대",
+    "speaker": "오딜 마르센",
+    "portrait": "CH01",
+    "body": "밤새 이슬이 내려 포대가 젖었습니다. 말리거나 옮기지 않으면 곡물을 버려야 합니다.",
+    "options": [
+      {
+        "label": "장작으로 말린다",
+        "effects": {},
+        "cost": {
+          "fuel": 8
+        }
+      },
+      {
+        "label": "곳간 안으로 옮긴다",
+        "effects": {},
+        "requires": {
+          "facility": "B22"
+        }
+      },
+      {
+        "label": "젖은 포대를 버린다",
+        "effects": {
+          "food": -28,
+          "mood": -1
+        }
+      }
+    ],
+    "pool": {
+      "once": true,
+      "weight": 2,
+      "min": 6,
+      "max": 38,
+      "seasons": [
+        0,
+        1,
+        2
+      ]
+    }
+  },
+  "RB_MOULD_BINS": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "negative",
+    "title": "저장 통의 곰팡이",
+    "speaker": "요스트",
+    "portrait": "CH09",
+    "body": "곳간의 저장 통에 곰팡이가 번졌습니다. 통을 소독하거나 오염된 곡물을 골라내야 합니다.",
+    "options": [
+      {
+        "label": "통을 씻고 소독한다",
+        "effects": {},
+        "cost": {
+          "money": 80,
+          "fuel": 4
+        }
+      },
+      {
+        "label": "풍요 성물로 보존",
+        "effects": {},
+        "requires": {
+          "relic_family": "abundance"
+        }
+      },
+      {
+        "label": "오염 곡물을 폐기",
+        "effects": {
+          "food": -24,
+          "health": -1
+        }
+      }
+    ],
+    "pool": {
+      "once": true,
+      "weight": 1,
+      "min": 10,
+      "max": 36,
+      "facility": "B22",
+      "seasons": [
+        0,
+        1,
+        2
+      ]
+    }
+  },
+  "RB_SOUR_FISH": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "negative",
+    "title": "상하기 시작한 어획물",
+    "speaker": "시아렐",
+    "portrait": "CH06",
+    "body": "더위에 생선이 상하기 시작했습니다. 지금 가공하지 못하면 어획물 일부를 버려야 합니다.",
+    "options": [
+      {
+        "label": "장작으로 급히 익힌다",
+        "effects": {},
+        "cost": {
+          "fuel": 8
+        }
+      },
+      {
+        "label": "훈연장에서 처리",
+        "effects": {},
+        "requires": {
+          "facility": "B21"
+        },
+        "cost": {
+          "fuel": 3
+        }
+      },
+      {
+        "label": "상한 생선을 버린다",
+        "effects": {
+          "food": -18,
+          "mood": -1
+        }
+      }
+    ],
+    "pool": {
+      "once": true,
+      "weight": 1,
+      "min": 14,
+      "max": 26,
+      "facility": "B16",
+      "seasons": [
+        1
+      ]
+    }
+  },
+  "RB_STAGNANT_DITCH": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "negative",
+    "title": "고인 물과 벌레",
+    "speaker": "아녜스",
+    "portrait": "CH03",
+    "body": "집 앞 배수로에 물이 고여 벌레가 늘었습니다. 배수로를 정비하지 않으면 병이 번집니다.",
+    "options": [
+      {
+        "label": "돌로 배수로를 정비",
+        "effects": {},
+        "cost": {
+          "stone": 8,
+          "money": 40
+        }
+      },
+      {
+        "label": "위생 인력을 보낸다",
+        "effects": {},
+        "requires": {
+          "policy": "hygiene"
+        }
+      },
+      {
+        "label": "주민에게 청소를 맡김",
+        "effects": {
+          "health": -3,
+          "mood": -1
+        }
+      }
+    ],
+    "pool": {
+      "once": true,
+      "weight": 2,
+      "min": 6,
+      "max": 32,
+      "seasons": [
+        0,
+        1,
+        2
+      ]
+    }
+  },
+  "RB_BROKEN_BUCKET": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "negative",
+    "title": "갈라진 우물 두레박",
+    "speaker": "두르간",
+    "portrait": "CH08",
+    "body": "우물 두레박이 갈라졌습니다. 새것을 달거나 수리하는 동안 주민들이 물을 길어 나릅니다.",
+    "options": [
+      {
+        "label": "도구로 단단히 수리",
+        "effects": {},
+        "cost": {
+          "tools": 1
+        }
+      },
+      {
+        "label": "판자로 임시 수리",
+        "effects": {
+          "mood": -1
+        },
+        "cost": {
+          "wood": 4
+        }
+      },
+      {
+        "label": "당분간 물을 날라 쓴다",
+        "effects": {
+          "health": -2,
+          "mood": -1
+        }
+      }
+    ],
+    "pool": {
+      "once": true,
+      "weight": 2,
+      "min": 6,
+      "max": 46,
+      "facility": "B06"
+    }
+  },
+  "RB_DRY_CHANNEL": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "negative",
+    "title": "마른 농수로",
+    "speaker": "요스트",
+    "portrait": "CH09",
+    "body": "여름 가뭄으로 농수로가 말랐습니다. 물길을 고치거나 공동 경작 인력으로 피해를 줄일 수 있습니다.",
+    "options": [
+      {
+        "label": "새 물길을 판다",
+        "effects": {},
+        "cost": {
+          "stone": 8,
+          "money": 60
+        }
+      },
+      {
+        "label": "공동 경작으로 급수",
+        "effects": {
+          "crop": -0.01
+        },
+        "requires": {
+          "policy": "commons"
+        }
+      },
+      {
+        "label": "농수로를 그대로 둔다",
+        "effects": {
+          "crop": -0.04,
+          "mood": -1
+        }
+      }
+    ],
+    "pool": {
+      "once": true,
+      "weight": 2,
+      "min": 14,
+      "max": 26,
+      "facility": "B13",
+      "seasons": [
+        1
+      ]
+    }
+  },
+  "RB_WET_FIREWOOD": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "negative",
+    "title": "빗물 밴 장작 더미",
+    "speaker": "오딜 마르센",
+    "portrait": "CH01",
+    "body": "덮개가 찢어져 장작이 젖고 있습니다. 지붕을 덧대거나 새 덮개를 사야 합니다.",
+    "options": [
+      {
+        "label": "목재로 덮개를 세운다",
+        "effects": {
+          "fuel": -4
+        },
+        "cost": {
+          "wood": 8
+        }
+      },
+      {
+        "label": "방수 덮개를 산다",
+        "effects": {},
+        "cost": {
+          "money": 120
+        }
+      },
+      {
+        "label": "젖은 장작을 골라낸다",
+        "effects": {
+          "fuel": -16,
+          "mood": -1
+        }
+      }
+    ],
+    "pool": {
+      "once": true,
+      "weight": 1,
+      "min": 14,
+      "max": 36,
+      "facility": "B25",
+      "seasons": [
+        1,
+        2
+      ]
+    }
+  },
+  "RB_CHARCOAL_SPARK": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "negative",
+    "title": "불씨가 튄 연료 창고",
+    "speaker": "두르간",
+    "portrait": "CH08",
+    "body": "연료 창고 안에서 불씨가 튀었습니다. 물이나 모래를 즉시 가져오면 큰 피해를 막습니다.",
+    "options": [
+      {
+        "label": "모래와 일손을 산다",
+        "effects": {},
+        "cost": {
+          "money": 100
+        }
+      },
+      {
+        "label": "우물물로 불을 끈다",
+        "effects": {
+          "fuel": -3
+        },
+        "requires": {
+          "facility": "B06"
+        }
+      },
+      {
+        "label": "주변 연료를 꺼낸다",
+        "effects": {
+          "fuel": -12,
+          "wood": -6
+        }
+      }
+    ],
+    "pool": {
+      "once": true,
+      "weight": 1,
+      "min": 8,
+      "max": 38,
+      "facility": "B25"
+    }
+  },
+  "RB_LOOSE_SCAFFOLD": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "negative",
+    "title": "흔들리는 지붕 발판",
+    "speaker": "두르간",
+    "portrait": "CH08",
+    "body": "주거 구역의 지붕 발판이 흔들립니다. 버팀목을 고정하지 않으면 자재와 주민이 다칩니다.",
+    "options": [
+      {
+        "label": "공구로 발판을 고정",
+        "effects": {},
+        "cost": {
+          "tools": 1
+        }
+      },
+      {
+        "label": "공방 성물로 보강",
+        "effects": {},
+        "requires": {
+          "relic_family": "craft"
+        }
+      },
+      {
+        "label": "발판을 내려 철거",
+        "effects": {
+          "wood": -8,
+          "health": -2
+        }
+      }
+    ],
+    "pool": {
+      "once": true,
+      "weight": 1,
+      "min": 6,
+      "max": 45,
+      "facility": "B01"
+    }
+  },
+  "RB_STONE_WAGON": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "negative",
+    "title": "기울어진 석재 수레",
+    "speaker": "디트마르 크론",
+    "portrait": "CH11",
+    "body": "비탈에서 석재 수레가 기울었습니다. 수리하거나 밧줄로 붙잡아 돌을 내려야 합니다.",
+    "options": [
+      {
+        "label": "바퀴와 축을 고친다",
+        "effects": {},
+        "cost": {
+          "tools": 1,
+          "wood": 4
+        }
+      },
+      {
+        "label": "밧줄로 수레를 붙잡음",
+        "effects": {},
+        "chance": {
+          "base": 0.65,
+          "stat": "security",
+          "per": 0.006,
+          "facility": {
+            "B71": 0.1
+          },
+          "win": {
+            "text": "수레를 붙잡았습니다. 돌 2만 비탈로 떨어졌습니다.",
+            "effects": {
+              "stone": -2
+            }
+          },
+          "lose": {
+            "text": "밧줄이 미끄러졌습니다. 돌 10을 잃고 주민들이 다쳤습니다.",
+            "effects": {
+              "stone": -10,
+              "health": -1
+            }
+          }
+        }
+      },
+      {
+        "label": "수레를 비우고 후퇴",
+        "effects": {
+          "stone": -14,
+          "mood": -1
+        }
+      }
+    ],
+    "pool": {
+      "once": true,
+      "weight": 1,
+      "min": 14,
+      "max": 46,
+      "facility": "B27"
+    }
+  },
+  "RB_BLUNT_SAW": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "negative",
+    "title": "이가 나간 제재 톱",
+    "speaker": "두르간",
+    "portrait": "CH08",
+    "body": "제재 톱의 이가 나갔습니다. 정비 없이 작업하면 목재와 날이 더 망가집니다.",
+    "options": [
+      {
+        "label": "새 톱날을 산다",
+        "effects": {},
+        "cost": {
+          "money": 100
+        }
+      },
+      {
+        "label": "대장간에서 손본다",
+        "effects": {},
+        "requires": {
+          "facility": "B33"
+        },
+        "cost": {
+          "fuel": 4
+        }
+      },
+      {
+        "label": "남은 날로 마무리",
+        "effects": {
+          "wood": -8,
+          "tools": -1
+        }
+      }
+    ],
+    "pool": {
+      "once": true,
+      "weight": 1,
+      "min": 16,
+      "max": 46,
+      "facility": "B26"
+    }
+  },
+  "RB_MISSING_STONE": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "negative",
+    "title": "부족하게 온 건축 석재",
+    "speaker": "베아트릭스 코른",
+    "portrait": "CH04",
+    "body": "납품업자가 돌을 덜 가져왔습니다. 추가 운임을 대거나 조합에 중재를 요청할 수 있습니다.",
+    "options": [
+      {
+        "label": "추가 운임을 낸다",
+        "effects": {},
+        "cost": {
+          "money": 120
+        }
+      },
+      {
+        "label": "조합과 운임을 나눔",
+        "effects": {},
+        "requires": {
+          "stat": [
+            "guild",
+            55
+          ]
+        },
+        "cost": {
+          "money": 60
+        }
+      },
+      {
+        "label": "부족분을 받아들인다",
+        "effects": {
+          "stone": -10,
+          "trust": -2
+        }
+      }
+    ],
+    "pool": {
+      "once": true,
+      "weight": 1,
+      "min": 12,
+      "max": 44
+    }
+  },
+  "RB_TAMPERED_WEIGHTS": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "negative",
+    "title": "조작된 시장 저울",
+    "speaker": "마티아스 그렌",
+    "portrait": "CH10",
+    "body": "장터에서 저울을 속인 거래가 드러났습니다. 피해액을 보전하거나 거래 장부로 가해자를 찾아야 합니다.",
+    "options": [
+      {
+        "label": "피해액을 대신 갚는다",
+        "effects": {},
+        "cost": {
+          "money": 100
+        }
+      },
+      {
+        "label": "서기관이 거래를 대조",
+        "effects": {},
+        "requires": {
+          "facility": "B63"
+        }
+      },
+      {
+        "label": "상인끼리 정산하게 둠",
+        "effects": {
+          "money": -40,
+          "guild": -3
+        }
+      }
+    ],
+    "pool": {
+      "once": true,
+      "weight": 1,
+      "min": 12,
+      "max": 46,
+      "facility": "B49"
+    }
+  },
+  "RB_COUNTERFEIT_SEAL": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "negative",
+    "title": "위조 인장의 청구서",
+    "speaker": "마티아스 그렌",
+    "portrait": "CH10",
+    "body": "영주의 인장을 흉내 낸 청구서가 왔습니다. 서기관이 가려내거나 2주간 조사를 맡길 수 있습니다.",
+    "options": [
+      {
+        "label": "서기관실에서 대조",
+        "effects": {},
+        "requires": {
+          "facility": "B63"
+        }
+      },
+      {
+        "label": "조사를 맡긴다",
+        "effects": {},
+        "cost": {
+          "money": 40
+        },
+        "followup": {
+          "id": "RB_SEAL_AUDIT",
+          "delay": 2
+        }
+      },
+      {
+        "label": "청구를 일부 인정",
+        "effects": {
+          "money": -80,
+          "trust": -3
+        }
+      }
+    ],
+    "pool": {
+      "once": true,
+      "weight": 1,
+      "min": 10,
+      "max": 46
+    }
+  },
+  "RB_FOOD_QUEUE": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "negative",
+    "title": "배급소 앞 실랑이",
+    "speaker": "요스트",
+    "portrait": "CH09",
+    "body": "배급 순서를 두고 다툼이 났습니다. 식량을 더 내거나 구휼 담당자가 차례를 정해야 합니다.",
+    "options": [
+      {
+        "label": "추가 식량을 나눈다",
+        "effects": {},
+        "cost": {
+          "food": 12
+        }
+      },
+      {
+        "label": "구휼 담당자가 중재",
+        "effects": {},
+        "requires": {
+          "policy": "relief"
+        }
+      },
+      {
+        "label": "오늘 배급 줄을 닫는다",
+        "effects": {
+          "mood": -3,
+          "village": -1
+        }
+      }
+    ],
+    "pool": {
+      "once": true,
+      "weight": 2,
+      "min": 6,
+      "max": 48
+    }
+  },
+  "RB_MOURNING": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "negative",
+    "title": "귀향하지 못한 가족",
+    "speaker": "아녜스",
+    "portrait": "CH03",
+    "body": "타지에서 가족을 잃은 주민들이 장례를 부탁합니다. 장소와 음식을 마련하지 못하면 불만이 남습니다.",
+    "options": [
+      {
+        "label": "장례 음식을 지원",
+        "effects": {},
+        "cost": {
+          "food": 10,
+          "money": 30
+        }
+      },
+      {
+        "label": "예배당에 장례를 맡김",
+        "effects": {},
+        "requires": {
+          "facility": "B59"
+        }
+      },
+      {
+        "label": "가족끼리 치르게 한다",
+        "effects": {
+          "mood": -2,
+          "village": -2
+        }
+      }
+    ],
+    "pool": {
+      "once": true,
+      "weight": 1,
+      "min": 8,
+      "max": 48
+    }
+  },
+  "RB_LEAKING_ROOF": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "negative",
+    "title": "새는 공동 주택 지붕",
+    "speaker": "오딜 마르센",
+    "portrait": "CH01",
+    "body": "공동 주택 지붕이 샙니다. 전부 고치거나 임시 덮개로 버틴 뒤 2주 후 다시 살펴야 합니다.",
+    "options": [
+      {
+        "label": "지붕을 바로 고친다",
+        "effects": {},
+        "cost": {
+          "wood": 12,
+          "stone": 4
+        }
+      },
+      {
+        "label": "임시 덮개를 댄다",
+        "effects": {},
+        "cost": {
+          "wood": 4
+        },
+        "followup": {
+          "id": "RB_ROOF_CHECK",
+          "delay": 2
+        }
+      },
+      {
+        "label": "젖은 방을 비운다",
+        "effects": {
+          "wood": -10,
+          "health": -2
+        }
+      }
+    ],
+    "pool": {
+      "once": true,
+      "weight": 2,
+      "min": 6,
+      "max": 45,
+      "facility": "B01"
+    }
+  },
+  "RB_INJURED_DRIVER": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "negative",
+    "title": "수레꾼의 부상",
+    "speaker": "아녜스",
+    "portrait": "CH03",
+    "body": "수레꾼 한 명이 크게 다쳤습니다. 진료소가 없으면 먹을 것과 간병인을 붙여 2주간 돌봐야 합니다.",
+    "options": [
+      {
+        "label": "진료소에서 치료",
+        "effects": {},
+        "requires": {
+          "facility": "B57"
+        },
+        "cost": {
+          "food": 4
+        }
+      },
+      {
+        "label": "집에서 간병을 맡긴다",
+        "effects": {},
+        "cost": {
+          "food": 8,
+          "money": 40
+        },
+        "followup": {
+          "id": "RB_DRIVER_RECOVERY",
+          "delay": 2
+        }
+      },
+      {
+        "label": "치료 지원을 포기",
+        "effects": {
+          "pop": -1,
+          "mood": -2
+        }
+      }
+    ],
+    "pool": {
+      "once": true,
+      "weight": 1,
+      "min": 8,
+      "max": 45
+    }
+  },
+  "RB_GRAIN_MOTHS": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "negative",
+    "title": "곳간에 번진 곡물나방",
+    "speaker": "요스트",
+    "portrait": "CH09",
+    "body": "곡물나방이 포대 사이에 번졌습니다. 방제하거나 통을 막고 2주 후 유충을 다시 제거해야 합니다.",
+    "options": [
+      {
+        "label": "곳간을 즉시 방제",
+        "effects": {},
+        "cost": {
+          "money": 120,
+          "fuel": 4
+        }
+      },
+      {
+        "label": "통부터 임시 밀봉",
+        "effects": {},
+        "cost": {
+          "wood": 4
+        },
+        "followup": {
+          "id": "RB_MOTH_HATCH",
+          "delay": 2
+        }
+      },
+      {
+        "label": "벌레 먹은 곡물 폐기",
+        "effects": {
+          "food": -30,
+          "mood": -1
+        }
+      }
+    ],
+    "pool": {
+      "once": true,
+      "weight": 1,
+      "min": 14,
+      "max": 32,
+      "facility": "B22",
+      "seasons": [
+        1,
+        2
+      ]
+    }
+  },
+  "RB_FORGE_SMOKE": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "negative",
+    "title": "대장간의 막힌 연통",
+    "speaker": "두르간",
+    "portrait": "CH08",
+    "body": "막힌 연통에서 연기가 샙니다. 전문가를 부르거나 임시로 뚫고 3주 후 내부를 다시 고쳐야 합니다.",
+    "options": [
+      {
+        "label": "전문가에게 수리 요청",
+        "effects": {},
+        "cost": {
+          "money": 160,
+          "tools": 1
+        }
+      },
+      {
+        "label": "임시 통로를 낸다",
+        "effects": {},
+        "cost": {
+          "wood": 6
+        },
+        "followup": {
+          "id": "RB_CHIMNEY_REPAIR",
+          "delay": 3
+        }
+      },
+      {
+        "label": "환기하며 작업을 잇는다",
+        "effects": {
+          "health": -3,
+          "mood": -1
+        }
+      }
+    ],
+    "pool": {
+      "once": true,
+      "weight": 1,
+      "min": 18,
+      "max": 45,
+      "facility": "B33"
+    }
+  },
+  "RB_STOLEN_DELIVERY": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "negative",
+    "title": "사라진 목재 화물",
+    "speaker": "베아트릭스 코른",
+    "portrait": "CH04",
+    "body": "목재 14를 실은 화물이 사라졌습니다. 손실을 확정하고 추적대를 보내면 3주 후 회수 여부를 압니다.",
+    "options": [
+      {
+        "label": "망루 기록으로 추적",
+        "effects": {
+          "wood": -4
+        },
+        "requires": {
+          "facility": "B71"
+        }
+      },
+      {
+        "label": "손실 확정 후 추적",
+        "effects": {},
+        "cost": {
+          "money": 50,
+          "wood": 14
+        },
+        "followup": {
+          "id": "RB_CARGO_FOUND",
+          "delay": 3
+        }
+      },
+      {
+        "label": "화물을 손실 처리",
+        "effects": {
+          "wood": -14,
+          "guild": -2
+        }
+      }
+    ],
+    "pool": {
+      "once": true,
+      "weight": 1,
+      "min": 12,
+      "max": 44,
+      "facility": "B49"
+    }
+  },
+  "RB_WAGE_DISPUTE": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "negative",
+    "title": "중복된 품삯 청구",
+    "speaker": "오딜 마르센",
+    "portrait": "CH01",
+    "body": "한 작업의 품삯을 두 사람이 청구했습니다. 장부로 가리거나 2주간 증인을 불러 대조해야 합니다.",
+    "options": [
+      {
+        "label": "서기관 장부로 판정",
+        "effects": {},
+        "requires": {
+          "facility": "B63"
+        }
+      },
+      {
+        "label": "증인을 불러 조사",
+        "effects": {},
+        "cost": {
+          "money": 40
+        },
+        "followup": {
+          "id": "RB_WAGE_HEARING",
+          "delay": 2
+        }
+      },
+      {
+        "label": "중복분까지 지급",
+        "effects": {
+          "money": -140,
+          "mood": -2
+        }
+      }
+    ],
+    "pool": {
+      "once": true,
+      "weight": 1,
+      "min": 10,
+      "max": 46
+    }
+  },
+  "RB_HOUSEHOLD_FEVER": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "negative",
+    "title": "한집에 번진 열병",
+    "speaker": "아녜스",
+    "portrait": "CH03",
+    "body": "한집에서 열병 환자가 잇달아 나옵니다. 위생 담당자를 보내거나 2주간 격리 관찰이 필요합니다.",
+    "options": [
+      {
+        "label": "위생 담당자가 격리",
+        "effects": {},
+        "requires": {
+          "policy": "hygiene"
+        }
+      },
+      {
+        "label": "약과 격리 식량을 댄다",
+        "effects": {},
+        "cost": {
+          "money": 80,
+          "food": 6
+        },
+        "followup": {
+          "id": "RB_FEVER_WATCH",
+          "delay": 2
+        }
+      },
+      {
+        "label": "가족에게 돌봄을 맡김",
+        "effects": {
+          "health": -4,
+          "mood": -1
+        }
+      }
+    ],
+    "pool": {
+      "once": true,
+      "weight": 2,
+      "min": 14,
+      "max": 46
+    }
+  },
+  "RB_QUARRY_CRACK": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "negative",
+    "title": "채석장 벽의 균열",
+    "speaker": "두르간",
+    "portrait": "CH08",
+    "body": "채석장 벽에 균열이 생겼습니다. 받침을 대거나 위험 구역의 돌을 포기해야 합니다.",
+    "options": [
+      {
+        "label": "받침을 단단히 댄다",
+        "effects": {},
+        "cost": {
+          "wood": 8,
+          "tools": 1
+        }
+      },
+      {
+        "label": "좁은 구역만 채석",
+        "effects": {
+          "stone": -6,
+          "mood": -1
+        }
+      },
+      {
+        "label": "위험 구역을 급히 비움",
+        "effects": {
+          "stone": -12,
+          "health": -1
+        }
+      }
+    ],
+    "pool": {
+      "once": true,
+      "weight": 1,
+      "min": 14,
+      "max": 46,
+      "facility": "B27"
+    }
+  },
+  "RB_FENCE_BREACH": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "negative",
+    "title": "먹이를 찾는 멧돼지",
+    "speaker": "디트마르 크론",
+    "portrait": "CH11",
+    "body": "멧돼지가 식량 더미를 헤집습니다. 울타리를 보강하거나 목책 안으로 짐을 옮겨야 합니다.",
+    "options": [
+      {
+        "label": "울타리를 급히 보강",
+        "effects": {},
+        "cost": {
+          "wood": 8,
+          "tools": 1
+        }
+      },
+      {
+        "label": "목책 안으로 옮긴다",
+        "effects": {
+          "food": -4
+        },
+        "requires": {
+          "facility": "B67"
+        }
+      },
+      {
+        "label": "사람만 피신시킨다",
+        "effects": {
+          "food": -24,
+          "security": -2
+        }
+      }
+    ],
+    "pool": {
+      "once": true,
+      "weight": 2,
+      "min": 8,
+      "max": 38,
+      "seasons": [
+        0,
+        1,
+        2
+      ]
+    }
+  },
+  "RB_FALSE_ALARM": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "negative",
+    "title": "밤마다 울리는 경보",
+    "speaker": "카트린 볼크",
+    "portrait": "CH02",
+    "body": "숲의 소리를 습격으로 오인한 경보가 반복됩니다. 경비를 정비하지 않으면 주민들이 잠을 못 잡니다.",
+    "options": [
+      {
+        "label": "숙련 경비를 고용",
+        "effects": {},
+        "cost": {
+          "money": 100
+        }
+      },
+      {
+        "label": "수호 성물로 경계",
+        "effects": {},
+        "requires": {
+          "relic_family": "guard"
+        }
+      },
+      {
+        "label": "경보를 그대로 둔다",
+        "effects": {
+          "mood": -3,
+          "health": -1
+        }
+      }
+    ],
+    "pool": {
+      "once": true,
+      "weight": 1,
+      "min": 8,
+      "max": 48
+    }
+  },
+  "RB_FROSTBITTEN_WATCH": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "negative",
+    "title": "초소 경비의 동상",
+    "speaker": "카트린 볼크",
+    "portrait": "CH02",
+    "body": "초소 경비가 추위에 발을 다쳤습니다. 보온 물자를 보내거나 진료를 받게 해야 합니다.",
+    "options": [
+      {
+        "label": "보온 물자를 보낸다",
+        "effects": {},
+        "cost": {
+          "money": 60,
+          "fuel": 8
+        }
+      },
+      {
+        "label": "진료소로 교대 이송",
+        "effects": {
+          "security": -1
+        },
+        "requires": {
+          "facility": "B57"
+        }
+      },
+      {
+        "label": "초소 근무를 줄인다",
+        "effects": {
+          "health": -3,
+          "security": -2
+        }
+      }
+    ],
+    "pool": {
+      "once": true,
+      "weight": 2,
+      "min": 40,
+      "max": 48,
+      "seasons": [
+        3
+      ]
+    }
+  },
+  "RB_SNOW_MARKET": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "negative",
+    "title": "눈에 막힌 장터 입구",
+    "speaker": "베아트릭스 코른",
+    "portrait": "CH04",
+    "body": "장터 입구에 눈이 쌓여 수레가 돌아갑니다. 길을 치우지 못하면 거래 취소가 이어집니다.",
+    "options": [
+      {
+        "label": "인부를 불러 제설",
+        "effects": {},
+        "cost": {
+          "money": 100,
+          "fuel": 4
+        }
+      },
+      {
+        "label": "차고 수레로 눈을 민다",
+        "effects": {},
+        "requires": {
+          "facility": "B52"
+        },
+        "cost": {
+          "fuel": 4
+        }
+      },
+      {
+        "label": "당분간 거래를 줄인다",
+        "effects": {
+          "money": -100,
+          "guild": -2
+        }
+      }
+    ],
+    "pool": {
+      "once": true,
+      "weight": 1,
+      "min": 40,
+      "max": 48,
+      "facility": "B49",
+      "seasons": [
+        3
+      ]
+    }
+  },
+  "RB_FROZEN_WELL": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "negative",
+    "title": "얼어붙은 우물 입구",
+    "speaker": "요스트",
+    "portrait": "CH09",
+    "body": "우물 입구가 얼어 물을 긷기 어렵습니다. 불을 피워 녹이거나 주민들이 먼 곳의 물을 날라야 합니다.",
+    "options": [
+      {
+        "label": "장작으로 얼음을 녹임",
+        "effects": {},
+        "cost": {
+          "fuel": 12
+        }
+      },
+      {
+        "label": "먼 곳에서 물을 나른다",
+        "effects": {
+          "health": -3,
+          "mood": -1
+        }
+      }
+    ],
+    "pool": {
+      "once": true,
+      "weight": 2,
+      "min": 40,
+      "max": 48,
+      "facility": "B06",
+      "seasons": [
+        3
+      ]
+    }
+  },
+  "RB_CENSUS_GAP": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "negative",
+    "title": "맞지 않는 호적 장부",
+    "speaker": "마티아스 그렌",
+    "portrait": "CH10",
+    "body": "호적 장부의 이름과 실제 거주자가 다릅니다. 다시 확인하지 않으면 행정관과 주민의 불신이 커집니다.",
+    "options": [
+      {
+        "label": "방문 조사를 맡긴다",
+        "effects": {},
+        "cost": {
+          "money": 80
+        }
+      },
+      {
+        "label": "서기관실에서 재대조",
+        "effects": {},
+        "requires": {
+          "facility": "B63"
+        }
+      },
+      {
+        "label": "다음 조사까지 미룬다",
+        "effects": {
+          "trust": -3,
+          "village": -1
+        }
+      }
+    ],
+    "pool": {
+      "once": true,
+      "weight": 1,
+      "min": 8,
+      "max": 48
+    }
+  },
+  "RB_DAMP_SEED_SACK": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "negative",
+    "title": "젖어서 온 종자 자루",
+    "speaker": "요스트",
+    "portrait": "CH09",
+    "body": "계약한 종자 자루가 젖어 도착했습니다. 판매자가 검사비를 요구하며 반품을 거절하고 있습니다.",
+    "options": [
+      {
+        "label": "검사비를 내고 반품",
+        "effects": {},
+        "cost": {
+          "money": 70
+        }
+      },
+      {
+        "label": "조합에 반품을 중재",
+        "effects": {},
+        "requires": {
+          "stat": [
+            "guild",
+            55
+          ]
+        }
+      },
+      {
+        "label": "젖은 종자를 버린다",
+        "effects": {
+          "food": -12,
+          "guild": -1
+        }
+      }
+    ],
+    "pool": {
+      "once": true,
+      "weight": 1,
+      "min": 6,
+      "max": 10,
+      "facility": "B13",
+      "seasons": [
+        0
+      ]
+    }
+  },
+  "RB_TAVERN_SCRAP": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "negative",
+    "title": "선술집의 주먹다짐",
+    "speaker": "카트린 볼크",
+    "portrait": "CH02",
+    "body": "선술집 손님들이 다투고 있습니다. 경비가 흩어 놓거나 피해를 보상해야 싸움이 멎습니다.",
+    "options": [
+      {
+        "label": "피해를 대신 보상",
+        "effects": {},
+        "cost": {
+          "money": 80
+        }
+      },
+      {
+        "label": "경비가 질서를 잡는다",
+        "effects": {},
+        "requires": {
+          "stat": [
+            "security",
+            55
+          ]
+        }
+      },
+      {
+        "label": "주인이 말리게 둔다",
+        "effects": {
+          "health": -1,
+          "security": -2,
+          "mood": -1
+        }
+      }
+    ],
+    "pool": {
+      "once": true,
+      "weight": 1,
+      "min": 16,
+      "max": 48,
+      "facility": "B11"
+    }
+  },
+  "RB_SEAL_AUDIT": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "negative",
+    "title": "위조 청구 조사 결과",
+    "speaker": "마티아스 그렌",
+    "portrait": "CH10",
+    "body": "조사 끝에 위조 청구의 보증인이 드러났습니다. 장부나 추가 증언으로 책임을 확정해야 합니다.",
+    "options": [
+      {
+        "label": "서기관 장부로 확정",
+        "effects": {},
+        "requires": {
+          "facility": "B63"
+        }
+      },
+      {
+        "label": "추가 증언을 확보",
+        "effects": {},
+        "cost": {
+          "money": 60
+        }
+      },
+      {
+        "label": "책임 규명을 끝낸다",
+        "effects": {
+          "trust": -2
+        }
+      }
+    ]
+  },
+  "RB_ROOF_CHECK": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "negative",
+    "title": "임시 덮개의 한계",
+    "speaker": "오딜 마르센",
+    "portrait": "CH01",
+    "body": "임시 덮개가 내려앉았습니다. 남은 틈을 고치거나 예배당으로 주민을 옮겨야 합니다.",
+    "options": [
+      {
+        "label": "남은 지붕을 보수",
+        "effects": {},
+        "cost": {
+          "wood": 6
+        }
+      },
+      {
+        "label": "예배당으로 잠시 이주",
+        "effects": {
+          "mood": -1
+        },
+        "requires": {
+          "facility": "B59"
+        }
+      },
+      {
+        "label": "주민끼리 틈을 막는다",
+        "effects": {
+          "health": -3,
+          "mood": -2
+        }
+      }
+    ]
+  },
+  "RB_DRIVER_RECOVERY": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "negative",
+    "title": "수레꾼의 회복 지연",
+    "speaker": "아녜스",
+    "portrait": "CH03",
+    "body": "다친 수레꾼의 상처가 아직 아물지 않았습니다. 치료를 마무리할 식량이나 진료가 필요합니다.",
+    "options": [
+      {
+        "label": "회복 식량을 더 댄다",
+        "effects": {
+          "health": 1
+        },
+        "cost": {
+          "food": 8
+        }
+      },
+      {
+        "label": "진료소에 치료를 맡김",
+        "effects": {
+          "health": 1
+        },
+        "requires": {
+          "facility": "B57"
+        }
+      },
+      {
+        "label": "지원을 여기서 끝낸다",
+        "effects": {
+          "health": -2,
+          "mood": -1
+        }
+      }
+    ]
+  },
+  "RB_MOTH_HATCH": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "negative",
+    "title": "밀봉 통의 남은 유충",
+    "speaker": "요스트",
+    "portrait": "CH09",
+    "body": "밀봉한 통 안에서 유충이 나왔습니다. 위생 인력을 보내거나 가열 소독해야 곡물을 지킵니다.",
+    "options": [
+      {
+        "label": "위생 인력으로 제거",
+        "effects": {},
+        "requires": {
+          "policy": "hygiene"
+        }
+      },
+      {
+        "label": "통을 가열 소독한다",
+        "effects": {},
+        "cost": {
+          "fuel": 6
+        }
+      },
+      {
+        "label": "남은 오염 곡물 폐기",
+        "effects": {
+          "food": -24,
+          "health": -1
+        }
+      }
+    ]
+  },
+  "RB_CHIMNEY_REPAIR": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "negative",
+    "title": "연통 안쪽의 손상",
+    "speaker": "두르간",
+    "portrait": "CH08",
+    "body": "임시로 뚫은 연통 안쪽이 무너졌습니다. 돌과 일손을 들여 마무리하거나 작업을 줄여야 합니다.",
+    "options": [
+      {
+        "label": "돌로 연통을 마무리",
+        "effects": {},
+        "cost": {
+          "stone": 6,
+          "money": 40
+        }
+      },
+      {
+        "label": "작업을 줄여 환기한다",
+        "effects": {
+          "health": -2,
+          "mood": -2
+        }
+      }
+    ]
+  },
+  "RB_CARGO_FOUND": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "negative",
+    "title": "약탈 화물의 행방",
+    "speaker": "잉가",
+    "portrait": "CH12",
+    "body": "추적대가 사라진 목재 일부를 찾았습니다. 운반비를 내거나 민병대에 회수를 맡길 수 있습니다.",
+    "options": [
+      {
+        "label": "운반비를 내고 회수",
+        "effects": {
+          "wood": 10
+        },
+        "cost": {
+          "money": 70
+        }
+      },
+      {
+        "label": "민병대가 일부 회수",
+        "effects": {
+          "wood": 8
+        },
+        "requires": {
+          "policy": "militia"
+        }
+      },
+      {
+        "label": "화물 회수를 포기",
+        "effects": {
+          "guild": -2
+        }
+      }
+    ]
+  },
+  "RB_WAGE_HEARING": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "negative",
+    "title": "품삯 분쟁의 증언",
+    "speaker": "오딜 마르센",
+    "portrait": "CH01",
+    "body": "증인들이 서로 다른 말을 합니다. 추가 조사나 신뢰받는 판정이 없으면 분쟁을 끝내기 어렵습니다.",
+    "options": [
+      {
+        "label": "추가 조사를 마친다",
+        "effects": {},
+        "cost": {
+          "money": 60
+        }
+      },
+      {
+        "label": "영주의 판정으로 정리",
+        "effects": {},
+        "requires": {
+          "stat": [
+            "trust",
+            60
+          ]
+        }
+      },
+      {
+        "label": "양측 주장을 묵살",
+        "effects": {
+          "trust": -3,
+          "mood": -2
+        }
+      }
+    ]
+  },
+  "RB_FEVER_WATCH": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "negative",
+    "title": "격리 환자의 경과",
+    "speaker": "아녜스",
+    "portrait": "CH03",
+    "body": "격리한 집에 환자가 남아 있습니다. 약을 더 보내거나 진료소에서 치료를 마쳐야 합니다.",
+    "options": [
+      {
+        "label": "추가 약을 보낸다",
+        "effects": {
+          "health": 1
+        },
+        "cost": {
+          "money": 80
+        }
+      },
+      {
+        "label": "진료소에서 치료 완료",
+        "effects": {
+          "health": 1
+        },
+        "requires": {
+          "facility": "B57"
+        }
+      },
+      {
+        "label": "격리 지원을 끝낸다",
+        "effects": {
+          "health": -3,
+          "mood": -1
+        }
+      }
+    ]
+  }
+}

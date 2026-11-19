@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "definitions": {
+    "SS01": {"name":"채집 인부 식사","season":0,"text":"공공 식량 48을 제공하고, 봄이 끝날 때까지 채집 +35%·벌목 +10%.","cost":{"food":48},"mods":{"gather":1.35,"logging":1.1}},
+    "SS02": {"name":"공방 정비","season":0,"text":"1금과 도구 1개로 정비합니다. 봄이 끝날 때까지 도구 소모 -30%·시설 유지비 -20%.","cost":{"money":100,"tools":1},"mods":{"tool_use":0.7,"maintenance":0.8}},
+    "SS03": {"name":"공사 인부 보급","season":0,"text":"식량 40·80동을 제공합니다. 봄에 새로 착공하는 공사의 작업량 -20%·봄 공공 급여 -10%.","cost":{"food":40,"money":80},"mods":{"build_work":0.8,"wages":0.9}},
+    "SS04": {"name":"채소밭 급수","season":1,"text":"1금·목재 6으로 급수대를 보수합니다. 여름 채소 생산 +40%·채집 +10%.","cost":{"money":100,"wood":6},"mods":{"garden":1.4,"gather":1.1}},
+    "SS05": {"name":"벌목 인부 식사","season":1,"text":"식량 60을 제공합니다. 여름 벌목 +40%·도구 소모 -10%.","cost":{"food":60},"mods":{"logging":1.4,"tool_use":0.9}},
+    "SS06": {"name":"여름 비축 정리","season":1,"text":"1금을 들여 창고를 정리합니다. 여름 보관 손실 -40%·저장 용량 +15%. 마당 손실률은 그대로입니다.","cost":{"money":100},"mods":{"spoil":0.6,"storage":1.15}},
+    "SS07": {"name":"추수 인부 식사","season":2,"last_week":36,"text":"식량 80을 제공합니다. 남은 33~36주 곡물 수확 +15%. 이미 거둔 곡물에는 적용되지 않습니다.","cost":{"food":80},"mods":{"harvest":1.15}},
+    "SS08": {"name":"가을 벌목 지원","season":2,"text":"식량 60을 제공합니다. 가을 벌목 +35%·도구 소모 -15%. 장작은 벌목소에서 따로 가공합니다.","cost":{"food":60},"mods":{"logging":1.35,"tool_use":0.85}},
+    "SS09": {"name":"저장고 정비","season":2,"text":"1금 20동·목재 6으로 보수합니다. 가을 보관 손실 -50%·저장 용량 +30%. 마당 손실률은 그대로입니다.","cost":{"money":120,"wood":6},"mods":{"spoil":0.5,"storage":1.3}},
+    "SS10": {"name":"겨울 공동 식사","season":3,"text":"식량 90을 제공합니다. 겨울이 끝날 때까지 건강 목표 +6·민심 목표 +4. 상태는 매주 조금씩 변합니다.","cost":{"food":90},"mods":{},"targets":{"health":6,"mood":4}},
+    "SS11": {"name":"공동 난방 정비","season":3,"text":"1금·장작 12로 난방 설비를 정비합니다. 남은 겨울 난방 소비 -30%.","cost":{"money":100,"fuel":12},"mods":{"heating":0.7}},
+    "SS12": {"name":"겨울 순찰 보급","season":3,"text":"식량 40·장작 20을 제공합니다. 남은 겨울 위협 증가 -40%·치안 목표 +8.","cost":{"food":40,"fuel":20},"mods":{"threat_growth":0.6},"targets":{"security":8}}
+  }
+}

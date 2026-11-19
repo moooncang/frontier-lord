@@ -1,0 +1,10 @@
+# Godot 캐시와 테스트 산출물
+godot/.godot/
+godot/.test-user/
+godot/tests/output/
+godot/tests/*.log
+*.tmp
+
+# 에셋 생성 기록 가운데 이 PC의 사용자 폴더 경로가 적힌 파일은 올리지 않는다
+godot/assets/relics/generation_prompts_builds.json
+에셋 원본/generation*.json

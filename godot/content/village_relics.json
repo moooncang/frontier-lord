@@ -1,0 +1,347 @@
+{
+  "version": 1,
+  "slots": 3,
+  "categories": {
+    "abundance": {"name":"풍요","set_name":"풍요의 결속","set_text":"풍요 성물 2개: 식량 저장량 +15%","mods":{"storage":1.15},"plus_set":{"set_name":"풍요 전문화","set_text":"풍요 3개: 수확 +20% · 난방 +15%","mods":{"harvest":1.2,"heating":1.15}}},
+    "craft": {"name":"공방","set_name":"공방의 결속","set_text":"공방 성물 2개: 시설 유지비 −15%","mods":{"maintenance":0.85},"plus_set":{"set_name":"공방 전문화","set_text":"공방 3개: 공사 작업량 −15% · 급여 +20%","mods":{"build_work":0.85,"wages":1.2}}},
+    "guard": {"name":"수호","set_name":"수호의 결속","set_text":"수호 성물 2개: 치안 목표 +3 · 난방 소비 −8%","mods":{"heating":0.92},"targets":{"security":3},"plus_set":{"set_name":"수호 전문화","set_text":"수호 3개: 치안 목표 +6 · 유지비 +20%","targets":{"security":6},"mods":{"maintenance":1.2}}}
+  },
+  "relics": {
+    "F01": {"name":"청동 낫","category":"abundance","icon":"relic_f01","text":"수확량 +20% · 공공 작업 급여 +10%","mods":{"harvest":1.2,"wages":1.1}},
+    "F02": {"name":"개척자의 바구니","category":"abundance","icon":"relic_f02","text":"채집 생산량 +15%","mods":{"gather":1.15}},
+    "F03": {"name":"밀랍 봉인 항아리","category":"abundance","icon":"relic_f03","text":"식량 보관 손실 −25%","mods":{"spoil":0.75}},
+    "F04": {"name":"순례자의 식기","category":"abundance","icon":"relic_f04","text":"먹거리 방침에서 채집·채소 생산 합계가 40 이상인 주: 공공 식량 +10","trigger":"food_crew","reward":{"food":10}},
+    "C01": {"name":"석공의 망치","category":"craft","icon":"relic_c01","text":"새로 착공하는 공사의 필요 작업량 −15%","mods":{"build_work":0.85}},
+    "C02": {"name":"장인의 숫돌","category":"craft","icon":"relic_c02","text":"벌목·채석 도구 소비 −20%","mods":{"tool_use":0.8}},
+    "C03": {"name":"영주의 측량추","category":"craft","icon":"relic_c03","text":"시설을 완공한 주: 목재 +6 · 석재 +4 (주 1회)","trigger":"completion","reward":{"wood":6,"stone":4}},
+    "C04": {"name":"장인의 모래시계","category":"craft","icon":"relic_c04","text":"실제 공사 8인주 이상을 처리한 주: 금고 +0.8금","trigger":"construction","reward":{"money":80}},
+    "G01": {"name":"꺼지지 않는 화로","category":"guard","icon":"relic_g01","text":"겨울 난방 소비 −25% · 시설 유지비 +10%","mods":{"heating":0.75,"maintenance":1.1}},
+    "G02": {"name":"은제 약병","category":"guard","icon":"relic_g02","text":"건강 목표 +4","targets":{"health":4}},
+    "G03": {"name":"초소의 청동종","category":"guard","icon":"relic_g03","text":"치안 55 이상으로 마친 주: 변경의 위협 −2","trigger":"security","reward":{"threat":-2}},
+    "G04": {"name":"겨울 부적","category":"guard","icon":"relic_g04","text":"겨울 정상 배급과 난방을 모두 충족한 주: 건강 +1","trigger":"winter_care","reward":{"health":1}},
+    "F05": {"name":"파종자의 씨앗상자","category":"abundance","icon":"relic_f05","plus_only":true,"text":"3~6·33~36주 농사 12인주 이상 수행: 식량 +16 (주 1회)","trigger":"farm_season","reward":{"food":16}},
+    "F06": {"name":"돌절구","category":"abundance","icon":"relic_f06","plus_only":true,"text":"채소 12 이상 생산한 주: 목재 2 → 식량 6. 목재 부족 시 미발동","trigger":"garden_mill","reward":{"wood":-2,"food":6}},
+    "F07": {"name":"곡물 계량잔","category":"abundance","icon":"relic_f07","plus_only":true,"text":"식량 저장량 +30% · 보관 손실 +15%","mods":{"storage":1.3,"spoil":1.15}},
+    "F08": {"name":"빗물 주전자","category":"abundance","icon":"relic_f08","plus_only":true,"text":"급수 충족·채소 4 이상 생산한 주: 민심 +1. 시설 유지비 +10%","trigger":"water_garden","reward":{"mood":1},"mods":{"maintenance":1.1}},
+    "C05": {"name":"목수의 먹줄","category":"craft","icon":"relic_c05","plus_only":true,"text":"실제 공사 8인주 이상 처리한 주: 목재 4 → 석재 6. 목재 부족 시 미발동","trigger":"construction","reward":{"wood":-4,"stone":6}},
+    "C06": {"name":"대장장이의 풀무","category":"craft","icon":"relic_c06","plus_only":true,"text":"대장간 도구 1 이상 생산한 주: 장작 6 → 도구 1. 장작 부족 시 미발동","trigger":"smithy","reward":{"fuel":-6,"tools":1}},
+    "C07": {"name":"상단의 저울","category":"craft","icon":"relic_c07","plus_only":true,"text":"수입 물자가 실제 도착한 주: 금고 +0.6금 (주 1회) · 물자 구매가 +5%","trigger":"imports","reward":{"money":60},"mods":{"buy":1.05}},
+    "C08": {"name":"톱니 계산기","category":"craft","icon":"relic_c08","plus_only":true,"text":"공사 없이 시설 유지비를 납부한 주: 금고 +0.6금. 새 공사 작업량 +10%","trigger":"idle_maintenance","reward":{"money":60},"mods":{"build_work":1.1}},
+    "G05": {"name":"순찰대의 등불","category":"guard","icon":"relic_g05","plus_only":true,"text":"치안 55 이상·위협이 남은 주: 장작 3 → 위협 −3. 장작 부족 시 미발동","trigger":"patrol_fuel","reward":{"fuel":-3,"threat":-3}},
+    "G06": {"name":"구휼소의 붕대","category":"guard","icon":"relic_g06","plus_only":true,"text":"건강 60 미만·정상 배급 충족한 주: 공공 식량 8 → 건강 +2. 식량 부족 시 미발동","trigger":"relief_care","reward":{"food":-8,"health":2}},
+    "G07": {"name":"행군 북","category":"guard","icon":"relic_g07","plus_only":true,"text":"치안 목표 +8 · 공공 작업 급여 +15%","targets":{"security":8},"mods":{"wages":1.15}},
+    "G08": {"name":"눈길 방울","category":"guard","icon":"relic_g08","plus_only":true,"text":"겨울 난방을 충족한 주: 금고 0.4금 → 장작 8. 금고 부족 시 미발동","trigger":"winter_supply","reward":{"money":-40,"fuel":8}},
+    "F09": {
+      "name": "수확의 뿔",
+      "category": "abundance",
+      "icon": "relic_f09",
+      "plus_only": true,
+      "build_id": "harvest_trade",
+      "text": "수확 +18% · 저장량 +10% · 공공 급여 +6%",
+      "mods": {
+        "harvest": 1.18,
+        "storage": 1.1,
+        "wages": 1.06
+      }
+    },
+    "F10": {
+      "name": "곡물 수출 인장",
+      "category": "abundance",
+      "icon": "relic_f10",
+      "plus_only": true,
+      "build_id": "harvest_trade",
+      "text": "물자 구매가 −10% · 보관 손실 +12%",
+      "mods": {
+        "buy": 0.9,
+        "spoil": 1.12
+      }
+    },
+    "F11": {
+      "name": "텃밭 물뿌리개",
+      "category": "abundance",
+      "icon": "relic_f11",
+      "plus_only": true,
+      "build_id": "market_garden",
+      "text": "채소 생산 +25% · 공공 급여 +8%",
+      "mods": {
+        "garden": 1.25,
+        "wages": 1.08
+      }
+    },
+    "F12": {
+      "name": "퇴비 삽",
+      "category": "abundance",
+      "icon": "relic_f12",
+      "plus_only": true,
+      "build_id": "market_garden",
+      "text": "채소 생산 +15% · 벌목·채석 도구 소모 +12%",
+      "mods": {
+        "garden": 1.15,
+        "tool_use": 1.12
+      }
+    },
+    "F13": {
+      "name": "보존의 소금단지",
+      "category": "abundance",
+      "icon": "relic_f13",
+      "plus_only": true,
+      "build_id": "granary",
+      "text": "보관 손실 −35% · 물자 구매가 +6%",
+      "mods": {
+        "spoil": 0.65,
+        "buy": 1.06
+      }
+    },
+    "F14": {
+      "name": "비축 창고 열쇠",
+      "category": "abundance",
+      "icon": "relic_f14",
+      "plus_only": true,
+      "build_id": "granary",
+      "text": "식량 저장량 +40% · 시설 유지비 +10%",
+      "mods": {
+        "storage": 1.4,
+        "maintenance": 1.1
+      }
+    },
+    "F15": {
+      "name": "구휼의 국자",
+      "category": "abundance",
+      "icon": "relic_f15",
+      "plus_only": true,
+      "build_id": "commons",
+      "text": "건강 목표 +4 · 공공 급여 +6%",
+      "mods": {
+        "wages": 1.06
+      },
+      "targets": {
+        "health": 4
+      }
+    },
+    "F16": {
+      "name": "공동 식탁 냄비",
+      "category": "abundance",
+      "icon": "relic_f16",
+      "plus_only": true,
+      "build_id": "commons",
+      "text": "민심 목표 +4 · 난방 장작 소비 +8%",
+      "mods": {
+        "heating": 1.08
+      },
+      "targets": {
+        "mood": 4
+      }
+    },
+    "C09": {
+      "name": "제재 장인의 도끼",
+      "category": "craft",
+      "icon": "relic_c09",
+      "plus_only": true,
+      "build_id": "timber_trade",
+      "text": "벌목 생산 +25% · 벌목·채석 도구 소모 +15%",
+      "mods": {
+        "logging": 1.25,
+        "tool_use": 1.15
+      }
+    },
+    "C10": {
+      "name": "목재 상단 갈고리",
+      "category": "craft",
+      "icon": "relic_c10",
+      "plus_only": true,
+      "build_id": "timber_trade",
+      "text": "벌목 생산 +15% · 물자 구매가 +8%",
+      "mods": {
+        "logging": 1.15,
+        "buy": 1.08
+      }
+    },
+    "C11": {
+      "name": "석공의 정",
+      "category": "craft",
+      "icon": "relic_c11",
+      "plus_only": true,
+      "build_id": "stoneworks",
+      "text": "채석 생산 +25% · 벌목·채석 도구 소모 +15%",
+      "mods": {
+        "quarry": 1.25,
+        "tool_use": 1.15
+      }
+    },
+    "C12": {
+      "name": "채석 지렛대",
+      "category": "craft",
+      "icon": "relic_c12",
+      "plus_only": true,
+      "build_id": "stoneworks",
+      "text": "채석 +15% · 도구 소모 −10% · 공공 급여 +10%",
+      "mods": {
+        "quarry": 1.15,
+        "tool_use": 0.9,
+        "wages": 1.1
+      }
+    },
+    "C13": {
+      "name": "조립공의 집게",
+      "category": "craft",
+      "icon": "relic_c13",
+      "plus_only": true,
+      "build_id": "prefab",
+      "text": "대장간 도구 생산 +30% · 시설 유지비 +12%",
+      "mods": {
+        "smithy": 1.3,
+        "maintenance": 1.12
+      }
+    },
+    "C14": {
+      "name": "건축가의 직각자",
+      "category": "craft",
+      "icon": "relic_c14",
+      "plus_only": true,
+      "build_id": "prefab",
+      "text": "새 공사 작업량 −20% · 공공 급여 +12%",
+      "mods": {
+        "build_work": 0.8,
+        "wages": 1.12
+      }
+    },
+    "C15": {
+      "name": "은제 계약함",
+      "category": "craft",
+      "icon": "relic_c15",
+      "plus_only": true,
+      "build_id": "caravan",
+      "text": "물자 구매가 −12% · 공공 급여 +6%",
+      "mods": {
+        "buy": 0.88,
+        "wages": 1.06
+      }
+    },
+    "C16": {
+      "name": "수레바퀴 모형",
+      "category": "craft",
+      "icon": "relic_c16",
+      "plus_only": true,
+      "build_id": "caravan",
+      "text": "급여 −8% · 물자 구매가 −5% · 유지비 +12%",
+      "mods": {
+        "wages": 0.92,
+        "buy": 0.95,
+        "maintenance": 1.12
+      }
+    },
+    "G09": {
+      "name": "성문 방패",
+      "category": "guard",
+      "icon": "relic_g09",
+      "plus_only": true,
+      "build_id": "garrison",
+      "text": "치안 목표 +5 · 공공 급여 +10%",
+      "mods": {
+        "wages": 1.1
+      },
+      "targets": {
+        "security": 5
+      }
+    },
+    "G10": {
+      "name": "순찰 신호 나팔",
+      "category": "guard",
+      "icon": "relic_g10",
+      "plus_only": true,
+      "build_id": "garrison",
+      "text": "치안 목표 +3 · 민심 목표 +2 · 시설 유지비 +12%",
+      "mods": {
+        "maintenance": 1.12
+      },
+      "targets": {
+        "security": 3,
+        "mood": 2
+      }
+    },
+    "G11": {
+      "name": "약초 주머니",
+      "category": "guard",
+      "icon": "relic_g11",
+      "plus_only": true,
+      "build_id": "infirmary",
+      "text": "건강 목표 +5 · 물자 구매가 +5%",
+      "mods": {
+        "buy": 1.05
+      },
+      "targets": {
+        "health": 5
+      }
+    },
+    "G12": {
+      "name": "진료소 구리 대야",
+      "category": "guard",
+      "icon": "relic_g12",
+      "plus_only": true,
+      "build_id": "infirmary",
+      "text": "건강 목표 +3 · 보관 손실 −8% · 난방 소비 +10%",
+      "mods": {
+        "spoil": 0.92,
+        "heating": 1.1
+      },
+      "targets": {
+        "health": 3
+      }
+    },
+    "G13": {
+      "name": "겨울 난로 열쇠",
+      "category": "guard",
+      "icon": "relic_g13",
+      "plus_only": true,
+      "build_id": "winter_hearth",
+      "text": "난방 장작 소비 −30% · 공공 급여 +8%",
+      "mods": {
+        "heating": 0.7,
+        "wages": 1.08
+      }
+    },
+    "G14": {
+      "name": "방한 망토",
+      "category": "guard",
+      "icon": "relic_g14",
+      "plus_only": true,
+      "build_id": "winter_hearth",
+      "text": "난방 −15% · 채집 +12% · 물자 구매가 +8%",
+      "mods": {
+        "heating": 0.85,
+        "gather": 1.12,
+        "buy": 1.08
+      }
+    },
+    "G15": {
+      "name": "평의회 의사봉",
+      "category": "guard",
+      "icon": "relic_g15",
+      "plus_only": true,
+      "build_id": "civic",
+      "text": "민심 목표 +4 · 유지비 −8% · 공공 급여 +8%",
+      "mods": {
+        "maintenance": 0.92,
+        "wages": 1.08
+      },
+      "targets": {
+        "mood": 4
+      }
+    },
+    "G16": {
+      "name": "영주의 판결 인장",
+      "category": "guard",
+      "icon": "relic_g16",
+      "plus_only": true,
+      "build_id": "civic",
+      "text": "치안 목표 +3 · 물자 구매가 −6% · 채집 −6%",
+      "mods": {
+        "buy": 0.94,
+        "gather": 0.94
+      },
+      "targets": {
+        "security": 3
+      }
+    }
+  }
+}

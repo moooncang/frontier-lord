@@ -1,0 +1,29 @@
+{
+  "version":1,
+  "phases":[
+    {"id":"settlement","name":"정착 유예","start":1,"mods":{},"text":"추가 비용과 위협 증가 없음"},
+    {"id":"demand","name":"수요 증가","start":14,"mods":{"buy":1.05,"wages":1.06,"maintenance":1.05,"threat_growth":1.1},"text":"구매가 +5% · 급여 +6% · 유지비 +5% · 위협 증가량 +10%"},
+    {"id":"strain","name":"공급 압박","start":27,"mods":{"buy":1.1,"wages":1.12,"maintenance":1.12,"threat_growth":1.25},"text":"구매가 +10% · 급여 +12% · 유지비 +12% · 위협 증가량 +25%"},
+    {"id":"winter","name":"겨울 고비","start":40,"mods":{"buy":1.16,"wages":1.18,"maintenance":1.2,"threat_growth":1.4},"text":"구매가 +16% · 급여 +18% · 유지비 +20% · 위협 증가량 +40%"}
+  ],
+  "windows":[
+    {"announce":8,"deadline":12,"pool":["CR01","CR02","CR03"]},
+    {"announce":18,"deadline":24,"pool":["CR04","CR05","CR06"]},
+    {"announce":30,"deadline":36,"pool":["CR07","CR08","CR09"]},
+    {"announce":42,"deadline":48,"pool":["CR10","CR11","CR12"]}
+  ],
+  "definitions":{
+    "CR01":{"name":"곡물 수송 지연","hint":"식량이 들어오는 길이 늦어집니다. 채집터를 늘리거나 미리 식량을 주문하세요.","checks":[{"label":"비상 식량","any":[{"kind":"food","per_pop":8,"label":"주민·공공 식량"}]}],"reward":{"money":250,"trust":2},"penalty":{"food":-80,"mood":-3}},
+    "CR02":{"name":"무너지는 물길","hint":"우물을 추가하거나 보강용 목재를 확보하세요. 두 방법 중 하나로 대비할 수 있습니다.","checks":[{"label":"물길 대비","any":[{"kind":"facility","key":"B06","amount":2,"label":"우물"},{"kind":"resource","key":"wood","amount":24,"label":"공공 목재"}]}],"reward":{"wood":8,"mood":2},"penalty":{"wood":-16,"health":-4}},
+    "CR03":{"name":"공구 파손 급증","hint":"수리할 도구를 비축하세요. 대장간을 갖추어도 대비할 수 있습니다.","checks":[{"label":"공구 확보","any":[{"kind":"resource","key":"tools","amount":4,"label":"공공 도구"},{"kind":"facility","key":"B33","amount":1,"label":"대장간"}]}],"reward":{"money":200,"tools":1},"penalty":{"tools":-2,"money":-250}},
+    "CR04":{"name":"장마 속 식량 부패","hint":"곡물 곳간을 짓거나 손실을 견딜 식량을 추가로 확보하세요.","checks":[{"label":"식량 보호","any":[{"kind":"facility","key":"B22","amount":1,"label":"곡물 곳간"},{"kind":"food","per_pop":10,"label":"주민·공공 식량"}]}],"reward":{"food":40,"trust":2},"penalty":{"food":-120,"health":-3}},
+    "CR05":{"name":"여름 열병 확산","hint":"건강을 유지하고 물 공급을 채우세요. 위생 의무나 진료소가 도움이 됩니다.","checks":[{"label":"주민 건강","any":[{"kind":"stat","key":"health","amount":58,"label":"건강"}]},{"label":"깨끗한 물","any":[{"kind":"capacity","key":"water","per_pop":1,"label":"물 공급 인원"},{"kind":"facility","key":"B57","amount":1,"label":"진료소"}]}],"reward":{"health":3,"money":250},"penalty":{"health":-8,"mood":-3}},
+    "CR06":{"name":"직영 일꾼의 임금 분쟁","hint":"체불을 정리하고 급여 예비비를 남겨 두세요. 공사 예약금은 예비비로 세지 않습니다.","checks":[{"label":"급여 예비비","any":[{"kind":"resource","key":"money","amount":800,"label":"가용 금고"}]},{"label":"체불 정리","any":[{"kind":"stat","key":"arrears_wage","amount":0,"comparison":"at_most","label":"미지급 비용"}]}],"reward":{"money":250,"mood":3},"penalty":{"money":-400,"mood":-6}},
+    "CR07":{"name":"수확물을 노리는 도적","hint":"치안을 높이거나 목책을 완공하세요. 민병 등록과 경비 시설로 준비할 수 있습니다.","checks":[{"label":"방어 준비","any":[{"kind":"stat","key":"security","amount":52,"label":"치안"},{"kind":"facility","key":"B67","amount":1,"label":"목책"}]}],"reward":{"security":4,"wood":12},"penalty":{"money":-600,"food":-100,"mood":-5},"relic":true},
+    "CR08":{"name":"수확철 공구 부족","hint":"수확과 보수에 쓸 도구를 확보하세요. 대장간이 있으면 별도 비축 조건을 대신합니다.","checks":[{"label":"수확 공구","any":[{"kind":"resource","key":"tools","amount":5,"label":"공공 도구"},{"kind":"facility","key":"B33","amount":1,"label":"대장간"}]}],"reward":{"food":60,"money":200},"penalty":{"food":-140,"mood":-3}},
+    "CR09":{"name":"곳간 해충 번식","hint":"정식 곳간과 건강한 관리 인력이 모두 필요합니다. 곳간 건설과 위생에 투자하세요.","checks":[{"label":"정식 저장 시설","any":[{"kind":"facility","key":"B22","amount":1,"label":"곡물 곳간"}]},{"label":"관리 인력 건강","any":[{"kind":"stat","key":"health","amount":55,"label":"건강"}]}],"reward":{"food":80,"trust":2},"penalty":{"food":-150,"health":-4}},
+    "CR10":{"name":"겨울 장작 보급 중단","hint":"마감 뒤에도 난방을 이어갈 장작을 남겨 두세요. 예고 시점의 인구와 난방 효율로 목표량을 확정합니다.","checks":[{"label":"장작 예비비축","any":[{"kind":"resource","key":"fuel","per_pop":0.6,"bonus":"heating","label":"공공 장작"}]}],"reward":{"fuel":24,"health":2},"penalty":{"fuel":-30,"health":-6}},
+    "CR11":{"name":"겨울 병동 과밀","hint":"정상 배급을 유지하고 건강을 회복하세요. 마감 주에도 필요한 식량을 실제로 지급해야 합니다.","checks":[{"label":"주민 건강","any":[{"kind":"stat","key":"health","amount":60,"label":"건강"}]},{"label":"정상 배급","any":[{"kind":"stat","key":"ration","amount":1,"label":"배급 비율"}]},{"label":"식량 지급","any":[{"kind":"stat","key":"food_satisfaction","amount":1,"label":"식량 지급률"}]}],"reward":{"health":4,"food":50},"penalty":{"health":-7,"mood":-5},"relic":true},
+    "CR12":{"name":"겨울 통행세 요구","hint":"교역 기반이나 현금을 확보하고 행정관의 신뢰를 유지하세요. 장터가 있으면 현금 비축을 대신합니다.","checks":[{"label":"협상 기반","any":[{"kind":"resource","key":"money","amount":1000,"label":"가용 금고"},{"kind":"facility","key":"B49","amount":1,"label":"장터"}]},{"label":"행정 신뢰","any":[{"kind":"stat","key":"trust","amount":55,"label":"행정관 신뢰"}]}],"reward":{"money":400,"trust":3},"penalty":{"money":-700,"trust":-5}}
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "opportunities": ["wild_food", "old_forest", "caravan_route"],
+  "constraints": ["lean_soil", "long_cold", "damp_store"],
+  "definitions": {
+    "wild_food": {
+      "name": "야생 식량 풍부",
+      "kind": "opportunity",
+      "description": "채집 식량 +20%",
+      "hint": "채집터를 늘리면 봄·여름 비축에 도움이 됩니다.",
+      "bonuses": {"gather": 1.2}
+    },
+    "old_forest": {
+      "name": "오래된 산림",
+      "kind": "opportunity",
+      "description": "벌목 생산 +25%",
+      "hint": "벌목소와 도구를 확보해 공사·장작용 목재를 모으세요.",
+      "bonuses": {"logging": 1.25}
+    },
+    "caravan_route": {
+      "name": "상단 왕래",
+      "kind": "opportunity",
+      "description": "물자값 -15% · 운송료 제외",
+      "hint": "운송 기간을 고려해 부족한 물자를 미리 주문하세요.",
+      "bonuses": {"buy": 0.85}
+    },
+    "lean_soil": {
+      "name": "메마른 밭",
+      "kind": "constraint",
+      "description": "곡물 수확 -15%",
+      "hint": "파종 전 농지를 늘리거나 채집·어장·수입으로 보완하세요.",
+      "bonuses": {"harvest": 0.85}
+    },
+    "long_cold": {
+      "name": "긴 추위",
+      "kind": "constraint",
+      "description": "겨울 장작 소모 +20%",
+      "hint": "겨울 목표량이 늘어납니다. 장작을 일찍 비축하세요.",
+      "bonuses": {"heating": 1.2}
+    },
+    "damp_store": {
+      "name": "습한 창고",
+      "kind": "constraint",
+      "description": "창고 안 식량 부패 +35%",
+      "hint": "곳간·훈연장으로 부패를 줄이세요. 야적 손실은 그대로입니다.",
+      "bonuses": {"spoil": 1.35}
+    }
+  }
+}

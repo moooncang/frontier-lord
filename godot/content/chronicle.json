@@ -1,0 +1,442 @@
+{
+  "regions": {
+    "forest": {
+      "name": "안개숲 변경",
+      "subtitle": "채집과 목재",
+      "description": "채집 +15% · 벌목 +20%\n수확 -5%",
+      "bonuses": {
+        "gather": 1.15,
+        "logging": 1.2,
+        "harvest": 0.95
+      }
+    },
+    "river": {
+      "name": "은빛 여울",
+      "subtitle": "교역과 비축",
+      "description": "구매가 -15% · 시작 식량 +100\n벌목 -15%",
+      "bonuses": {
+        "buy": 0.85,
+        "logging": 0.85
+      },
+      "resources": {
+        "food": 100
+      }
+    },
+    "highland": {
+      "name": "잿빛 구릉",
+      "subtitle": "도구와 개척",
+      "description": "시작 도구 +8 · 목재 +40\n공공 급여 +10%",
+      "bonuses": {
+        "wages": 1.1
+      },
+      "resources": {
+        "tools": 8,
+        "wood": 40
+      }
+    }
+  },
+  "traits": {
+    "patient": {
+      "name": "농업 숙련",
+      "description": "수확 +8%",
+      "bonuses": {
+        "harvest": 1.08
+      }
+    },
+    "frugal": {
+      "name": "절약가",
+      "description": "유지비 -10%",
+      "bonuses": {
+        "maintenance": 0.9
+      }
+    },
+    "woods": {
+      "name": "채집 숙련",
+      "description": "채집 +10%",
+      "bonuses": {
+        "gather": 1.1
+      }
+    },
+    "artisan": {
+      "name": "도구 관리",
+      "description": "도구 소모 -15%",
+      "bonuses": {
+        "tool_use": 0.85
+      }
+    },
+    "silver": {
+      "name": "협상가",
+      "description": "구매가 -8%",
+      "bonuses": {
+        "buy": 0.92
+      }
+    },
+    "warm": {
+      "name": "사교적",
+      "description": "면담 신뢰 +2",
+      "bonuses": {
+        "trust": 2
+      }
+    },
+    "proud": {
+      "name": "고임금 선호",
+      "description": "공공 급여 +8%",
+      "flaw": true,
+      "bonuses": {
+        "wages": 1.08
+      }
+    },
+    "careless": {
+      "name": "보관 미숙",
+      "description": "저장 용량 -8%",
+      "flaw": true,
+      "bonuses": {
+        "storage": 0.92
+      }
+    },
+    "city": {
+      "name": "벌목 미숙",
+      "description": "벌목 -10%",
+      "flaw": true,
+      "bonuses": {
+        "logging": 0.9
+      }
+    }
+  },
+  "relics": {
+    "seeds": {
+      "name": "개량 종자",
+      "cost": 2,
+      "description": "수확 +10%",
+      "bonuses": {
+        "harvest": 1.1
+      }
+    },
+    "axe": {
+      "name": "벌목 도끼",
+      "cost": 1,
+      "description": "벌목 +15%",
+      "bonuses": {
+        "logging": 1.15
+      }
+    },
+    "seal": {
+      "name": "운영 자금",
+      "cost": 1,
+      "description": "시작 금고 +8금",
+      "resources": {
+        "money": 800
+      }
+    },
+    "lantern": {
+      "name": "보온 장비",
+      "cost": 2,
+      "description": "난방 장작 소비 -25%",
+      "bonuses": {
+        "heating": 0.75
+      }
+    },
+    "basket": {
+      "name": "채집 도구",
+      "cost": 1,
+      "description": "채집 +8%",
+      "bonuses": {
+        "gather": 1.08
+      }
+    },
+    "notes": {
+      "name": "선택 교환권",
+      "cost": 2,
+      "description": "특전 새로고침 +1회",
+      "refreshes": 1
+    }
+  },
+  "families": {
+    "agriculture": {
+      "name": "농업",
+      "color": "a9c980",
+      "description": "2장: 수확 +8% / 4장: 파종 노동 -20%",
+      "tiers": {
+        "2": {
+          "harvest": 1.08
+        },
+        "4": {
+          "sow_labor": 0.8
+        }
+      }
+    },
+    "provisions": {
+      "name": "보존",
+      "color": "8dbad2",
+      "description": "2장: 저장 +15% / 4장: 난방 소비 -25%",
+      "tiers": {
+        "2": {
+          "storage": 1.15
+        },
+        "4": {
+          "heating": 0.75
+        }
+      }
+    },
+    "industry": {
+      "name": "생산",
+      "color": "dca276",
+      "description": "2장: 벌목 +15% / 4장: 도구 소모 -20%",
+      "tiers": {
+        "2": {
+          "logging": 1.15
+        },
+        "4": {
+          "tool_use": 0.8
+        }
+      }
+    },
+    "court": {
+      "name": "행정",
+      "color": "baa3d7",
+      "description": "2장: 유지비 -10% / 4장: 세금 수금률 +5%p",
+      "tiers": {
+        "2": {
+          "maintenance": 0.9
+        },
+        "4": {
+          "tax": 0.05
+        }
+      }
+    }
+  },
+  "trials": {
+    "frost": {
+      "name": "긴 서리",
+      "description": "40주부터 난방 장작 소비 +50%.\n52주 결산 때 건강 50 이상으로 버티기.",
+      "effect": "heating",
+      "value": 1.5,
+      "target": "health",
+      "threshold": 50
+    },
+    "rot": {
+      "name": "검은 곰팡이",
+      "description": "40주에 모든 식량의 15%가 소실.\n52주 결산 때 식량 10주분 이상 남기기.",
+      "target": "food_weeks",
+      "threshold": 10
+    },
+    "audit": {
+      "name": "왕실의 징수관",
+      "description": "40주에 특별 공납 20금 납부.\n52주 결산 때 공공 금고 10금 이상 남기기.",
+      "target": "money",
+      "threshold": 1000
+    }
+  },
+  "missions": {
+    "fields": {
+      "name": "농지 확장",
+      "description": "계절 말까지 농지 6구획 확보",
+      "target": "farms",
+      "threshold": 6,
+      "cost": {
+        "wood": 10
+      },
+      "reward": {
+        "food": 80
+      },
+      "character": "CH09"
+    },
+    "pantry": {
+      "name": "식량 비축",
+      "description": "계절 말 식량 10주분 이상",
+      "target": "food_weeks",
+      "threshold": 10,
+      "cost": {
+        "money": 300
+      },
+      "reward": {
+        "tools": 2
+      },
+      "character": "CH03"
+    },
+    "timber": {
+      "name": "목재 확보",
+      "description": "계절 말 공공 목재 40 이상",
+      "target": "wood",
+      "threshold": 40,
+      "cost": {
+        "food": 20
+      },
+      "reward": {
+        "money": 600
+      },
+      "character": "CH06"
+    },
+    "trust": {
+      "name": "행정관 신뢰 확보",
+      "description": "계절 말 행정관 신뢰 50 이상",
+      "target": "trust",
+      "threshold": 50,
+      "cost": {},
+      "reward": {
+        "money": 500
+      },
+      "character": "CH01"
+    },
+    "health": {
+      "name": "주민 건강 관리",
+      "description": "계절 말 건강 65 이상",
+      "target": "health",
+      "threshold": 65,
+      "cost": {
+        "food": 30
+      },
+      "reward": {
+        "fuel": 50
+      },
+      "character": "CH03"
+    },
+    "watch": {
+      "name": "치안 유지",
+      "description": "계절 말 치안 60 이상",
+      "target": "security",
+      "threshold": 60,
+      "cost": {
+        "money": 300
+      },
+      "reward": {
+        "wood": 40
+      },
+      "character": "CH02"
+    }
+  },
+  "characters": {
+    "CH01": {
+      "name": "오딜 마르센",
+      "role": "행정관",
+      "age": "27세 · 인간",
+      "appearance": "흑발 · 은테 안경 · 열쇠 꾸러미",
+      "quote": "영주님, 우선순위를 정하십시오. 제가 장부를 맞추겠습니다.",
+      "effect": "trust",
+      "value": 4,
+      "action": "행정 면담",
+      "benefit": "신뢰 +4"
+    },
+    "CH02": {
+      "name": "카트린 볼크",
+      "role": "기사대장",
+      "age": "30세 · 인간",
+      "appearance": "붉은 숏컷 · 뺨의 흉터 · 은제 흉갑",
+      "quote": "주군, 지킬 곳을 정해 주십시오. 나머지는 제가 맡겠습니다.",
+      "effect": "security",
+      "value": 4,
+      "action": "순찰 계획",
+      "benefit": "치안 +4"
+    },
+    "CH03": {
+      "name": "아녜스",
+      "role": "루멘 교단 사제",
+      "age": "24세 · 인간",
+      "appearance": "연분홍 땋은 머리 · 흰 베일 · 은빛 등불",
+      "quote": "배고픈 사람의 이름부터 적어 주세요. 기도는 그다음이에요.",
+      "effect": "health",
+      "value": 3,
+      "action": "진료소 돕기",
+      "benefit": "건강 +3"
+    },
+    "CH04": {
+      "name": "베아트릭스 코른",
+      "role": "상인조합 지부장",
+      "age": "33세 · 인간",
+      "appearance": "짙은 보랏빛 웨이브 · 모피 숄 · 긴 담뱃대",
+      "quote": "영주 나리, 좋은 거래에는 늘 다음 만남이 따라오는 법이지.",
+      "effect": "guild",
+      "value": 4,
+      "action": "상단과 담소",
+      "benefit": "길드 호감 +4"
+    },
+    "CH05": {
+      "name": "이네스 라우",
+      "role": "마탑 파견 마법사",
+      "age": "22세 · 인간",
+      "appearance": "하늘색 단발 · 보라 눈 · 손을 덮는 로브",
+      "quote": "계약주, 잠깐만. 이 계산… 아직 끝난 게 아니야.",
+      "effect": "trust",
+      "value": 3,
+      "action": "연구 기록 정리",
+      "benefit": "신뢰 +3"
+    },
+    "CH06": {
+      "name": "시아렐",
+      "role": "세릴 숲 씨족 사절",
+      "age": "180세 · 성인 엘프",
+      "appearance": "진녹색 장발 · 금빛 눈 · 이마의 은사슬",
+      "quote": "짧은 생의 자여, 베어 낼 나무보다 남길 숲을 먼저 보시오.",
+      "effect": "village",
+      "value": 4,
+      "action": "숲의 이야기",
+      "benefit": "주민 관계 +4"
+    },
+    "CH07": {
+      "name": "클로틸드 드 레이벡",
+      "role": "레이벡 여자작",
+      "age": "25세 · 인간",
+      "appearance": "금발 드릴 컬 · 푸른 드레스 · 부채",
+      "quote": "이웃 경, 올해 수확도 그대의 장담만큼 훌륭하겠지요?",
+      "effect": "guild",
+      "value": 3,
+      "action": "이웃 영지 접견",
+      "benefit": "길드 호감 +3"
+    },
+    "CH08": {
+      "name": "두르간",
+      "role": "카르둔 산채 장인장",
+      "age": "140세 · 성인 드워프",
+      "appearance": "회색 땋은 수염 · 확대경 · 망치",
+      "quote": "땅주인, 약속은 종이에. 솜씨는 물건으로 보여 주지.",
+      "effect": "mood",
+      "value": 3,
+      "action": "작업장 방문",
+      "benefit": "민심 +3"
+    },
+    "CH09": {
+      "name": "요스트",
+      "role": "촌장",
+      "age": "64세 · 인간",
+      "appearance": "흰 구레나룻 · 깊은 주름 · 지팡이",
+      "quote": "젊은 양반, 밭은 서두른다고 먼저 익어 주질 않소.",
+      "effect": "village",
+      "value": 4,
+      "action": "마을 회의",
+      "benefit": "주민 관계 +4"
+    },
+    "CH10": {
+      "name": "마티아스 그렌",
+      "role": "왕실 감찰관",
+      "age": "41세 · 인간",
+      "appearance": "단정한 흑발 · 콧수염 · 왕실 문장",
+      "quote": "경, 설명은 확인했습니다. 이제 장부를 보겠습니다.",
+      "effect": "trust",
+      "value": 3,
+      "action": "장부 검토",
+      "benefit": "신뢰 +3"
+    },
+    "CH11": {
+      "name": "디트마르 크론",
+      "role": "추방 기사",
+      "age": "38세 · 인간",
+      "appearance": "흑발 장발 · 수염 · 낡은 판금 갑옷",
+      "quote": "영주, 명예로 빈 배를 채울 수는 없지. 그래도 버릴 순 없더군.",
+      "effect": "security",
+      "value": 3,
+      "action": "변경 정보 교환",
+      "benefit": "치안 +3"
+    },
+    "CH12": {
+      "name": "잉가",
+      "role": "붉은방패 용병단장",
+      "age": "29세 · 인간",
+      "appearance": "갈색 피부 · 은백색 땋은 포니테일 · 붉은 방패",
+      "quote": "고용주! 보수만 제때라면 오늘 밤도 조용할 거야.",
+      "effect": "security",
+      "value": 4,
+      "action": "용병대 훈련",
+      "benefit": "치안 +4"
+    }
+  }
+}

@@ -1,0 +1,1400 @@
+{
+  "RG_BEEKEEPER": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "positive",
+    "title": "양봉가의 첫 수확",
+    "speaker": "시아렐",
+    "portrait": "CH06",
+    "body": "양봉가가 꿀을 가져왔습니다. 오늘 받을 몫 대신 벌통을 지원하면 3주 뒤 더 많은 꿀을 받습니다.",
+    "options": [
+      {
+        "label": "꿀을 식량으로 받는다",
+        "effects": {
+          "food": 14
+        }
+      },
+      {
+        "label": "벌통 재료를 지원한다",
+        "effects": {},
+        "cost": {
+          "money": 60,
+          "wood": 4
+        },
+        "followup": {
+          "id": "RG_HONEY_DELIVERY",
+          "delay": 3
+        }
+      }
+    ],
+    "pool": {
+      "weight": 2,
+      "min": 4,
+      "max": 30,
+      "once": true,
+      "seasons": [
+        0,
+        1
+      ]
+    }
+  },
+  "RG_HONEY_DELIVERY": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "positive",
+    "title": "약속한 꿀 도착",
+    "speaker": "시아렐",
+    "portrait": "CH06",
+    "body": "지원한 벌통에서 꿀을 거뒀습니다. 전량을 보관하거나 일부를 이웃에게 나눌 수 있습니다.",
+    "options": [
+      {
+        "label": "전량을 보관한다",
+        "effects": {
+          "food": 42
+        }
+      },
+      {
+        "label": "주민과 나누어 받는다",
+        "effects": {
+          "food": 20,
+          "resident_food": 18,
+          "village": 3
+        }
+      }
+    ]
+  },
+  "RG_FISH_RUN": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "positive",
+    "title": "여울에 몰린 물고기",
+    "speaker": "요스트",
+    "portrait": "CH09",
+    "body": "어부들이 물고기를 넉넉히 잡았습니다. 그물을 보수하면 2주 뒤 추가 어획물을 받습니다.",
+    "options": [
+      {
+        "label": "오늘 잡은 몫을 받는다",
+        "effects": {
+          "food": 28
+        }
+      },
+      {
+        "label": "그물 보수를 지원한다",
+        "effects": {},
+        "cost": {
+          "wood": 6,
+          "tools": 1
+        },
+        "followup": {
+          "id": "RG_NETS_READY",
+          "delay": 2
+        }
+      }
+    ],
+    "pool": {
+      "weight": 2,
+      "min": 4,
+      "max": 36,
+      "once": true,
+      "seasons": [
+        0,
+        1,
+        2
+      ],
+      "facility": "B16"
+    }
+  },
+  "RG_NETS_READY": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "positive",
+    "title": "새 그물의 수확",
+    "speaker": "요스트",
+    "portrait": "CH09",
+    "body": "보수한 그물로 추가 어획물을 잡았습니다. 곳간에 넣거나 주민 식탁에 올릴 수 있습니다.",
+    "options": [
+      {
+        "label": "곳간으로 운반한다",
+        "effects": {
+          "food": 58
+        }
+      },
+      {
+        "label": "주민 식탁에 올린다",
+        "effects": {
+          "resident_food": 45,
+          "mood": 3
+        }
+      }
+    ]
+  },
+  "RG_TOOL_APPRENTICE": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "positive",
+    "title": "견습 장인의 첫 작품",
+    "speaker": "두르간",
+    "portrait": "CH08",
+    "body": "견습 장인이 도구를 완성했습니다. 첫 작품을 받거나 재료를 보태 3주 뒤 도구 묶음을 받습니다.",
+    "options": [
+      {
+        "label": "첫 도구를 받는다",
+        "effects": {
+          "tools": 1
+        }
+      },
+      {
+        "label": "다음 제작을 맡긴다",
+        "effects": {},
+        "cost": {
+          "money": 120,
+          "wood": 8
+        },
+        "followup": {
+          "id": "RG_TOOLS_READY",
+          "delay": 3
+        }
+      }
+    ],
+    "pool": {
+      "weight": 2,
+      "min": 8,
+      "max": 42,
+      "once": true,
+      "facility": "B33"
+    }
+  },
+  "RG_TOOLS_READY": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "positive",
+    "title": "견습 장인의 납품",
+    "speaker": "두르간",
+    "portrait": "CH08",
+    "body": "약속한 도구가 완성됐습니다. 모두 받거나 한 개를 장인조합에 보내 솜씨를 알릴 수 있습니다.",
+    "options": [
+      {
+        "label": "도구 네 개를 받는다",
+        "effects": {
+          "tools": 4
+        }
+      },
+      {
+        "label": "조합에 한 개를 보낸다",
+        "effects": {
+          "tools": 3,
+          "guild": 3
+        }
+      }
+    ]
+  },
+  "RG_CARAVAN_DEPOT": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "positive",
+    "title": "상단의 임시 하역장",
+    "speaker": "베아트릭스 코른",
+    "portrait": "CH04",
+    "body": "상단이 장터를 경유합니다. 하역 자재를 대주면 3주 뒤 더 큰 사용료를 지급하겠답니다.",
+    "options": [
+      {
+        "label": "기존 자리만 내준다",
+        "effects": {
+          "money": 100
+        }
+      },
+      {
+        "label": "하역 자재를 지원한다",
+        "effects": {},
+        "cost": {
+          "wood": 12,
+          "stone": 6
+        },
+        "followup": {
+          "id": "RG_CARAVAN_RETURN",
+          "delay": 3
+        }
+      }
+    ],
+    "pool": {
+      "weight": 2,
+      "min": 10,
+      "max": 44,
+      "once": true,
+      "facility": "B49"
+    }
+  },
+  "RG_CARAVAN_RETURN": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "positive",
+    "title": "하역장 사용료 도착",
+    "speaker": "베아트릭스 코른",
+    "portrait": "CH04",
+    "body": "상단이 하역장 사용료를 보내왔습니다. 현금 대신 일부를 도구로 받을 수도 있습니다.",
+    "options": [
+      {
+        "label": "사용료를 모두 받는다",
+        "effects": {
+          "money": 360,
+          "guild": 2
+        }
+      },
+      {
+        "label": "일부를 도구로 받는다",
+        "effects": {
+          "money": 180,
+          "tools": 2,
+          "guild": 1
+        }
+      }
+    ]
+  },
+  "RG_HEALER_CIRCLE": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "positive",
+    "title": "이웃 마을의 의료 지원",
+    "speaker": "아녜스",
+    "portrait": "CH03",
+    "body": "진료소에 외지 약사가 왔습니다. 숙식을 지원하면 2주 동안 주민들을 더 살펴주겠답니다.",
+    "options": [
+      {
+        "label": "무료 검진을 받는다",
+        "effects": {
+          "health": 3
+        }
+      },
+      {
+        "label": "추가 진료를 부탁한다",
+        "effects": {},
+        "cost": {
+          "money": 100,
+          "food": 20
+        },
+        "followup": {
+          "id": "RG_HEALTH_VISIT",
+          "delay": 2
+        }
+      }
+    ],
+    "pool": {
+      "weight": 2,
+      "min": 8,
+      "max": 42,
+      "once": true,
+      "facility": "B57"
+    }
+  },
+  "RG_HEALTH_VISIT": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "positive",
+    "title": "추가 진료 마무리",
+    "speaker": "아녜스",
+    "portrait": "CH03",
+    "body": "약사가 약속한 진료를 마쳤습니다. 남은 약을 배분하거나 응급 처치 교육에 쓸 수 있습니다.",
+    "options": [
+      {
+        "label": "약을 주민에게 나눈다",
+        "effects": {
+          "health": 7,
+          "mood": 2
+        }
+      },
+      {
+        "label": "응급 처치를 가르친다",
+        "effects": {
+          "health": 4,
+          "village": 4
+        }
+      }
+    ]
+  },
+  "RG_PATROL_MAP": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "positive",
+    "title": "비어 있는 산적 야영지",
+    "speaker": "카트린 볼크",
+    "portrait": "CH02",
+    "body": "망루에서 빈 산적 야영지를 찾았습니다. 정찰대를 지원하면 2주 뒤 주변까지 조사합니다.",
+    "options": [
+      {
+        "label": "야영지 위치를 공유한다",
+        "effects": {
+          "threat": -4
+        }
+      },
+      {
+        "label": "추가 정찰을 지원한다",
+        "effects": {},
+        "cost": {
+          "food": 16,
+          "money": 80
+        },
+        "followup": {
+          "id": "RG_PATROL_RETURN",
+          "delay": 2
+        }
+      }
+    ],
+    "pool": {
+      "weight": 1,
+      "min": 10,
+      "max": 44,
+      "once": true,
+      "facility": "B71"
+    }
+  },
+  "RG_PATROL_RETURN": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "positive",
+    "title": "정찰대의 복귀",
+    "speaker": "카트린 볼크",
+    "portrait": "CH02",
+    "body": "정찰대가 우회로와 버려진 보급품을 찾았습니다. 길을 확보하거나 물자를 회수할 수 있습니다.",
+    "options": [
+      {
+        "label": "우회로를 확보한다",
+        "effects": {
+          "threat": -10,
+          "security": 4
+        }
+      },
+      {
+        "label": "버려진 물자를 가져온다",
+        "effects": {
+          "food": 24,
+          "tools": 1,
+          "threat": -4
+        }
+      }
+    ]
+  },
+  "RG_PILGRIM_KITCHEN": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "positive",
+    "title": "순례객의 숙박 제안",
+    "speaker": "아녜스",
+    "portrait": "CH03",
+    "body": "순례객이 예배당을 찾았습니다. 식사와 땔감을 대주면 2주 뒤 본대가 답례품을 보내겠답니다.",
+    "options": [
+      {
+        "label": "방문 기부만 받는다",
+        "effects": {
+          "food": 16,
+          "mood": 1
+        }
+      },
+      {
+        "label": "숙식을 지원한다",
+        "effects": {},
+        "cost": {
+          "food": 16,
+          "fuel": 8
+        },
+        "followup": {
+          "id": "RG_PILGRIM_GIFT",
+          "delay": 2
+        }
+      }
+    ],
+    "pool": {
+      "weight": 1,
+      "min": 10,
+      "max": 44,
+      "once": true,
+      "facility": "B59"
+    }
+  },
+  "RG_PILGRIM_GIFT": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "positive",
+    "title": "순례단의 답례품",
+    "speaker": "아녜스",
+    "portrait": "CH03",
+    "body": "순례단이 약속한 답례품을 가져왔습니다. 기부금이나 겨울용 식품 중 하나를 받을 수 있습니다.",
+    "options": [
+      {
+        "label": "기부금을 받는다",
+        "effects": {
+          "money": 240,
+          "village": 2
+        }
+      },
+      {
+        "label": "겨울용 식품을 받는다",
+        "effects": {
+          "food": 55,
+          "health": 2
+        }
+      }
+    ]
+  },
+  "RG_WINTER_KILN": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "positive",
+    "title": "땔감 가공 장인의 방문",
+    "speaker": "두르간",
+    "portrait": "CH08",
+    "body": "장인이 벌목소에 들렀습니다. 목재와 도구를 지원하면 2주 뒤 말린 땔감 묶음을 내놓겠답니다.",
+    "options": [
+      {
+        "label": "가져온 장작만 받는다",
+        "effects": {
+          "fuel": 12
+        }
+      },
+      {
+        "label": "추가 생산을 맡긴다",
+        "effects": {},
+        "cost": {
+          "wood": 20,
+          "tools": 1
+        },
+        "followup": {
+          "id": "RG_CHARCOAL_READY",
+          "delay": 2
+        }
+      }
+    ],
+    "pool": {
+      "weight": 2,
+      "min": 27,
+      "max": 46,
+      "once": true,
+      "seasons": [
+        2,
+        3
+      ],
+      "facility": "B25"
+    }
+  },
+  "RG_CHARCOAL_READY": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "positive",
+    "title": "겨울 땔감 완성",
+    "speaker": "두르간",
+    "portrait": "CH08",
+    "body": "약속한 땔감이 완성됐습니다. 전량 보관하거나 일부를 이웃 마을에 넘길 수 있습니다.",
+    "options": [
+      {
+        "label": "땔감을 모두 보관한다",
+        "effects": {
+          "fuel": 64
+        }
+      },
+      {
+        "label": "절반을 이웃에 넘긴다",
+        "effects": {
+          "fuel": 32,
+          "money": 160,
+          "guild": 2
+        }
+      }
+    ]
+  },
+  "RG_FIELD_EDGE": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "positive",
+    "title": "밭둑 정리 완료",
+    "speaker": "요스트",
+    "portrait": "CH09",
+    "body": "농부들이 밭둑의 잡초를 걷었습니다. 퇴비를 밭에 쓰거나 함께 캔 먹을거리를 받을 수 있습니다.",
+    "options": [
+      {
+        "label": "퇴비를 밭에 뿌린다",
+        "effects": {
+          "crop": 0.03
+        }
+      },
+      {
+        "label": "먹을거리를 받는다",
+        "effects": {
+          "food": 20
+        }
+      }
+    ],
+    "pool": {
+      "weight": 2,
+      "min": 4,
+      "max": 28,
+      "once": true,
+      "seasons": [
+        0,
+        1,
+        2
+      ],
+      "facility": "B13"
+    }
+  },
+  "RG_GARDEN_SURPLUS": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "positive",
+    "title": "채소밭의 여분 수확",
+    "speaker": "요스트",
+    "portrait": "CH09",
+    "body": "채소밭에서 예상보다 많이 거뒀습니다. 공공 식량으로 받거나 주민들과 나눌 수 있습니다.",
+    "options": [
+      {
+        "label": "곳간에 채소를 넣는다",
+        "effects": {
+          "food": 26
+        }
+      },
+      {
+        "label": "주민들과 나눈다",
+        "effects": {
+          "resident_food": 22,
+          "mood": 3
+        }
+      }
+    ],
+    "pool": {
+      "weight": 2,
+      "min": 4,
+      "max": 39,
+      "once": true,
+      "seasons": [
+        0,
+        1,
+        2
+      ],
+      "facility": "B14"
+    }
+  },
+  "RG_CLEAR_SPRING": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "positive",
+    "title": "샘물 검사 결과",
+    "speaker": "이네스 라우",
+    "portrait": "CH05",
+    "body": "우물의 물이 깨끗하다는 검사 결과가 나왔습니다. 물통을 보태면 더 많은 집에 물을 나눕니다.",
+    "options": [
+      {
+        "label": "검사 결과를 알린다",
+        "effects": {
+          "health": 2,
+          "mood": 1
+        }
+      },
+      {
+        "label": "배달용 물통을 만든다",
+        "effects": {
+          "health": 4,
+          "mood": 2
+        },
+        "cost": {
+          "wood": 4
+        }
+      }
+    ],
+    "pool": {
+      "weight": 1,
+      "min": 4,
+      "max": 39,
+      "once": true,
+      "facility": "B06"
+    }
+  },
+  "RG_GRAVEL_BANK": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "positive",
+    "title": "드러난 자갈톱",
+    "speaker": "요스트",
+    "portrait": "CH09",
+    "body": "어부들이 하천에서 자갈톱을 찾았습니다. 손으로 줍거나 도구를 써서 더 많이 캐낼 수 있습니다.",
+    "options": [
+      {
+        "label": "손에 잡히는 돌을 줍는다",
+        "effects": {
+          "stone": 14
+        }
+      },
+      {
+        "label": "채취 도구를 내준다",
+        "effects": {
+          "stone": 34
+        },
+        "cost": {
+          "tools": 1
+        }
+      }
+    ],
+    "pool": {
+      "weight": 1,
+      "min": 8,
+      "max": 35,
+      "once": true,
+      "seasons": [
+        0,
+        1,
+        2
+      ],
+      "facility": "B16"
+    }
+  },
+  "RG_STRAIGHT_TRUNKS": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "positive",
+    "title": "곧게 자란 나무",
+    "speaker": "시아렐",
+    "portrait": "CH06",
+    "body": "벌목소에서 건축에 쓰기 좋은 나무를 찾았습니다. 인부들의 식사를 보태면 더 실어 올 수 있습니다.",
+    "options": [
+      {
+        "label": "준비된 목재를 받는다",
+        "effects": {
+          "wood": 18
+        }
+      },
+      {
+        "label": "운반 인부에게 식사 제공",
+        "effects": {
+          "wood": 34
+        },
+        "cost": {
+          "food": 12
+        }
+      }
+    ],
+    "pool": {
+      "weight": 2,
+      "min": 4,
+      "max": 38,
+      "once": true,
+      "seasons": [
+        0,
+        1,
+        2
+      ],
+      "facility": "B25"
+    }
+  },
+  "RG_SMITH_SCRAPS": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "positive",
+    "title": "대장간의 남은 쇳조각",
+    "speaker": "두르간",
+    "portrait": "CH08",
+    "body": "대장장이가 남은 재료를 모았습니다. 공방 성물을 쓰면 도구로 쓸 수 있는 양이 늘어납니다.",
+    "options": [
+      {
+        "label": "만들어 둔 도구를 받는다",
+        "effects": {
+          "tools": 1
+        }
+      },
+      {
+        "label": "공방 성물로 정비한다",
+        "effects": {
+          "tools": 3
+        },
+        "requires": {
+          "relic_family": "craft"
+        }
+      },
+      {
+        "label": "석재를 보태 제작한다",
+        "effects": {
+          "tools": 2
+        },
+        "cost": {
+          "stone": 4
+        }
+      }
+    ],
+    "pool": {
+      "weight": 1,
+      "min": 8,
+      "max": 46,
+      "once": true,
+      "facility": "B33"
+    }
+  },
+  "RG_QUARRY_SLAB": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "positive",
+    "title": "다루기 쉬운 돌층",
+    "speaker": "두르간",
+    "portrait": "CH08",
+    "body": "채석장에서 잘 갈라지는 돌층을 만났습니다. 그대로 캐거나 새 도구로 작업량을 늘릴 수 있습니다.",
+    "options": [
+      {
+        "label": "지금 캔 석재를 받는다",
+        "effects": {
+          "stone": 18
+        }
+      },
+      {
+        "label": "새 도구로 더 캔다",
+        "effects": {
+          "stone": 38
+        },
+        "cost": {
+          "tools": 1
+        }
+      },
+      {
+        "label": "석재 상인에게 넘긴다",
+        "effects": {
+          "money": 180
+        },
+        "requires": {
+          "facility": "B49"
+        }
+      }
+    ],
+    "pool": {
+      "weight": 1,
+      "min": 8,
+      "max": 46,
+      "once": true,
+      "facility": "B27"
+    }
+  },
+  "RG_GRANARY_AUDIT": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "positive",
+    "title": "곳간의 누락 장부",
+    "speaker": "오딜 마르센",
+    "portrait": "CH01",
+    "body": "곳간 구석에서 장부에 빠진 공동 보관 곡식을 찾았습니다. 공공 재고로 넣거나 주민에게 돌려줍니다.",
+    "options": [
+      {
+        "label": "공공 재고로 기록한다",
+        "effects": {
+          "food": 35,
+          "trust": 1
+        }
+      },
+      {
+        "label": "주민들에게 돌려준다",
+        "effects": {
+          "resident_food": 30,
+          "village": 3
+        }
+      }
+    ],
+    "pool": {
+      "weight": 1,
+      "min": 8,
+      "max": 48,
+      "once": true,
+      "facility": "B22"
+    }
+  },
+  "RG_ROAD_DONATION": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "positive",
+    "title": "상단의 길 보수 지원",
+    "speaker": "베아트릭스 코른",
+    "portrait": "CH04",
+    "body": "상인들이 길 보수를 돕겠다고 합니다. 목재와 석재를 받거나 운송비를 지원받을 수 있습니다.",
+    "options": [
+      {
+        "label": "보수용 자재를 받는다",
+        "effects": {
+          "wood": 10,
+          "stone": 10
+        }
+      },
+      {
+        "label": "운송비를 받는다",
+        "effects": {
+          "money": 140,
+          "guild": 1
+        }
+      }
+    ],
+    "pool": {
+      "weight": 1,
+      "min": 6,
+      "max": 44,
+      "once": true
+    }
+  },
+  "RG_FAIR_INVITATION": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "positive",
+    "title": "장터 시식회 초대",
+    "speaker": "베아트릭스 코른",
+    "portrait": "CH04",
+    "body": "외지 상단이 장터에서 시식회를 엽니다. 곡식을 보태면 판매 수익을 더 많이 나누겠답니다.",
+    "options": [
+      {
+        "label": "자리 사용료만 받는다",
+        "effects": {
+          "money": 160,
+          "guild": 1
+        }
+      },
+      {
+        "label": "시식용 곡식을 낸다",
+        "effects": {
+          "money": 320,
+          "guild": 2
+        },
+        "cost": {
+          "food": 20
+        }
+      }
+    ],
+    "pool": {
+      "weight": 2,
+      "min": 10,
+      "max": 40,
+      "once": true,
+      "seasons": [
+        0,
+        1,
+        2
+      ],
+      "facility": "B49"
+    }
+  },
+  "RG_WEAVER_GIFTS": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "positive",
+    "title": "마을 직조품 완성",
+    "speaker": "요스트",
+    "portrait": "CH09",
+    "body": "주민들이 여분의 천을 짰습니다. 추첨 선물로 나누거나 상단에 팔아 마을 기금으로 쓸 수 있습니다.",
+    "options": [
+      {
+        "label": "주민에게 선물한다",
+        "effects": {
+          "mood": 4,
+          "village": 2
+        }
+      },
+      {
+        "label": "상단에 판매한다",
+        "effects": {
+          "money": 140,
+          "guild": 1
+        }
+      }
+    ],
+    "pool": {
+      "weight": 1,
+      "min": 6,
+      "max": 38,
+      "once": true
+    }
+  },
+  "RG_RETURNED_PURSE": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "positive",
+    "title": "되찾은 상인의 돈주머니",
+    "speaker": "오딜 마르센",
+    "portrait": "CH01",
+    "body": "주민이 찾아준 돈주머니의 주인이 나타났습니다. 영지에 사례금을 주거나 조합에 선행을 알리겠답니다.",
+    "options": [
+      {
+        "label": "사례금을 받는다",
+        "effects": {
+          "money": 100,
+          "trust": 1
+        }
+      },
+      {
+        "label": "조합에 소식을 전한다",
+        "effects": {
+          "guild": 4,
+          "village": 2
+        }
+      }
+    ],
+    "pool": {
+      "weight": 1,
+      "min": 4,
+      "max": 48,
+      "once": true
+    }
+  },
+  "RG_ARCHIVE_COPY": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "positive",
+    "title": "중복 수수료 환급",
+    "speaker": "마티아스 그렌",
+    "portrait": "CH10",
+    "body": "감찰관이 중복 납부한 수수료를 찾았습니다. 돌려받거나 마을 기록 정리에 사용할 수 있습니다.",
+    "options": [
+      {
+        "label": "수수료를 돌려받는다",
+        "effects": {
+          "money": 160
+        }
+      },
+      {
+        "label": "마을 기록을 정리한다",
+        "effects": {
+          "trust": 4,
+          "village": 2
+        }
+      }
+    ],
+    "pool": {
+      "weight": 1,
+      "min": 6,
+      "max": 40,
+      "once": true
+    }
+  },
+  "RG_YOUNG_RUNNERS": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "positive",
+    "title": "자원한 길 안내꾼",
+    "speaker": "잉가",
+    "portrait": "CH12",
+    "body": "젊은 주민들이 여행객의 길 안내를 돕습니다. 식사를 지원하면 외곽 순찰도 맡겠답니다.",
+    "options": [
+      {
+        "label": "길 안내를 맡긴다",
+        "effects": {
+          "security": 2,
+          "guild": 2
+        }
+      },
+      {
+        "label": "순찰대 식사를 지원한다",
+        "effects": {
+          "threat": -6,
+          "security": 3
+        },
+        "cost": {
+          "food": 12
+        }
+      }
+    ],
+    "pool": {
+      "weight": 1,
+      "min": 8,
+      "max": 38,
+      "once": true
+    }
+  },
+  "RG_HERB_CLEARING": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "positive",
+    "title": "새로 찾은 약초밭",
+    "speaker": "아녜스",
+    "portrait": "CH03",
+    "body": "약초꾼이 상태 좋은 약초밭을 찾았습니다. 진료에 쓰거나 먹을 수 있는 풀을 모을 수 있습니다.",
+    "options": [
+      {
+        "label": "약초를 진료에 쓴다",
+        "effects": {
+          "health": 3
+        }
+      },
+      {
+        "label": "먹을거리를 모은다",
+        "effects": {
+          "food": 20
+        }
+      },
+      {
+        "label": "채집 인부를 더 보낸다",
+        "effects": {
+          "health": 5,
+          "food": 12
+        },
+        "cost": {
+          "money": 80
+        }
+      }
+    ],
+    "pool": {
+      "weight": 2,
+      "min": 4,
+      "max": 38,
+      "once": true,
+      "seasons": [
+        0,
+        1,
+        2
+      ]
+    }
+  },
+  "RG_BAKERY_BATCH": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "positive",
+    "title": "제빵소의 시험 굽기",
+    "speaker": "두르간",
+    "portrait": "CH08",
+    "body": "제빵소가 새 화덕으로 빵을 넉넉히 구웠습니다. 영지에 납품하거나 주민들에게 맛보일 수 있습니다.",
+    "options": [
+      {
+        "label": "빵을 납품받는다",
+        "effects": {
+          "food": 28
+        }
+      },
+      {
+        "label": "주민 시식회를 연다",
+        "effects": {
+          "resident_food": 22,
+          "mood": 3
+        }
+      }
+    ],
+    "pool": {
+      "weight": 1,
+      "min": 12,
+      "max": 40,
+      "once": true,
+      "facility": "B20"
+    }
+  },
+  "RG_TAVERN_MUSIC": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "positive",
+    "title": "유랑 악단의 공연",
+    "speaker": "클로틸드 드 레이벡",
+    "portrait": "CH07",
+    "body": "유랑 악단이 선술집에 머뭅니다. 무료 공연을 열거나 외지 손님에게 관람료를 받을 수 있습니다.",
+    "options": [
+      {
+        "label": "주민 무료 공연을 연다",
+        "effects": {
+          "mood": 4,
+          "village": 2
+        }
+      },
+      {
+        "label": "외지 관람객을 받는다",
+        "effects": {
+          "money": 120,
+          "mood": 2,
+          "guild": 1
+        }
+      }
+    ],
+    "pool": {
+      "weight": 1,
+      "min": 10,
+      "max": 48,
+      "once": true,
+      "facility": "B11"
+    }
+  },
+  "RG_WATCH_SIGNAL": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "positive",
+    "title": "목책의 새 경계 신호",
+    "speaker": "잉가",
+    "portrait": "CH12",
+    "body": "초병들이 경계 신호를 개선했습니다. 수호 성물을 활용하면 멀리 있는 순찰대에도 신호가 닿습니다.",
+    "options": [
+      {
+        "label": "새 신호를 도입한다",
+        "effects": {
+          "threat": -5
+        }
+      },
+      {
+        "label": "초병 훈련에 집중한다",
+        "effects": {
+          "security": 3
+        }
+      },
+      {
+        "label": "수호 성물로 신호 전달",
+        "effects": {
+          "threat": -9,
+          "security": 2
+        },
+        "requires": {
+          "relic_family": "guard"
+        }
+      }
+    ],
+    "pool": {
+      "weight": 1,
+      "min": 12,
+      "max": 48,
+      "once": true,
+      "facility": "B67"
+    }
+  },
+  "RG_CHAPEL_GIFTS": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "positive",
+    "title": "예배당의 기부 물품",
+    "speaker": "아녜스",
+    "portrait": "CH03",
+    "body": "예배당에 기부 물품이 들어왔습니다. 풍요 성물을 공개하면 순례객의 추가 기부를 받을 수 있습니다.",
+    "options": [
+      {
+        "label": "곡물을 받는다",
+        "effects": {
+          "food": 22
+        }
+      },
+      {
+        "label": "땔감을 받는다",
+        "effects": {
+          "fuel": 18
+        }
+      },
+      {
+        "label": "풍요 성물을 공개한다",
+        "effects": {
+          "food": 38,
+          "mood": 1
+        },
+        "requires": {
+          "relic_family": "abundance"
+        }
+      }
+    ],
+    "pool": {
+      "weight": 1,
+      "min": 8,
+      "max": 48,
+      "once": true,
+      "facility": "B59"
+    }
+  },
+  "RG_FROST_CELLAR": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "positive",
+    "title": "눈 속에 보관한 채소",
+    "speaker": "요스트",
+    "portrait": "CH09",
+    "body": "주민들이 눈 속에 묻어 둔 채소를 꺼냈습니다. 곳간에 보태거나 따뜻한 식사로 나눌 수 있습니다.",
+    "options": [
+      {
+        "label": "곳간에 채소를 보탠다",
+        "effects": {
+          "food": 28
+        }
+      },
+      {
+        "label": "따뜻한 식사로 나눈다",
+        "effects": {
+          "resident_food": 24,
+          "health": 2
+        }
+      }
+    ],
+    "pool": {
+      "weight": 2,
+      "min": 40,
+      "max": 48,
+      "once": true,
+      "seasons": [
+        3
+      ],
+      "facility": "B22"
+    }
+  },
+  "RG_FORGE_WARMTH": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "positive",
+    "title": "대장간의 남은 화력",
+    "speaker": "두르간",
+    "portrait": "CH08",
+    "body": "대장장이가 작업 뒤 남은 화력을 내줍니다. 도구를 손보거나 주민들이 몸을 녹이게 할 수 있습니다.",
+    "options": [
+      {
+        "label": "도구 하나를 정비한다",
+        "effects": {
+          "tools": 1
+        }
+      },
+      {
+        "label": "주민 쉼터로 쓴다",
+        "effects": {
+          "health": 2,
+          "mood": 2
+        }
+      }
+    ],
+    "pool": {
+      "weight": 1,
+      "min": 28,
+      "max": 48,
+      "once": true,
+      "seasons": [
+        2,
+        3
+      ],
+      "facility": "B33"
+    }
+  },
+  "RG_SNOW_PATH": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "positive",
+    "title": "눈을 피하는 우회로",
+    "speaker": "디트마르 크론",
+    "portrait": "CH11",
+    "body": "목동이 눈이 적게 쌓이는 길을 찾았습니다. 식사를 대주면 운반대를 이끌고 목재와 땔감을 가져옵니다.",
+    "options": [
+      {
+        "label": "상인에게 길을 알린다",
+        "effects": {
+          "guild": 3,
+          "trust": 1
+        }
+      },
+      {
+        "label": "운반대 식사를 대준다",
+        "effects": {
+          "fuel": 22,
+          "wood": 8
+        },
+        "cost": {
+          "food": 10
+        }
+      }
+    ],
+    "pool": {
+      "weight": 2,
+      "min": 40,
+      "max": 48,
+      "once": true,
+      "seasons": [
+        3
+      ]
+    }
+  },
+  "RG_COMMUNAL_FEAST": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "positive",
+    "title": "이웃 마을의 음식 선물",
+    "speaker": "요스트",
+    "portrait": "CH09",
+    "body": "이웃 마을이 음식을 보내왔습니다. 공공 식량으로 남기거나 주민들이 함께 먹게 할 수 있습니다.",
+    "options": [
+      {
+        "label": "공공 식량으로 받는다",
+        "effects": {
+          "food": 32
+        }
+      },
+      {
+        "label": "마을 식사를 준비한다",
+        "effects": {
+          "resident_food": 26,
+          "mood": 3
+        }
+      }
+    ],
+    "pool": {
+      "weight": 1,
+      "min": 14,
+      "max": 48,
+      "once": true,
+      "seasons": [
+        1,
+        2,
+        3
+      ]
+    }
+  },
+  "RG_WINTER_LETTER": {
+    "week": 999,
+    "realm": true,
+    "plus_only": true,
+    "tone": "positive",
+    "title": "이웃 영지의 겨울 선물",
+    "speaker": "클로틸드 드 레이벡",
+    "portrait": "CH07",
+    "body": "이웃 영지가 겨울 선물을 보냈습니다. 지원금이나 도구 중 필요한 쪽을 받을 수 있습니다.",
+    "options": [
+      {
+        "label": "금고 지원을 받는다",
+        "effects": {
+          "money": 200
+        }
+      },
+      {
+        "label": "도구 묶음을 받는다",
+        "effects": {
+          "tools": 2,
+          "guild": 2
+        }
+      }
+    ],
+    "pool": {
+      "weight": 1,
+      "min": 40,
+      "max": 48,
+      "once": true,
+      "seasons": [
+        3
+      ]
+    }
+  }
+}

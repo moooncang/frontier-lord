@@ -1,0 +1,416 @@
+{
+  "EV01": {
+    "week": 1,
+    "title": "연간 목표",
+    "speaker": "오딜",
+    "portrait": "CH01",
+    "body": "영주님. 올해 목표는 농지 6구획, 곡물 곳간 1개, 식량 13주분입니다. 먼저 농지 2구획을 추가로 건설하십시오.",
+    "options": [
+      {
+        "label": "주민 지원을 우선한다",
+        "hint": "민심 +3 · 촌락 태도 +3",
+        "effects": {
+          "mood": 3,
+          "village": 3
+        }
+      },
+      {
+        "label": "행정 업무를 우선한다",
+        "hint": "오딜 신뢰 +5",
+        "effects": {
+          "trust": 5
+        }
+      }
+    ]
+  },
+  "EV02": {
+    "week": 9,
+    "title": "이민자 12명 도착",
+    "speaker": "요스트",
+    "portrait": "CH09",
+    "body": "젊은 양반, 이민자 열두 명이 왔소. 받아들이려면 주거 12명분, 정착금 8금, 식량 48이 필요하오.",
+    "immigration": true,
+    "options": [
+      {
+        "label": "함께 살아갈 자리를 내준다",
+        "hint": "8금 · 공공 식량 48 / 인구 +12 · 촌락 +5",
+        "cost": {
+          "money": 800,
+          "food": 48
+        },
+        "effects": {
+          "pop": 12,
+          "village": 5
+        },
+        "requires_housing": 12
+      },
+      {
+        "label": "식량을 나누고 다음을 약속한다",
+        "hint": "공공 식량 24 / 민심 +2",
+        "cost": {
+          "food": 24
+        },
+        "effects": {
+          "mood": 2
+        }
+      },
+      {
+        "label": "이번에는 받아들이기 어렵다",
+        "hint": "촌락 태도 -3",
+        "effects": {
+          "village": -3
+        }
+      }
+    ]
+  },
+  "EV03": {
+    "week": 17,
+    "title": "교역로 정비",
+    "speaker": "베아트릭스",
+    "portrait": "CH04",
+    "body": "영주 나리, 교역로 정비에 6금을 내시면 이번 회차의 운송 수수료를 25% 줄여 드려요. 주문한 물자는 2주 뒤에 도착해요.",
+    "options": [
+      {
+        "label": "교역길을 정비한다",
+        "hint": "6금 / 이번 회차 운송 수수료 -25%",
+        "cost": {
+          "money": 600
+        },
+        "effects": {
+          "trade_discount": 0.25,
+          "guild": 4
+        }
+      },
+      {
+        "label": "필요한 물건만 주문하겠다",
+        "hint": "거래 조건 유지",
+        "effects": {}
+      }
+    ]
+  },
+  "EV04": {
+    "week": 24,
+    "title": "추가 이민 요청",
+    "speaker": "요스트",
+    "portrait": "CH09",
+    "body": "열두 명이 더 정착하고 싶다오. 주거가 남아 있어야 하고, 정착금과 식량도 지난번만큼 필요하오.",
+    "immigration": true,
+    "options": [
+      {
+        "label": "주거 여유를 확인하고 받아들인다",
+        "hint": "8금 · 식량 48 / 인구 +12",
+        "cost": {
+          "money": 800,
+          "food": 48
+        },
+        "effects": {
+          "pop": 12,
+          "village": 4
+        },
+        "requires_housing": 12
+      },
+      {
+        "label": "지금 인원을 먼저 돌본다",
+        "hint": "민심 +2",
+        "effects": {
+          "mood": 2
+        }
+      }
+    ]
+  },
+  "EV05": {
+    "week": 29,
+    "title": "겨울 자재 구매",
+    "speaker": "시아렐",
+    "portrait": "CH06",
+    "body": "짧은 생의 자여, 겨울이 다가오고 있소. 목재 30을 5금에, 또는 장작 120을 8금에 공급하겠소.",
+    "options": [
+      {
+        "label": "쓰러진 나무를 함께 수거한다",
+        "hint": "5금 / 목재 +30 · 촌락 +3",
+        "cost": {
+          "money": 500
+        },
+        "effects": {
+          "wood": 30,
+          "village": 3
+        }
+      },
+      {
+        "label": "외부에서 장작을 구한다",
+        "hint": "8금 / 장작 +120",
+        "cost": {
+          "money": 800
+        },
+        "effects": {
+          "fuel": 120
+        }
+      },
+      {
+        "label": "지금 가진 재료로 준비한다",
+        "hint": "추가 비용 없음",
+        "effects": {}
+      }
+    ]
+  },
+  "EV06": {
+    "week": 37,
+    "title": "수확 후 배급",
+    "speaker": "오딜",
+    "portrait": "CH01",
+    "body": "수확이 끝났습니다. 공공 식량 80을 주민에게 배급하면 민심이 개선됩니다. 공공 비축이 부족하다면 유지하십시오.",
+    "options": [
+      {
+        "label": "공공 비축으로 구휼한다",
+        "hint": "공공 식량 80을 주민 창고로 이전 / 민심 +6",
+        "cost": {
+          "food": 80
+        },
+        "effects": {
+          "resident_food": 80,
+          "mood": 6,
+          "trust": 3
+        }
+      },
+      {
+        "label": "종자를 위해 비축을 지킨다",
+        "hint": "오딜 신뢰 +3",
+        "effects": {
+          "trust": 3
+        }
+      }
+    ]
+  },
+  "EV07": {
+    "week": 43,
+    "title": "동절기 경비와 난방",
+    "speaker": "카트린",
+    "portrait": "CH02",
+    "body": "주군. 경비 장비를 보강하면 치안이 개선됩니다. 공동 숙소에 지원금을 지급하면 주민 건강을 높일 수 있습니다.",
+    "options": [
+      {
+        "label": "교대 경비의 장비를 지급한다",
+        "hint": "6금 · 도구 2 / 치안 +10",
+        "cost": {
+          "money": 600,
+          "tools": 2
+        },
+        "effects": {
+          "security": 10
+        }
+      },
+      {
+        "label": "불을 나누고 공동 숙소를 연다",
+        "hint": "3금 / 건강 +8 · 민심 +3",
+        "cost": {
+          "money": 300
+        },
+        "effects": {
+          "health": 8,
+          "mood": 3
+        }
+      },
+      {
+        "label": "현재 경비 계획을 유지한다",
+        "hint": "변경 없음",
+        "effects": {}
+      }
+    ]
+  },
+  "EV08": {
+    "week": 49,
+    "title": "연말 점검",
+    "speaker": "오딜",
+    "portrait": "CH01",
+    "body": "3주 뒤에 회차가 종료됩니다. 농지, 곳간, 식량과 겨울 시련 조건을 확인하십시오. 남은 일정을 어디에 사용할지 정해 주십시오.",
+    "options": [
+      {
+        "label": "주민 상황을 확인한다",
+        "hint": "민심 +3 · 오딜 신뢰 +3",
+        "effects": {
+          "mood": 3,
+          "trust": 3
+        }
+      },
+      {
+        "label": "행정 업무를 점검한다",
+        "hint": "오딜 신뢰 +5",
+        "effects": {
+          "trust": 5
+        }
+      }
+    ]
+  },
+  "EV09": {
+    "week": 5,
+    "title": "기초 진료 지원",
+    "speaker": "아녜스",
+    "portrait": "CH03",
+    "body": "영주님, 진료에 쓸 식량과 물자가 필요해요. 식량 30을 지원해 주시면 주민 건강을 개선할 수 있어요.",
+    "chronicle_only": true,
+    "options": [
+      {
+        "label": "식량 30 지원",
+        "hint": "식량 -30 · 건강 +5",
+        "cost": {
+          "food": 30
+        },
+        "effects": {
+          "health": 5
+        }
+      },
+      {
+        "label": "현재 계획 유지",
+        "hint": "비용·효과 없음",
+        "effects": {}
+      }
+    ]
+  },
+  "EV10": {
+    "week": 12,
+    "title": "농업 연구 지원",
+    "speaker": "이네스",
+    "portrait": "CH05",
+    "body": "계약주, 종자 보관 상태를 조사했어. 도구 1개만 빌려주면 손상되지 않은 식량 60을 더 확보할 수 있어.",
+    "chronicle_only": true,
+    "options": [
+      {
+        "label": "도구 1개 제공",
+        "hint": "도구 -1 · 식량 +60",
+        "cost": {
+          "tools": 1
+        },
+        "effects": {
+          "food": 60
+        }
+      },
+      {
+        "label": "현재 계획 유지",
+        "hint": "비용·효과 없음",
+        "effects": {}
+      }
+    ]
+  },
+  "EV11": {
+    "week": 21,
+    "title": "이웃 영지와 교역",
+    "speaker": "클로틸드",
+    "portrait": "CH07",
+    "body": "이웃 경, 남는 목재가 있다면 30을 5금에 사들이겠어요. 대금은 바로 지급하지요.",
+    "chronicle_only": true,
+    "options": [
+      {
+        "label": "목재 30 판매",
+        "hint": "목재 -30 · 금고 +5금",
+        "cost": {
+          "wood": 30
+        },
+        "effects": {
+          "money": 500
+        }
+      },
+      {
+        "label": "현재 계획 유지",
+        "hint": "비용·효과 없음",
+        "effects": {}
+      }
+    ]
+  },
+  "EV12": {
+    "week": 27,
+    "title": "도구 보수",
+    "speaker": "두르간",
+    "portrait": "CH08",
+    "body": "땅주인, 4금이면 공용 도구 3개를 보수해 주지. 대금부터 주게.",
+    "chronicle_only": true,
+    "options": [
+      {
+        "label": "4금 지급",
+        "hint": "금고 -4금 · 도구 +3",
+        "cost": {
+          "money": 400
+        },
+        "effects": {
+          "tools": 3
+        }
+      },
+      {
+        "label": "현재 계획 유지",
+        "hint": "비용·효과 없음",
+        "effects": {}
+      }
+    ]
+  },
+  "EV13": {
+    "week": 32,
+    "title": "황야 수색 지원",
+    "speaker": "디트마르",
+    "portrait": "CH11",
+    "body": "영주, 우리 쪽에서 버려진 장작을 찾았다. 식량 40을 주면 장작 80을 가져오지.",
+    "chronicle_only": true,
+    "options": [
+      {
+        "label": "식량 40 교환",
+        "hint": "식량 -40 · 장작 +80",
+        "cost": {
+          "food": 40
+        },
+        "effects": {
+          "fuel": 80
+        }
+      },
+      {
+        "label": "현재 계획 유지",
+        "hint": "비용·효과 없음",
+        "effects": {}
+      }
+    ]
+  },
+  "EV14": {
+    "week": 40,
+    "title": "왕실 감찰",
+    "speaker": "마티아스",
+    "portrait": "CH10",
+    "body": "경, 겨울 운영 상황을 점검하겠습니다. 장부를 정리해 두면 행정관의 업무 부담을 줄일 수 있습니다.",
+    "chronicle_only": true,
+    "options": [
+      {
+        "label": "행정관과 함께 장부 검토",
+        "hint": "오딜 신뢰 +4",
+        "effects": {
+          "trust": 4
+        }
+      },
+      {
+        "label": "현재 계획 유지",
+        "hint": "비용·효과 없음",
+        "effects": {}
+      }
+    ]
+  },
+  "EV15": {
+    "week": 47,
+    "title": "용병대 순찰 제안",
+    "speaker": "잉가",
+    "portrait": "CH12",
+    "body": "고용주, 겨울에도 수레는 다녀야지. 5금이면 우리 용병대가 교역로를 순찰해 줄게.",
+    "chronicle_only": true,
+    "options": [
+      {
+        "label": "5금 지급",
+        "hint": "금고 -5금 · 치안 +7",
+        "cost": {
+          "money": 500
+        },
+        "effects": {
+          "security": 7
+        }
+      },
+      {
+        "label": "현재 계획 유지",
+        "hint": "비용·효과 없음",
+        "effects": {}
+      }
+    ]
+  }
+}

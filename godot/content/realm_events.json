@@ -1,0 +1,290 @@
+{
+  "RV_RAID": {"week": 999, "realm": true, "kind": "threat", "title": "도적 떼의 통첩", "speaker": "카트린 볼크", "portrait": "CH02",
+    "body": "주군, 황야의 도적들이 여울 건너에 진을 쳤습니다. 곡식을 내놓으면 물러가겠다는 전갈입니다. 지킬 것인지, 내줄 것인지 정해 주십시오.",
+    "options": [
+      {"label": "곡식을 내주고 돌려보낸다", "cost": {"food": 60}, "effects": {"threat": -8, "mood": -3}},
+      {"label": "무기를 들고 맞선다", "effects": {},
+       "chance": {"base": 0.4, "stat": "security", "per": 0.01, "facility": {"B67": 0.2, "B71": 0.08}, "policy": {"militia": 0.15},
+         "win": {"text": "목책 너머로 화살이 몇 번 오가자 도적들은 물러났습니다. 주민들이 환호합니다.", "effects": {"threat": -30, "security": 6, "mood": 5, "flag": "raid_won"}},
+         "lose": {"text": "방어선이 뚫렸습니다. 곳간 일부가 털리고 두 사람이 돌아오지 못했습니다.", "effects": {"food": -90, "wood": -20, "pop": -2, "mood": -7, "threat": -12}}}},
+      {"label": "붉은방패 용병단을 부른다", "cost": {"money": 700}, "requires": {"stat": ["guild", 45]}, "effects": {"threat": -30, "security": 3}}
+    ]},
+  "RV_WOLVES": {"week": 999, "realm": true, "kind": "threat", "title": "겨울 늑대 무리", "speaker": "디트마르 크론", "portrait": "CH11",
+    "body": "영주, 굶주린 늑대들이 울타리 근처까지 내려왔소. 밤마다 발자국이 늘고 있지. 먼저 치든가, 불을 밝히든가.",
+    "options": [
+      {"label": "사냥대를 꾸려 먼저 친다", "effects": {},
+       "chance": {"base": 0.5, "stat": "security", "per": 0.008, "facility": {"B67": 0.15},
+         "win": {"text": "사냥대가 무리를 흩어 놓고 고기와 가죽을 메고 돌아왔습니다.", "effects": {"food": 45, "security": 4, "threat": -15}},
+         "lose": {"text": "눈보라 속에서 사냥대가 흩어졌습니다. 한 명이 크게 다쳤습니다.", "effects": {"pop": -1, "health": -5, "threat": -5}}}},
+      {"label": "밤새 횃불을 밝힌다", "cost": {"fuel": 25}, "effects": {"threat": -10}},
+      {"label": "문단속만 시킨다", "effects": {"food": -35, "mood": -3}}
+    ]},
+
+  "RV_MIG_S": {"week": 999, "realm": true, "kind": "migrants", "immigration": true, "title": "이주 희망자 6명", "speaker": "요스트", "portrait": "CH09",
+    "body": "젊은 양반, 여울에 여섯 식구가 와 있소. 일손은 반갑지만 입도 여섯이 느는 일이오. 집과 양식이 넉넉한지 먼저 보시구려.",
+    "options": [
+      {"label": "모두 받아들인다", "cost": {"money": 120, "food": 24}, "requires_housing": 6, "effects": {"pop": 6, "village": 3}},
+      {"label": "식량만 나눠 보낸다", "cost": {"food": 12}, "effects": {"mood": 2}},
+      {"label": "이번에는 어렵다", "effects": {"village": -2}}
+    ]},
+  "RV_MIG_M": {"week": 999, "realm": true, "kind": "migrants", "immigration": true, "title": "이주 희망자 10명", "speaker": "요스트", "portrait": "CH09",
+    "body": "소문이 났나 보오. 이번엔 열 사람이 짐을 풀 자리를 묻고 있소. 다 받으면 봄 일손이 든든하겠지만, 겨울 곳간은 그만큼 빨리 비겠지.",
+    "options": [
+      {"label": "모두 받아들인다", "cost": {"money": 200, "food": 40}, "requires_housing": 10, "effects": {"pop": 10, "village": 4}},
+      {"label": "절반만 받는다", "cost": {"money": 100, "food": 20}, "requires_housing": 5, "effects": {"pop": 5, "village": 1}},
+      {"label": "이번에는 어렵다", "effects": {"village": -2}}
+    ]},
+  "RV_MIG_L": {"week": 999, "realm": true, "kind": "migrants", "immigration": true, "title": "이주 행렬 14명", "speaker": "요스트", "portrait": "CH09",
+    "body": "허허, 이 땅 살기 좋다는 말이 고갯길을 넘었나 보오. 열네 명이오. 이만한 식구를 한 번에 들이는 건 영지의 얼굴이 바뀌는 일이지.",
+    "options": [
+      {"label": "모두 받아들인다", "cost": {"money": 280, "food": 56}, "requires_housing": 14, "effects": {"pop": 14, "village": 5, "mood": 2}},
+      {"label": "절반만 받는다", "cost": {"money": 140, "food": 28}, "requires_housing": 7, "effects": {"pop": 7, "village": 2}},
+      {"label": "이번에는 어렵다", "effects": {"village": -3}}
+    ]},
+
+  "RV_MERCHANT": {"week": 999, "realm": true, "title": "떠돌이 상단", "speaker": "베아트릭스 코른", "portrait": "CH04",
+    "pool": {"weight": 4, "min": 4, "max": 48},
+    "body": "영주 나리, 지나는 길에 짐을 좀 풀었지. 오늘만 이 값이야. 다음 고갯길에선 두 배를 부를 물건들이거든.",
+    "options": [
+      {"label": "도구 4개를 산다", "cost": {"money": 300}, "effects": {"tools": 4, "guild": 2}},
+      {"label": "석재 30을 산다", "cost": {"money": 250}, "effects": {"stone": 30, "guild": 2}},
+      {"label": "남는 목재 30을 판다", "cost": {"wood": 30}, "effects": {"money": 360, "guild": 2}},
+      {"label": "구경만 한다", "effects": {}}
+    ]},
+  "RV_FEVER": {"week": 999, "realm": true, "title": "여름 열병", "speaker": "아녜스", "portrait": "CH03",
+    "pool": {"weight": 3, "min": 10, "max": 36, "seasons": [0, 1]},
+    "body": "아랫마을 세 집에서 열이 오른 아이들이 나왔어요. 지금 손을 쓰면 번지지 않아요. 일손이 아깝다고 미루면… 저는 그 끝을 본 적이 있어요.",
+    "options": [
+      {"label": "진료소에서 돌본다", "requires": {"facility": "B57"}, "effects": {"health": 8, "mood": 3}},
+      {"label": "환자를 격리하고 죽을 끓인다", "cost": {"food": 30}, "effects": {"health": 4}},
+      {"label": "일을 멈출 수는 없다", "effects": {},
+       "chance": {"base": 0.4, "stat": "health", "per": 0.006,
+         "win": {"text": "다행히 열은 며칠 만에 가라앉았습니다.", "effects": {}},
+         "lose": {"text": "열병이 일터까지 번졌습니다. 한 사람을 묻었습니다.", "effects": {"health": -12, "pop": -1, "mood": -4}}}}
+    ]},
+  "RV_FIRE": {"week": 999, "realm": true, "title": "한밤의 불길", "speaker": "오딜 마르센", "portrait": "CH01",
+    "pool": {"weight": 2, "min": 8, "max": 50},
+    "body": "영주님, 자재 창고 지붕에 불이 붙었습니다! 물동이를 나를 사람과 지붕을 뜯을 도구, 어느 쪽에 걸지 지금 정하셔야 합니다.",
+    "options": [
+      {"label": "도구를 써서 지붕을 뜯어낸다", "cost": {"tools": 1}, "effects": {"wood": -8}},
+      {"label": "주민을 깨워 물을 나른다", "effects": {},
+       "chance": {"base": 0.45, "facility": {"B06": 0.2}, "stat": "mood", "per": 0.004,
+         "win": {"text": "물동이 행렬이 불길을 잡았습니다. 그을린 판자 몇 장만 잃었습니다.", "effects": {"wood": -8, "village": 2}},
+         "lose": {"text": "불이 곡식 더미로 옮겨 붙었습니다.", "effects": {"wood": -30, "food": -70, "mood": -4}}}}
+    ]},
+  "RV_DISPUTE": {"week": 999, "realm": true, "title": "밭둑 싸움", "speaker": "요스트", "portrait": "CH09",
+    "pool": {"weight": 3, "min": 5, "max": 34},
+    "body": "두 집이 밭둑 한 뼘을 두고 낫을 들 뻔했소. 장부대로 자르면 한쪽이 울고, 덮어 두면 가을에 또 터질 일이오.",
+    "options": [
+      {"label": "장부대로 판결한다", "effects": {"trust": 4, "village": -3}},
+      {"label": "양쪽에 보상하고 달랜다", "cost": {"money": 300}, "effects": {"village": 5, "mood": 3}},
+      {"label": "촌장에게 맡긴다", "effects": {"village": 2, "trust": -2}}
+    ]},
+  "RV_FESTIVAL": {"week": 999, "realm": true, "title": "수확제", "speaker": "요스트", "portrait": "CH09",
+    "pool": {"weight": 6, "min": 35, "max": 39, "once": true},
+    "body": "낟가리가 섰으니 잔치 얘기가 나오는구려. 한 해 고생한 사람들이오. 크게 열면 겨울 내내 그 기억으로 버틸 게요.",
+    "options": [
+      {"label": "크게 연다", "cost": {"food": 80, "money": 300}, "effects": {"mood": 10, "village": 5}},
+      {"label": "조촐하게 연다", "cost": {"food": 30}, "effects": {"mood": 4}},
+      {"label": "올해는 건너뛴다", "effects": {"mood": -4}}
+    ]},
+  "RV_SURVEY": {"week": 999, "realm": true, "title": "마탑의 측량 제안", "speaker": "이네스 라우", "portrait": "CH05",
+    "pool": {"weight": 3, "min": 4, "max": 24, "once": true},
+    "body": "계약주, 이 땅 지맥이 좀 재밌어. 측량비만 대 주면 한 달 안에 쓸 만한 지도를 그려 줄게. 밭이든 광맥이든, 어디가 좋은지 알고 파는 게 낫잖아?",
+    "options": [
+      {"label": "측량을 맡긴다", "cost": {"money": 400}, "effects": {"trust": 2}, "followup": {"id": "RV_SURVEY_DONE", "delay": 4}},
+      {"label": "광맥만 빨리 찾아 달라고 한다", "cost": {"tools": 2}, "effects": {},
+       "chance": {"base": 0.55,
+         "win": {"text": "얕은 석재층이 드러났습니다. 캐기만 하면 됩니다.", "effects": {"stone": 60}},
+         "lose": {"text": "곡괭이만 무뎌졌습니다. 이네스가 머쓱하게 웃습니다.", "effects": {}}}},
+      {"label": "지금은 여유가 없다", "effects": {}}
+    ]},
+  "RV_SURVEY_DONE": {"week": 999, "realm": true, "title": "완성된 지도", "speaker": "이네스 라우", "portrait": "CH05",
+    "body": "됐어, 계약주. 물길과 흙의 결이 다 들어 있어. 한 군데만 고르라면… 음, 그건 영주가 정할 일이지.",
+    "options": [
+      {"label": "밭의 물길을 고친다", "effects": {"crop": 0.08}},
+      {"label": "채집지 지도를 나눠 준다", "effects": {"perm": {"gather": 1.1}}},
+      {"label": "돌 캐기 좋은 자리를 표시한다", "effects": {"stone": 40}}
+    ]},
+  "RV_ELF": {"week": 999, "realm": true, "title": "숲의 경고", "speaker": "시아렐", "portrait": "CH06",
+    "pool": {"weight": 4, "min": 8, "max": 44, "facility": "B25", "once": true},
+    "body": "짧은 생의 자여, 그대들의 도끼가 경계석을 넘었소. 숲은 오래 참지만 잊지 않소. 벨 몫과 남길 몫을 다시 적으시오.",
+    "options": [
+      {"label": "벌목 구역을 줄인다", "effects": {"village": 5, "threat": -5, "perm": {"logging": 0.9}}},
+      {"label": "묘목을 심어 보상한다", "cost": {"money": 300, "food": 20}, "effects": {"village": 6}},
+      {"label": "영지의 겨울이 먼저다", "effects": {"village": -6, "threat": 8}}
+    ]},
+  "RV_DWARF": {"week": 999, "realm": true, "title": "장인장의 제안", "speaker": "두르간", "portrait": "CH08",
+    "pool": {"weight": 3, "min": 6, "max": 40, "once": true},
+    "body": "땅주인, 그대네 도끼날 가는 꼴을 보다 못해 왔소. 제자 하나를 한 철 붙여 주지. 공짜는 아니오. 솜씨엔 값이 있는 법이니.",
+    "options": [
+      {"label": "도제 계약을 맺는다", "cost": {"money": 500}, "effects": {"perm": {"tool_use": 0.8}, "mood": 2}},
+      {"label": "석재를 주고 도구를 받는다", "cost": {"stone": 20}, "effects": {"tools": 3}},
+      {"label": "다음 기회에", "effects": {}}
+    ]},
+  "RV_NOBLE": {"week": 999, "realm": true, "title": "레이벡의 만찬", "speaker": "클로틸드 드 레이벡", "portrait": "CH07",
+    "pool": {"weight": 3, "min": 10, "max": 46, "once": true},
+    "body": "이웃 경, 변경에 새 영주가 왔다는데 얼굴도 못 봤군요. 만찬에 오세요. 빈손이어도 좋지만, 빈손으로 온 사람을 저는 오래 기억한답니다.",
+    "options": [
+      {"label": "선물을 들고 참석한다", "cost": {"money": 400}, "effects": {"guild": 7, "trust": 2}},
+      {"label": "곡물 거래를 제안한다", "cost": {"food": 100}, "effects": {"money": 320, "guild": 3}},
+      {"label": "정중히 사양한다", "effects": {"guild": -3}}
+    ]},
+  "RV_INSPECT": {"week": 999, "realm": true, "title": "불시 점검", "speaker": "마티아스 그렌", "portrait": "CH10",
+    "pool": {"weight": 3, "min": 14, "max": 46, "once": true},
+    "body": "경, 예고 없이 온 것은 사과드립니다. 다만 예고하면 장부가 깨끗해지는 영지를 많이 보았기에. 열어 보이시겠습니까?",
+    "options": [
+      {"label": "장부를 전부 연다", "effects": {},
+       "chance": {"base": 0.25, "stat": "trust", "per": 0.01,
+         "win": {"text": "감찰관이 고개를 끄덕입니다. \"모범으로 보고하겠습니다.\" 왕실 포상이 내려왔습니다.", "effects": {"money": 400, "trust": 5}},
+         "lose": {"text": "누락된 항목이 발견되었습니다. 과태료가 부과됩니다.", "effects": {"money": -400, "trust": -3}}}},
+      {"label": "접대하며 시간을 끈다", "cost": {"money": 300}, "effects": {"trust": -2}}
+    ]},
+  "RV_DESERTER": {"week": 999, "realm": true, "title": "문 앞의 탈영병", "speaker": "디트마르 크론", "portrait": "CH11",
+    "pool": {"weight": 3, "min": 6, "max": 46},
+    "body": "영주, 북쪽 부대에서 도망친 자 셋이 문 앞에 있소. 칼 쓸 줄은 아는 놈들이지. 먹여 쓰든가, 쫓든가. 굶은 칼잡이를 그냥 보내면 어디로 가겠소?",
+    "options": [
+      {"label": "경비로 고용한다", "cost": {"money": 300}, "effects": {"security": 8}},
+      {"label": "먹을 것을 주어 보낸다", "cost": {"food": 20}, "effects": {"threat": -4}},
+      {"label": "쫓아낸다", "effects": {"threat": 5}}
+    ]},
+  "RV_MERC": {"week": 999, "realm": true, "title": "용병단의 겨울 계약", "speaker": "잉가", "portrait": "CH12",
+    "pool": {"weight": 3, "min": 20, "max": 44, "once": true},
+    "body": "고용주! 올겨울 일감을 찾는 중이야. 우리가 울타리 옆에 천막만 쳐도 황야 놈들은 길을 돌아가지. 값은… 뭐, 목숨값치곤 싸.",
+    "options": [
+      {"label": "한 철 주둔을 맡긴다", "cost": {"money": 800}, "effects": {"security": 15, "threat": -20}},
+      {"label": "민병 훈련만 부탁한다", "cost": {"money": 300}, "effects": {"security": 6}},
+      {"label": "우리 힘으로 지킨다", "effects": {}}
+    ]},
+  "RV_FORAGE": {"week": 999, "realm": true, "title": "버섯이 돋은 숲", "speaker": "시아렐", "portrait": "CH06",
+    "pool": {"weight": 3, "min": 6, "max": 30, "seasons": [0, 1]},
+    "body": "비 뒤에 숲이 상을 차렸소. 깊은 골까지 들어가면 광주리가 넘치겠지만, 그곳은 길을 아는 자의 땅이오.",
+    "options": [
+      {"label": "깊은 골까지 채집대를 보낸다", "effects": {},
+       "chance": {"base": 0.65, "facility": {"B17": 0.1},
+         "win": {"text": "광주리마다 버섯과 산열매가 가득합니다.", "effects": {"food": 70}},
+         "lose": {"text": "독버섯이 섞였습니다. 며칠을 앓는 사람이 나왔습니다.", "effects": {"health": -5}}}},
+      {"label": "숲 가장자리만 훑는다", "effects": {"food": 25}}
+    ]},
+  "RV_STORM": {"week": 999, "realm": true, "title": "지붕을 벗긴 폭풍", "speaker": "오딜 마르센", "portrait": "CH01",
+    "pool": {"weight": 3, "min": 14, "max": 39, "seasons": [1, 2]},
+    "body": "밤사이 폭풍이 지나갔습니다. 움집 여러 채의 지붕이 날아갔습니다. 지금 고치지 않으면 다음 비에 살림이 전부 젖습니다.",
+    "options": [
+      {"label": "목재를 풀어 즉시 고친다", "cost": {"wood": 20}, "effects": {"village": 3}},
+      {"label": "각자 알아서 고치게 한다", "effects": {"mood": -4, "health": -4}}
+    ]},
+  "RV_ORPHANS": {"week": 999, "realm": true, "immigration": true, "title": "길 위의 아이들", "speaker": "아녜스", "portrait": "CH03",
+    "pool": {"weight": 2, "min": 8, "max": 44, "once": true},
+    "body": "순례길에서 부모를 잃은 아이 셋을 데려왔어요. 교단 숙소는 왕도까지 가야 있고… 이 아이들이 그 길을 버틸 수 있을지 모르겠어요.",
+    "options": [
+      {"label": "영지가 거둔다", "cost": {"food": 30}, "requires_housing": 3, "effects": {"pop": 3, "mood": 4, "village": 3}},
+      {"label": "여비를 주어 교단에 보낸다", "cost": {"money": 200}, "effects": {"trust": 2}},
+      {"label": "여력이 없다", "effects": {"mood": -3}}
+    ]},
+  "RV_WELL": {"week": 999, "realm": true, "title": "흐려진 우물", "speaker": "아녜스", "portrait": "CH03",
+    "pool": {"weight": 3, "min": 12, "max": 40, "seasons": [1, 2]},
+    "body": "우물물에서 냄새가 나요. 벌써 배앓이를 하는 사람이 있어요. 바닥을 쳐내든 물을 끓이든, 오늘 안에 정해 주세요.",
+    "options": [
+      {"label": "우물 바닥을 쳐낸다", "cost": {"tools": 1, "wood": 5}, "effects": {"health": 3}},
+      {"label": "장작을 나눠 물을 끓이게 한다", "cost": {"fuel": 15}, "effects": {}},
+      {"label": "며칠 지켜본다", "effects": {"health": -8}}
+    ]},
+  "RV_TAXPLEA": {"week": 999, "realm": true, "title": "세금 탄원", "speaker": "요스트", "portrait": "CH09",
+    "pool": {"weight": 6, "min": 30, "max": 35, "once": true},
+    "body": "곧 가을 세금이오. 올해는 다들 빠듯했소. 한 번만 숨통을 틔워 주면, 사람들은 그걸 십 년은 기억할 게요. 물론 금고는 십 년을 기억 못 하겠지만.",
+    "options": [
+      {"label": "올해 세금 일부를 돌려준다", "cost": {"money": 500}, "effects": {"mood": 6, "village": 6}},
+      {"label": "원칙대로 걷는다", "effects": {"mood": -4, "trust": 3}}
+    ]},
+  "RV_BRIDGE": {"week": 999, "realm": true, "title": "삐걱이는 여울 다리", "speaker": "베아트릭스 코른", "portrait": "CH04",
+    "pool": {"weight": 3, "min": 8, "max": 40, "once": true},
+    "body": "나리, 여울 다리 판자가 반은 썩었어. 수레 한 대 빠지면 상단은 이 길을 지도에서 지워. 고쳐 놓으면? 통행료 이상으로 돌아오지.",
+    "options": [
+      {"label": "다리를 고친다", "cost": {"wood": 25, "stone": 10}, "effects": {"guild": 5, "trade_discount": 0.1}},
+      {"label": "건너는 수레에 통행세를 물린다", "effects": {"money": 200, "guild": -4}},
+      {"label": "그대로 둔다", "effects": {}}
+    ]},
+  "RV_HUNT": {"week": 999, "realm": true, "title": "가을 몰이사냥", "speaker": "디트마르 크론", "portrait": "CH11",
+    "pool": {"weight": 3, "min": 27, "max": 39, "once": true},
+    "body": "영주, 사슴 떼가 구릉을 넘고 있소. 몰이꾼만 붙여 주면 겨울 고기를 마련할 수 있지. 다만 수확 일손을 빼야 하오.",
+    "options": [
+      {"label": "몰이사냥을 연다", "effects": {},
+       "chance": {"base": 0.6, "stat": "security", "per": 0.004,
+         "win": {"text": "사슴 여러 마리를 잡았습니다. 훈연할 고기가 넉넉합니다.", "effects": {"food": 80, "mood": 3}},
+         "lose": {"text": "떼를 놓쳤습니다. 헛걸음에 도구만 상했습니다.", "effects": {"tools": -1}}}},
+      {"label": "수확이 먼저다", "effects": {}}
+    ]},
+  "RV_LETTER": {"week": 999, "realm": true, "title": "왕도의 서신", "speaker": "마티아스 그렌", "portrait": "CH10",
+    "pool": {"weight": 3, "min": 18, "max": 40, "once": true},
+    "body": "경, 왕도의 성벽 보수에 변경의 정성을 구한다는 서신입니다. 강제는 아닙니다. 다만 왕실은 누가 응했는지 적어 둡니다.",
+    "options": [
+      {"label": "목재 40을 헌납한다", "cost": {"wood": 40}, "effects": {"trust": 6}, "followup": {"id": "RV_ROYAL", "delay": 6}},
+      {"label": "금화 5금을 보낸다", "cost": {"money": 500}, "effects": {"trust": 4}, "followup": {"id": "RV_ROYAL", "delay": 6}},
+      {"label": "사정을 적어 사양한다", "effects": {"trust": -3}}
+    ]},
+  "RV_ROYAL": {"week": 999, "realm": true, "title": "왕실의 답례", "speaker": "마티아스 그렌", "portrait": "CH10",
+    "body": "경, 왕실은 기억합니다. 답례를 가져왔습니다. 두 가지 중 변경에 더 필요한 쪽을 고르시지요.",
+    "options": [
+      {"label": "왕실 대장간의 도구 5개", "effects": {"tools": 5}},
+      {"label": "하사금 7금", "effects": {"money": 700}}
+    ]},
+  "RV_RATS": {"week": 999, "realm": true, "title": "곳간의 쥐", "speaker": "오딜 마르센", "portrait": "CH01",
+    "pool": {"weight": 3, "min": 30, "max": 50},
+    "body": "영주님, 곳간 자루마다 구멍이 났습니다. 쥐입니다. 매일 조금씩이지만, 겨울 석 달이면 조금이 아닙니다.",
+    "options": [
+      {"label": "고양이를 사 온다", "cost": {"money": 150}, "effects": {"mood": 1}},
+      {"label": "덫을 만들어 놓는다", "cost": {"tools": 1}, "effects": {}},
+      {"label": "그냥 둔다", "effects": {"food": -60}}
+    ]},
+  "RV_GREENHOUSE": {"week": 999, "realm": true, "title": "이네스의 실험", "speaker": "이네스 라우", "portrait": "CH05",
+    "pool": {"weight": 2, "min": 26, "max": 44, "once": true},
+    "body": "계약주, 마력석 조각 하나로 겨울에도 싹을 틔울 수 있을 것 같아. 장작이랑 돈이 좀 들고… 음, 실패할 수도 있고. 과학이 원래 그래.",
+    "options": [
+      {"label": "실험을 지원한다", "cost": {"money": 300, "fuel": 20}, "effects": {},
+       "chance": {"base": 0.6,
+         "win": {"text": "유리 온상에서 푸른 싹이 올라왔습니다. 겨울에도 푸성귀를 거둘 수 있습니다.", "effects": {"food": 60, "mood": 4, "perm": {"spoil": 0.9}}},
+         "lose": {"text": "온상이 밤새 얼어 터졌습니다. 이네스가 수첩에 뭔가 열심히 적습니다.", "effects": {"trust": 1}}}},
+      {"label": "겨울 장작은 못 내준다", "effects": {}}
+    ]},
+  "RV_WEDDING": {"week": 999, "realm": true, "title": "마을 혼례", "speaker": "요스트", "portrait": "CH09",
+    "pool": {"weight": 3, "min": 6, "max": 46},
+    "body": "이 땅에 와서 눈이 맞은 한 쌍이 혼례를 올린다오. 영주가 술 한 통 내면 그게 이 마을의 첫 풍습이 되는 게요.",
+    "options": [
+      {"label": "잔치 음식을 낸다", "cost": {"food": 30}, "effects": {"mood": 6, "village": 3}},
+      {"label": "축사만 전한다", "effects": {"mood": 2}}
+    ]},
+  "RV_SMUGGLER": {"week": 999, "realm": true, "title": "밤의 수레", "speaker": "잉가", "portrait": "CH12",
+    "pool": {"weight": 3, "min": 24, "max": 48, "once": true},
+    "body": "고용주, 조용히 들어. 세관을 피한 장작 수레가 여울 밑에 있어. 시세의 반값이야. 조합이 알면 곤란하겠지만… 겨울은 조합 사정을 안 봐주잖아?",
+    "options": [
+      {"label": "반값에 사들인다", "cost": {"money": 300}, "effects": {"fuel": 120, "guild": -4}},
+      {"label": "조합에 알린다", "effects": {"guild": 4, "trust": 2}},
+      {"label": "못 들은 걸로 한다", "effects": {}}
+    ]},
+  "RV_PILGRIM": {"week": 999, "realm": true, "title": "길 잃은 순례단", "speaker": "아녜스", "portrait": "CH03",
+    "pool": {"weight": 3, "min": 5, "max": 46},
+    "body": "눈비에 길을 잃은 순례단이 하룻밤만 묵게 해 달래요. 열두 명이에요. 내어 줄 건 죽 한 솥과 헛간뿐이지만요.",
+    "options": [
+      {"label": "죽을 끓이고 헛간을 내준다", "cost": {"food": 12}, "effects": {"mood": 2},
+       "chance": {"base": 0.5,
+         "win": {"text": "떠나는 아침, 순례단 인솔자가 은화 주머니를 두고 갔습니다.", "effects": {"money": 250}},
+         "lose": {"text": "순례단은 축복의 말을 남기고 조용히 떠났습니다.", "effects": {"village": 1}}}},
+      {"label": "문을 열 수 없다", "effects": {"mood": -2}}
+    ]},
+  "RV_TOOLS": {"week": 999, "realm": true, "title": "무뎌진 연장", "speaker": "두르간", "portrait": "CH08",
+    "pool": {"weight": 3, "min": 12, "max": 46, "facility": "B25"},
+    "body": "땅주인, 연장 꼴이 그게 뭐요. 자루는 갈라지고 날은 톱이 됐구려. 지금 벼리면 한 해를 더 쓰고, 그냥 쓰면 한 달 안에 부러지오.",
+    "options": [
+      {"label": "벼림 값을 낸다", "cost": {"money": 200}, "effects": {"tools": 2}},
+      {"label": "대장간에서 직접 손본다", "requires": {"facility": "B33"}, "effects": {"tools": 3, "mood": 1}},
+      {"label": "부러질 때까지 쓴다", "effects": {"tools": -2}}
+    ]},
+  "RV_RUMOR": {"week": 999, "realm": true, "title": "선술집의 소문", "speaker": "베아트릭스 코른", "portrait": "CH04",
+    "pool": {"weight": 4, "min": 16, "max": 48, "facility": "B11"},
+    "body": "나리네 선술집 말이야, 귀가 열려 있으면 돈이 되는 곳이지. 어젯밤 들은 얘기 두 개가 있는데, 하나만 살 수 있어.",
+    "options": [
+      {"label": "곡물 시세 소식을 산다", "cost": {"money": 150}, "effects": {"perm": {"buy": 0.93}, "guild": 2}},
+      {"label": "황야 도적의 동선을 산다", "cost": {"money": 150}, "effects": {"threat": -15, "security": 3}},
+      {"label": "술이나 한 잔 산다", "effects": {"mood": 1}}
+    ]}
+}

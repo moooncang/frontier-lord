@@ -1,0 +1,10 @@
+{
+  "version":1,
+  "rules":[
+    {"level":1,"name":"먼 보급로","text":"모든 물자 구매가 +5%","mods":{"buy":1.05}},
+    {"level":2,"name":"잦은 설비 고장","text":"시설 유지비 +8%","mods":{"maintenance":1.08}},
+    {"level":3,"name":"거친 자원 지대","text":"생산 작업의 도구 소모 +10%","mods":{"tool_use":1.1}},
+    {"level":4,"name":"찬 겨울바람","text":"겨울 난방 소비 +10%","mods":{"heating":1.1}},
+    {"level":5,"name":"불안한 국경","text":"변경의 위협 증가 +15%","mods":{"threat_growth":1.15}}
+  ]
+}
