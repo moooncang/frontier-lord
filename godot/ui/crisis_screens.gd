@@ -87,7 +87,7 @@ static func _active(ui: Variant, parent: Node, current: Dictionary) -> void:
 		var box: VBoxContainer = ui._box(area)
 		box.name = "CrisisCheck_%d" % index
 		box.add_theme_constant_override("separation",2)
-		ui._label(box,("✓ " if check.met else "○ ")+str(check.label),20,GameTheme.GOOD if check.met else GameTheme.TEXT)
+		ui._label(box,("● " if check.met else "○ ")+str(check.label),20,GameTheme.GOOD if check.met else GameTheme.TEXT)
 		ui._label(box,str(check.text),19,GameTheme.GOOD if check.met else GameTheme.WARN)
 	ui._rule(area)
 	ui._label(area,"조건은 예고 때 확정됩니다. 비축품은 대비 조건이며, 성공 시 차감하지 않습니다. 공사 예약 자재는 비축량에서 제외합니다.",17,GameTheme.MUTED)
@@ -116,4 +116,4 @@ static func results(ui: Variant, parent: Node) -> void:
 	ui._rule(parent)
 	ui._heading(parent,"위기 극복 %d / %d" % [info.records.filter(func(row): return row.success).size(),info.records.size()])
 	for row in info.records:
-		ui._label(parent,("✓ " if row.success else "✗ ")+"%d주 · %s" % [row.week,row.name],19,GameTheme.GOOD if row.success else GameTheme.WARN)
+		ui._label(parent,("● " if row.success else "× ")+"%d주 · %s" % [row.week,row.name],19,GameTheme.GOOD if row.success else GameTheme.WARN)

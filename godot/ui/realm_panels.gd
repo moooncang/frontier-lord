@@ -153,7 +153,7 @@ static func growth(ui: Variant, parent: Node) -> void:
 		return
 	ui._label(parent,str(rank.next)+" 승격 조건",20,GameTheme.TEAL)
 	for condition in rank.checks:
-		ui._label(parent,("✓ " if condition.done else "○ ")+str(condition.text),18,GameTheme.GOOD if condition.done else GameTheme.TEXT)
+		ui._label(parent,("● " if condition.done else "○ ")+str(condition.text),18,GameTheme.GOOD if condition.done else GameTheme.TEXT)
 	var goal: Dictionary = ui.session.content.realm.ranks[int(rank.rank)+1]
 	ui._label(parent,"승격 보상 · "+RealmRules.changes_text(goal.get("reward",{})),18,GameTheme.GOOD)
 	if VillageRelics.enabled(s) and int(rank.rank) == 0: ui._label(parent,"첫 촌락 승격 · 성물 3개 중 1개 선택",18,GameTheme.TEAL)

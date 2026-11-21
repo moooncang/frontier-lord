@@ -147,7 +147,7 @@ static func _stages(ui: Variant, parent: Node, phase: int, reserved: bool) -> vo
 	for index in 3:
 		var text: String = ["승인", "공사", "완공"][index]
 		if reserved and index == 0: text = "승인 완료"
-		elif index < phase: text = "✓ " + text
+		elif index < phase: text = "● " + text
 		var label: Label = ui._label(row,text,18,GameTheme.GOOD if index <= phase else GameTheme.MUTED)
 		label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		if index == phase: label.add_theme_font_override("font",PixelTheme.heading_font())

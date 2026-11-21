@@ -13,11 +13,15 @@ static func font(strong: bool = false) -> Font:
 		bold = load("res://assets/fonts/Galmuri11-Bold.ttf")
 		# 가는 글꼴은 12의 배수가 아닌 크기에서 획이 끊기거나 흐려진다. 본문도 굵은 글꼴로 쓴다.
 		regular = bold
-		if bold is FontFile:
-			# 크기와 화면 배율이 제각각이라 계단 처리를 끄면 획 굵기가 들쭉날쭉해진다.
-			bold.antialiasing = TextServer.FONT_ANTIALIASING_GRAY
-			bold.hinting = TextServer.HINTING_NONE
-			bold.subpixel_positioning = TextServer.SUBPIXEL_POSITIONING_DISABLED
+		# 굵은 체에 없는 기호(− ▾ ▸ 등)는 가는 체에서 빌린다. 브라우저에는 기댈 시스템 글꼴이 없다.
+		var thin: Font = load("res://assets/fonts/Galmuri11.ttf")
+		for face in [bold, thin]:
+			if face is FontFile:
+				# 크기와 화면 배율이 제각각이라 계단 처리를 끄면 획 굵기가 들쭉날쭉해진다.
+				face.antialiasing = TextServer.FONT_ANTIALIASING_GRAY
+				face.hinting = TextServer.HINTING_NONE
+				face.subpixel_positioning = TextServer.SUBPIXEL_POSITIONING_DISABLED
+		bold.fallbacks = [thin]
 	return bold if strong else regular
 
 static func frame(fill: Color, edge: Color, inset: int = 16) -> StyleBoxTexture:

@@ -73,7 +73,7 @@ static func _active_lock(ui: Variant) -> String:
 
 static func page(ui: Variant) -> void:
 	var view: Dictionary = LegacyPath.overview(ui.session.profile)
-	var frame: VBoxContainer = ui._plate(Rect2(36,28,ui.size.x-72,ui.size.y-56),false,20)
+	var frame: VBoxContainer = ui._plate(ui._sheet(36,28),false,20)
 	frame.name = "LegacyBoard"
 	frame.add_theme_constant_override("separation",8)
 	var header: HBoxContainer = ui._row(frame)
@@ -99,10 +99,12 @@ static func page(ui: Variant) -> void:
 	body.add_theme_constant_override("separation",16)
 	if ui.house_branch == "additional": _additional(ui,body,view)
 	else: _branch(ui,body,view)
-	var plan: HBoxContainer = ui._row(frame)
-	_copy(ui,plan,"다음 통치  "+_doctrine_names(view)+"  ·  지원 "+_support_name(view),"LegacyPolicySummary",GameTheme.MUTED)
-	ui._button(plan,"방침·지원 선택",func(): ui._open_house_preparation("archive"),false,"LegacyPolicyManager")
 	var footer: HBoxContainer = ui._row(frame)
+	var plan: HBoxContainer = footer if ui.compact else ui._row(frame)
+	if not ui.compact:
+		frame.move_child(plan,footer.get_index())
+		_copy(ui,plan,"다음 통치  "+_doctrine_names(view)+"  ·  지원 "+_support_name(view),"LegacyPolicySummary",GameTheme.MUTED)
+	ui._button(plan,"방침·지원 선택",func(): ui._open_house_preparation("archive"),false,"LegacyPolicyManager")
 	var refund: Button = ui._button(footer,"무료 재분배",ui._refund_talents,ui._is_active() or ui._talent_ranks() == 0 or ui.load_blocked,"RefundTalents")
 	refund.tooltip_text = "가문 특성에 쓴 공훈을 전부 돌려받습니다. 선택한 방침과 지원 설정은 해제되고, 공통 강화 구매는 유지됩니다."
 	ui._button(footer,"발견·통치 기록",func(): ui._go("catalog"),false,"LegacyCatalog")
@@ -121,7 +123,7 @@ static func _branch(ui: Variant, parent: Node, view: Dictionary) -> void:
 	var acquired: int = rows.filter(func(item): return item.rank > 0).size()
 	var branch: Dictionary = view.branches.filter(func(item): return item.id == ui.house_branch)[0]
 	_copy(ui,left,"%s 성장 경로  ·  %d / %d 습득" % [branch.name,acquired,rows.size()],"HouseBranchProgress",GameTheme.GOOD,20)
-	_copy(ui,left,"기반을 1단계 익히면 연결된 다음 특성을 해금할 수 있습니다.","HousePathHint",GameTheme.MUTED)
+	if not ui.compact: _copy(ui,left,"기반을 1단계 익히면 연결된 다음 특성을 해금할 수 있습니다.","HousePathHint",GameTheme.MUTED)
 	var list: VBoxContainer = _scroll(ui,left,"branch:"+ui.house_branch)
 	if not rows.any(func(item): return item.id == ui.selected_talent): ui.selected_talent = str(rows[0].id)
 	var path := TrainingLinks.new()
@@ -284,11 +286,11 @@ static func _loadout(ui: Variant, parent: Node, view: Dictionary) -> void:
 		if index < view.selected_doctrines.size():
 			item = view.doctrines.filter(func(entry): return entry.id == view.selected_doctrines[index])[0]
 		_copy(ui,card,"방침 %d  ·  %s" % [index+1,item.get("name","미선택")],"",GameTheme.GOOD,19)
-		_copy(ui,card,str(item.get("description","해금한 방침을 선택하세요.")),"",GameTheme.MUTED,18)
+		if not ui.compact: _copy(ui,card,str(item.get("description","해금한 방침을 선택하세요.")),"",GameTheme.MUTED,18)
 	var support: VBoxContainer = ui._box(row)
 	support.name = "HouseSupplySlot"
 	_copy(ui,support,"지원 물자  ·  "+_support_name(view),"",GameTheme.GOOD,19)
-	_copy(ui,support,"해금한 6종 중 1종 · 부임 때 한 번 지급","",GameTheme.MUTED,18)
+	if not ui.compact: _copy(ui,support,"해금한 6종 중 1종 · 부임 때 한 번 지급","",GameTheme.MUTED,18)
 
 
 static func _cost_text(points: int, price: int) -> String:
@@ -313,15 +315,17 @@ static func setup_summary(ui: Variant, parent: Node) -> void:
 
 static func preparation_page(ui: Variant) -> void:
 	var view: Dictionary = LegacyPath.overview(ui.session.profile)
-	var frame: VBoxContainer = ui._plate(Rect2(36,28,ui.size.x-72,ui.size.y-56),false,20)
+	var frame: VBoxContainer = ui._plate(ui._sheet(36,28),false,20)
 	frame.name = "HousePreparation"
 	frame.add_theme_constant_override("separation",8)
 	var header: HBoxContainer = ui._row(frame)
-	ui._heading(header,"다음 부임 준비",true)
-	ui._button(header,"돌아가기",func(): ui._go(ui.house_return),false,"LegacySetupBack")
-	_copy(ui,frame,"가문 방침  %s  ·  %d/2 선택" % [_doctrine_names(view),view.selected_doctrines.size()],"HouseSelectedDoctrines",GameTheme.GOOD,20)
+	if not ui.compact:
+		ui._heading(header,"다음 부임 준비",true)
+		ui._button(header,"돌아가기",func(): ui._go(ui.house_return),false,"LegacySetupBack")
+		_copy(ui,frame,"가문 방침  %s  ·  %d/2 선택" % [_doctrine_names(view),view.selected_doctrines.size()],"HouseSelectedDoctrines",GameTheme.GOOD,20)
+	var tabs: HBoxContainer = header if ui.compact else ui._row(frame)
 	_loadout(ui,frame,view)
-	var tabs: HBoxContainer = ui._row(frame)
+	if not ui.compact: frame.move_child(tabs,frame.get_child_count()-1)
 	for key in PREP_NAMES:
 		var button: Button = ui._button(tabs,PREP_NAMES[key],func(): ui.house_setup_tab = key; ui.selected_house_option = ""; ui._render(),false,"house_setup_"+key)
 		button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -335,9 +339,10 @@ static func preparation_page(ui: Variant) -> void:
 	detail.name = "HouseOptionDetail"
 	if ui.house_setup_tab == "doctrines": _doctrines(ui,list,detail,view)
 	else: _preparation_options(ui,list,detail,view)
-	var footer: HBoxContainer = ui._row(frame)
-	_copy(ui,footer,"선택은 다음 부임에 적용됩니다. 구매한 선택권을 다시 쓸 때 공훈은 들지 않습니다.","HousePreparationTiming",GameTheme.MUTED)
+	var footer: HBoxContainer = header if ui.compact else ui._row(frame)
+	if not ui.compact: _copy(ui,footer,"선택은 다음 부임에 적용됩니다. 구매한 선택권을 다시 쓸 때 공훈은 들지 않습니다.","HousePreparationTiming",GameTheme.MUTED)
 	ui._button(footer,"가문 강화",func(): ui._go("archive"),false,"HouseToTalents")
+	if ui.compact: ui._button(footer,"돌아가기",func(): ui._go(ui.house_return),false,"LegacySetupBack")
 
 
 static func _choice_grid(list: Node) -> GridContainer:
@@ -383,7 +388,7 @@ static func _doctrines(ui: Variant, list: Node, detail: Node, view: Dictionary) 
 		var button: Button = _choice(ui,grid,str(item.name)+" · "+status,str(item.description),func(): ui.selected_house_option = item.id; ui._render(),"house_doctrine_"+str(item.id))
 		if item.id == ui.selected_house_option: ui._primary(button)
 	var item: Dictionary = rows.filter(func(row): return row.id == ui.selected_house_option)[0]
-	ui._heading(detail,str(item.name),true)
+	ui._heading(detail,str(item.name),not ui.compact)
 	_copy(ui,detail,"가문 방침 · "+("선택 중" if item.selected else "해금 완료" if item.rank > 0 else "미해금"),"DoctrineState",GameTheme.GOOD if item.selected else GameTheme.MUTED)
 	var notes: VBoxContainer = ui._scroll(detail)
 	var roomy: bool = ui.size.y >= 860
@@ -435,7 +440,7 @@ static func _preparation_options(ui: Variant, list: Node, detail: Node, view: Di
 		button.size_flags_vertical = Control.SIZE_EXPAND_FILL
 		if str(item.id) == ui.selected_house_option: ui._primary(button)
 	var item: Dictionary = rows.filter(func(row): return str(row.id) == ui.selected_house_option)[0]
-	ui._heading(detail,str(item.name),true)
+	ui._heading(detail,str(item.name),not ui.compact)
 	if str(item.get("text","")) != "": _copy(ui,detail,str(item.text),"PreparationEffect",GameTheme.GOOD,20)
 	var scope: String = "선택한 지원 물자는 새 통치 시작에 1회 지급됩니다.\n물자 예산으로 고르는 부임 물자와 함께 받을 수 있습니다."
 	if key == "perk_family": scope = "첫 특전 제안에만 적용됩니다.\n고른 계열의 후보 1개가 포함되며, 3개 중 1개를 선택합니다."

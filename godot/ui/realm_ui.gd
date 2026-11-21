@@ -3,7 +3,9 @@ extends "res://ui/expedition_ui.gd"
 ## 규칙은 sim/realm_rules.gd, 지도는 ui/realm_board.gd가 맡는다. 여기서는 보여 주고 명령만 넘긴다.
 
 const SIDE := 392.0
-const TOP := 134.0
+## 위쪽 수치 띠와 아래쪽 명령 띠가 차지하는 높이. 휴대폰 배치에서는 줄어든다.
+var TOP := 134.0
+var FOOT := 88.0
 const LIT := Color("f3e7cd")
 const LIT_MUTED := Color("ccd4cf")
 const LIT_GOOD := Color("9fd48f")
@@ -108,13 +110,14 @@ func _setup_pressure(parent: Node) -> void:
 
 
 func _catalog_screen() -> void:
-	var box := _plate(Rect2(40,28,size.x-80,size.y-56))
+	var box := _plate(_sheet(40,28))
 	var row := _row(box)
 	_heading(row,"발견과 통치 기록",true)
 	_button(row,"성물 발견 도감",func(): relic_collection = true; _go("relic_codex"),false,"OpenRelicCodex")
 	_button(row,"가문 강화",func(): _go("archive"))
 	_button(row,"메뉴",func(): _go("menu"))
-	_archive(_window_scroll(box))
+	# 기록 화면은 안에 자기 목록 두 개를 가진다. 바깥 목록에 넣으면 높이를 받지 못해 무너진다.
+	_archive(box)
 
 
 func _coach_rect(_step: int) -> Rect2:
@@ -147,6 +150,8 @@ func _render() -> void:
 		if lesson.step == 1: side_page = "overview"
 		elif lesson.step in [3, 5]: side_page = "overview"
 	crew_options = WorkcrewRules.choices(session.state, session.content) if _is_active() and WorkcrewRules.enabled(session.state) else []
+	TOP = 116.0 if size.y < 640 else 134.0
+	FOOT = 60.0 if size.y < 640 else 88.0
 	super._render()
 
 
@@ -200,7 +205,7 @@ func _message(message: String) -> void:
 	if previous != null:
 		interface.remove_child(previous)
 		previous.queue_free()
-	var area := Rect2(48,TOP+88,minf(620,size.x-SIDE-100),64) if page == "estate" else Rect2(48,size.y-164,minf(760,size.x-96),64)
+	var area := Rect2(48,TOP+(56 if compact else 88),minf(620,size.x-SIDE-100),64) if page == "estate" else Rect2(48,size.y-FOOT-76,minf(760,size.x-96),64)
 	var toast := _plate(area,true,14)
 	toast.get_parent().name = "ActionNotice"
 	_label(toast,_plain(message),20,LIT)
@@ -330,7 +335,7 @@ func _hud_tile(row: Node, icon: String, title: String, value: String, change: St
 
 
 func _campaign_hud() -> void:
-	var box := _plate(Rect2(20, 8, size.x - 40, 72), true, 7)
+	var box := _plate(Rect2(6, 4, size.x - 12, 68) if compact else Rect2(20, 8, size.x - 40, 72), true, 5 if compact else 7)
 	box.name = "CampaignHUD"
 	var row := _row(box)
 	row.add_theme_constant_override("separation", 10)
@@ -378,7 +383,7 @@ func _campaign_hud() -> void:
 
 
 func _season_track() -> void:
-	var box := _plate(Rect2(20, 84, size.x - 40, 42), true, 3)
+	var box := _plate(Rect2(6, 74, size.x - 12, 38) if compact else Rect2(20, 84, size.x - 40, 42), true, 3)
 	box.name = "SeasonTrack"
 	var row := _row(box)
 	row.add_theme_constant_override("separation", 14)
@@ -429,7 +434,7 @@ func _season_track() -> void:
 			var done: int = progress.checks.filter(func(item): return item.done).size()
 			_button(rank, "%s %d/%d" % [progress.next,done,progress.checks.size()],func(): _side("growth"),false,"OpenGrowth")
 			var lines: Array[String] = []
-			for item in progress.checks: lines.append(("✓ " if item.done else "○ ") + str(item.text))
+			for item in progress.checks: lines.append(("● " if item.done else "○ ") + str(item.text))
 			rank.tooltip_text = "%s 승격 조건\n%s" % [progress.next, "\n".join(lines)]
 			rank.mouse_filter = MOUSE_FILTER_STOP
 
@@ -438,7 +443,7 @@ func _season_track() -> void:
 
 func _campaign_screen() -> void:
 	if page == "fantasy_frontier":
-		var changes := _plate(Rect2(28,28,size.x-56,size.y-56),false,18)
+		var changes := _plate(_sheet(28,28),false,18)
 		var heading := _row(changes)
 		_heading(heading,"영지의 변화",true)
 		_button(heading,"집무실로 돌아가기",func(): _go("estate"),false,"BackEstate")
@@ -448,7 +453,7 @@ func _campaign_screen() -> void:
 		SeasonSupportScreens.page(self)
 		return
 	if page == "relic_codex":
-		var codex := _plate(Rect2(28,28,size.x-56,size.y-56),false,18)
+		var codex := _plate(_sheet(28,28),false,18)
 		var head := _row(codex)
 		_heading(head,"성물 발견 도감",true)
 		_button(head,"기록으로",func(): _go("catalog"),false,"RelicCodexBack")
@@ -466,10 +471,11 @@ func _campaign_screen() -> void:
 	elif page == "build":
 		_district_playfield()
 	else:
-		var box := _plate(Rect2(28, TOP, size.x - 56, size.y - TOP - 88), false, 16)
-		var row := _row(box)
-		_heading(row, TITLES.get(page, "영지 관리"), true)
-		_button(row, "영지로 돌아가기", func(): _go("estate"), false, "BackEstate")
+		var box := _plate(Rect2(28, TOP, size.x - 56, size.y - TOP - FOOT), false, 16)
+		if not compact:
+			var row := _row(box)
+			_heading(row, TITLES.get(page, "영지 관리"), true)
+			_button(row, "영지로 돌아가기", func(): _go("estate"), false, "BackEstate")
 		match page:
 			"build": _development(box)
 			"trade": _reading_market(box)
@@ -499,7 +505,7 @@ func _estate_playfield() -> void:
 	scene.name = "EstatePlayfield"
 	scene.mouse_filter = MOUSE_FILTER_IGNORE
 	interface.add_child(scene)
-	_place(scene,Rect2(28,TOP,left_width,size.y-TOP-88))
+	_place(scene,Rect2(28,TOP,left_width,size.y-TOP-FOOT))
 	var heading := _plate(Rect2(28,TOP,left_width,52),true,10)
 	var title := _row(heading)
 	_lit(title,"영지 집무실",22,LIT,true).size_flags_horizontal = SIZE_EXPAND_FILL
@@ -514,7 +520,7 @@ func _estate_playfield() -> void:
 	var court := PeopleRules.court(session.state, session.content, int(left_width / 204.0))
 	for position_index in court.size():
 		var person: Dictionary = court[position_index]
-		var card := _plate(Rect2(28 + position_index * 204, size.y - 88 - desk_height - 84, 196, 76), true, 8)
+		var card := _plate(Rect2(28 + position_index * 204, size.y - FOOT - desk_height - 84, 196, 76), true, 8)
 		card.name = "CourtCard_" + str(person.id)
 		var line := _row(card)
 		line.add_theme_constant_override("separation", 8)
@@ -524,7 +530,7 @@ func _estate_playfield() -> void:
 		_lit(words, str(person.name), 18, LIT, true).clip_text = true
 		_lit(words, str(person.mood), 18, LIT_GOOD if int(person.regard) > 0 else LIT_WARN if int(person.regard) < 0 else LIT_MUTED)
 		card.get_parent().tooltip_text = "%s · %s\n%s\n호의가 %d번 쌓이면 보답하고, 서운함이 %d번 쌓이면 등을 돌립니다." % [person.name, person.role, person.memory, PeopleRules.LIMIT, PeopleRules.LIMIT]
-	var desk := _plate(Rect2(28,size.y-88-desk_height,left_width,desk_height),false,16)
+	var desk := _plate(Rect2(28,size.y-FOOT-desk_height,left_width,desk_height),false,16)
 	desk.name = "OfficeDesk"
 	desk.add_theme_constant_override("separation",6)
 	_news_block(desk)
@@ -537,7 +543,7 @@ func _estate_playfield() -> void:
 		FantasyFrontierScreens.summary(self,growth)
 		RelicScreens.builds_summary(self,growth)
 		RealmPanels.growth(self,growth)
-	else: RealmPanels.office_plan(self,side)
+	else: RealmPanels.office_plan(self,_scroll(side) if compact else side)
 
 
 ## 앞으로 몇 주 안에 일어날 일. 가까운 순서로 돌려준다.
@@ -564,7 +570,7 @@ func _upcoming() -> Array:
 
 ## '이번 주' 탭의 남는 자리를 채운다. used는 위쪽 내용이 이미 쓰는 높이다. 들어갈 만큼만 넣는다.
 func _office_extras(parent: Node, used: float) -> void:
-	var room := size.y - TOP - 88.0 - used
+	var room := size.y - TOP - FOOT - used
 	var s := session.state
 	var overview := CampaignDirector.overview(s, session.content)
 	var coming := _upcoming()
@@ -617,7 +623,7 @@ func _office_extras(parent: Node, used: float) -> void:
 
 
 func _operation_sidebar() -> VBoxContainer:
-	var side := _plate(Rect2(size.x-28-SIDE,TOP,SIDE,size.y-TOP-88),false,14)
+	var side := _plate(Rect2(size.x-28-SIDE,TOP,SIDE,size.y-TOP-FOOT),false,14)
 	side.name = "OperatingWorkspace"
 	side.add_theme_constant_override("separation",8)
 	var tabs := _row(side)
@@ -630,7 +636,7 @@ func _operation_sidebar() -> VBoxContainer:
 
 func _district_playfield() -> void:
 	if active_district == "fantasy" and FantasyFrontiers.overview(session.state,session.content).get("selected",[]).is_empty(): active_district = "civic"
-	var height := size.y-TOP-88
+	var height := size.y-TOP-FOOT
 	var width := size.x-56-SIDE-18
 	var frame := Panel.new()
 	frame.name = "DistrictPlayfield"
@@ -715,7 +721,7 @@ func _open_build_lot(id: String) -> void:
 
 
 func _run_dock() -> void:
-	var dock := _plate(Rect2(20,size.y-76,size.x-40,60),true,6)
+	var dock := _plate(Rect2(6,size.y-56,size.x-12,52) if compact else Rect2(20,size.y-76,size.x-40,60),true,3 if compact else 6)
 	dock.name = "RunDock"
 	var row := _row(dock)
 	row.add_theme_constant_override("separation",10)
@@ -723,6 +729,7 @@ func _run_dock() -> void:
 		var button := _button(row,entry[1],func(): _go(entry[0]),false,"nav_"+entry[0])
 		if page == entry[0]: _primary(button)
 	_button(row,"통치·성장",func(): management_open = true; _render(),false,"MoreActions")
+	if compact and TITLES.has(page): _lit(row,"· "+str(TITLES[page]),18,LIT_MUTED).name = "PageTitle"
 	_spacer(row)
 	var next := _button(row,"결정 먼저 확인" if _pending() else "1주 진행 →",_open_decision if _pending() else func(): _advance(1),busy or not _is_active(),"NextWeek")
 	next.custom_minimum_size.x = 240
@@ -901,9 +908,9 @@ func _workcrew_panel(parent: Node) -> void:
 	var lesson := Onboarding.current(session.state)
 	var locked: bool = lesson.active and lesson.step < 5
 	for option in options:
-		var copy: String = "%s%s\n식량 %+.0f · 공사 %d" % ["✓ " if option.selected else "", option.name, option.deltas.food, option.work]
+		var copy: String = "%s%s\n식량 %+.0f · 공사 %d" % ["● " if option.selected else "", option.name, option.deltas.food, option.work]
 		if metric != "work":
-			copy = "%s%s\n식량 %+.0f · %s %+.0f" % ["✓ " if option.selected else "",option.name,option.deltas.food,"장작" if metric == "fuel" else "목재",option.deltas[metric]]
+			copy = "%s%s\n식량 %+.0f · %s %+.0f" % ["● " if option.selected else "",option.name,option.deltas.food,"장작" if metric == "fuel" else "목재",option.deltas[metric]]
 		if not option.available:
 			copy = option.name + "\n" + ("공사가 있을 때" if option.id == "build" else "벌목소 필요" if option.id == "winter" and int(session.state.facilities.get("B25", 0)) == 0 else "목재·인력 부족" if option.id == "winter" else "지금은 일감 없음")
 		var button := _button(grid, copy, func(): _choose_workcrew(option.id), not option.available or locked, "crew_" + option.id)
@@ -1154,7 +1161,7 @@ func _event_choices(parent: Node) -> void:
 	var copy := {} if modern else ConciseCopy.event_brief(id, event)
 	var top := _row(parent)
 	top.add_theme_constant_override("separation", 18)
-	_face(top, event.get("portrait", "CH01"), 96)
+	_face(top, event.get("portrait", "CH01"), 72 if compact else 96)
 	var words := _box(top)
 	words.add_theme_constant_override("separation", 4)
 	var byline := _row(words)
@@ -1165,7 +1172,7 @@ func _event_choices(parent: Node) -> void:
 		category.size_flags_horizontal = SIZE_SHRINK_BEGIN
 		category.autowrap_mode = TextServer.AUTOWRAP_OFF
 	_label(byline, str(event.get("speaker", "")), 18, GameTheme.MUTED)
-	_heading(words, str(event.title) if modern else str(copy.title), true)
+	_heading(words, str(event.title) if modern else str(copy.title), not compact)
 	_label(words, str(event.body) if modern else str(copy.body), 20)
 	var visitor: Dictionary = PeopleRules.view(session.state, session.content, str(event.get("portrait", "")))
 	if visitor.known:
@@ -1308,7 +1315,7 @@ func _outcome_popup() -> void:
 	var event: Dictionary = RealmRules.event_definition(session.state,session.content,outcome.event)
 	var row := _row(box)
 	row.add_theme_constant_override("separation", 18)
-	_face(row, event.get("portrait", "CH01"), 110)
+	_face(row, event.get("portrait", "CH01"), 72 if compact else 110)
 	var words := _box(row)
 	_heading(words, str(outcome.title), true)
 	_label(words, "선택 · " + str(outcome.choice), 20, GameTheme.MUTED)
@@ -1387,7 +1394,7 @@ func _run_results() -> void:
 	if not result.has("grade"):
 		super._run_results()
 		return
-	var box := _plate(Rect2(44, 36, size.x - 88, size.y - 72), false, 24)
+	var box := _plate(_sheet(44,36), false, 24)
 	box.name = "RunResults"
 	var header := _row(box)
 	_heading(header, "통치 결산", true)
@@ -1412,9 +1419,9 @@ func _run_results() -> void:
 	detail.get_parent().size_flags_stretch_ratio = 1.6
 	_heading(detail, "연말 목표")
 	for goal in session.state.goals.values():
-		_label(detail, ("✓ " if goal.done else "✗ ") + "%s · %s" % [goal.detail, goal.status], 20, GameTheme.GOOD if goal.done else GameTheme.BAD)
+		_label(detail, ("● " if goal.done else "× ") + "%s · %s" % [goal.detail, goal.status], 20, GameTheme.GOOD if goal.done else GameTheme.BAD)
 	if result.has("trial_passed"):
-		_label(detail, ("✓ " if result.trial_passed else "✗ ") + "겨울 시련 · " + str(session.content.chronicle.trials[session.state.trial].name), 20, GameTheme.GOOD if result.trial_passed else GameTheme.BAD)
+		_label(detail, ("● " if result.trial_passed else "× ") + "겨울 시련 · " + str(session.content.chronicle.trials[session.state.trial].name), 20, GameTheme.GOOD if result.trial_passed else GameTheme.BAD)
 	_rule(detail)
 	_heading(detail, "영지의 성장  +%d" % result.get("realm_points", 0))
 	for line in result.get("realm_lines", []):

@@ -52,7 +52,9 @@ static func page(ui: Variant, parent: Node) -> void:
 	var top: HBoxContainer = ui._row(parent)
 	var guide: String = "장착한 성물만 적용 · 같은 계열 2개로 성물 세트 적용"
 	if CrisisDirector.enabled(ui.session.state): guide = "장착 3칸 · 같은 계열 2개 세트 · 확장 성물 포함 3개 전문화"
-	ui._label(top,"한 번 발견한 성물은 기록에 남습니다 · 새 통치에서는 다시 획득" if ui.page == "relic_codex" else guide,18,GameTheme.MUTED)
+	# 휴대폰: 안내 글과 성소 그림을 빼고, 계열 거르기 단추를 이 줄에 함께 둔다.
+	var tight: bool = ui.compact and ui.page != "relic_codex"
+	if not tight: ui._label(top,"한 번 발견한 성물은 기록에 남습니다 · 새 통치에서는 다시 획득" if ui.page == "relic_codex" else guide,18,GameTheme.MUTED)
 	if ui.page != "relic_codex":
 		ui._button(top,"보관함 보기" if ui.relic_collection else "발견 도감 %d / %d" % [discovered.size(),definitions.relics.size()],func(): ui.relic_collection = not ui.relic_collection; ui._render(),false,"RelicCollection")
 		if _builds_enabled(ui): ui._button(top,"운영 조합",func(): ui._go("operating_builds"),false,"SanctuaryBuilds")
@@ -63,7 +65,7 @@ static func page(ui: Variant, parent: Node) -> void:
 	var left: VBoxContainer = ui._box(body,1.7)
 	left.add_theme_constant_override("separation",8)
 	if not ui.relic_collection:
-		scene(ui,left,64 if ui.size.y < 800 else 144,info.equipped)
+		if not tight: scene(ui,left,64 if ui.size.y < 800 else 144,info.equipped)
 		var slots: HBoxContainer = ui._row(left)
 		for index in 3:
 			var item: Dictionary = info.equipped[index] if index < info.equipped.size() else {}
@@ -78,10 +80,10 @@ static func page(ui: Variant, parent: Node) -> void:
 		var set_lines: Array[String] = []
 		for item in info.sets: set_lines.append(str(item.set_text))
 		var sets: Label = ui._label(left,"\n".join(set_lines) if not set_lines.is_empty() else "성물 세트 없음 · 같은 계열 2개 장착 시 적용",18,GameTheme.GOOD if not set_lines.is_empty() else GameTheme.MUTED)
-		sets.max_lines_visible = 2
+		sets.max_lines_visible = 1 if tight else 2
 		sets.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
 		sets.tooltip_text = "\n".join(set_lines)
-	var filters: HBoxContainer = ui._row(left)
+	var filters: HBoxContainer = top if tight else ui._row(left)
 	filters.name = "RelicFamilyFilters"
 	for entry in [["","전체"],["abundance","풍요"],["craft","공방"],["guard","수호"]]:
 		var filter: Button = ui._button(filters,entry[1],func(): ui.relic_family_filter = entry[0]; ui._render(),false,"relic_filter_"+str(entry[0]))
@@ -410,7 +412,7 @@ static func builds_page(ui: Variant, parent: Node) -> void:
 		var row: HBoxContainer = ui._row(effects)
 		image(ui,row,str(item.icon),56).size_flags_horizontal = Control.SIZE_SHRINK_BEGIN
 		var equipped: bool = id in ui.session.state.realm.sanctuary.equipped
-		ui._label(row,("✓ " if equipped else "○ ")+str(item.name)+( " · 장착" if equipped else " · 보관 중" if id in ui.session.state.realm.sanctuary.owned else " · 미보유"),20,GameTheme.GOOD if equipped else GameTheme.TEXT)
+		ui._label(row,("● " if equipped else "○ ")+str(item.name)+( " · 장착" if equipped else " · 보관 중" if id in ui.session.state.realm.sanctuary.owned else " · 미보유"),20,GameTheme.GOOD if equipped else GameTheme.TEXT)
 	ui._label(effects,"자원 변환은 실제 주간 조건과 비용을 모두 충족할 때 한 번 실행합니다. 비용이 부족하면 지급도 없습니다.",18,GameTheme.MUTED)
 	var actions: HBoxContainer = ui._row(detail)
 	ui._button(actions,"성소에서 장착",func(): ui._go("sanctuary"),false,"BuildGoSanctuary")

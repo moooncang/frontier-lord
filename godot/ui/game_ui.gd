@@ -661,7 +661,7 @@ func _goals(parent: Node) -> void:
 	var box:=_card(parent,"첫 회차의 약속")
 	for goal in session.state.goals.values():
 		var head := _row(box)
-		_label(head,("✓ " if goal.done else "○ ")+goal.title,16,GameTheme.GOOD if goal.done else GameTheme.TEXT)
+		_label(head,("● " if goal.done else "○ ")+goal.title,16,GameTheme.GOOD if goal.done else GameTheme.TEXT)
 		_tag(head,goal.get("status",""),GameTheme.GOOD if goal.done else GameTheme.MUTED,14)
 		_bar(box,goal.get("progress",1.0 if goal.done else 0.0),"good" if goal.done else "warn")
 		_label(box,goal.detail,14,GameTheme.MUTED)
@@ -887,7 +887,7 @@ func _people(parent: Node) -> void:
 	var choices:=_row(ration)
 	for ratio in [1.0,0.9,0.75]:
 		var caption: String={1.0:"정상 배급",0.9:"절약 배급",0.75:"비상 배급"}[ratio]
-		_button(choices,("✓ " if session.state.ration==ratio else "")+caption,func(): session.state.ration=ratio; _changed("배급 방침을 변경했습니다."),session.state.status!="active")
+		_button(choices,("● " if session.state.ration==ratio else "")+caption,func(): session.state.ration=ratio; _changed("배급 방침을 변경했습니다."),session.state.status!="active")
 	var perks:=_card(parent,"이번 회차의 특전")
 	for id in session.state.perks:
 		_label(perks,session.content.progression.perks[id].name+" — "+session.content.progression.perks[id].description)

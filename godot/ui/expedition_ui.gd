@@ -1,6 +1,7 @@
 extends "res://ui/cabinet_ui.gd"
 ## 부임 준비, 영구 성장, 계절 운영을 독립 화면으로 연결한다.
 
+var compact := false
 var selected_talent := "LF01"
 var setup_relic := "seeds"
 var campaign_board: EstateBoard
@@ -40,6 +41,8 @@ func _render() -> void:
 		remove_child(shell)
 		shell.queue_free()
 	theme = RealmTheme.create(assets.body_font())
+	# 휴대폰 배치: 세로 540줄 기준. 위아래 띠와 바깥 여백을 줄이고 넘치는 내용은 민다.
+	compact = size.y < 640
 	texture_filter = TEXTURE_FILTER_NEAREST
 	paper_ready = true
 	pixel_ready = true
@@ -81,7 +84,12 @@ func _render() -> void:
 	rendered_page = page
 	_restore_scroll.call_deferred(page, int(scroll_positions.get(page, 0)))
 
+## 화면을 가득 채우는 종이판의 자리. 휴대폰에서는 바깥 여백을 거의 없앤다.
+func _sheet(side: float, edge: float) -> Rect2:
+	return Rect2(8,6,size.x-16,size.y-12) if compact else Rect2(side,edge,size.x-side*2,size.y-edge*2)
+
 func _plate(rect: Rect2, dark: bool = false, inset: int = 18) -> VBoxContainer:
+	if compact: inset = mini(inset,12)
 	var box := _paper(rect, inset, DARK if dark else CREAM)
 	box.get_parent().add_theme_stylebox_override("panel", _sprite_style("ui_frame_slate" if dark else "ui_frame_paper",DARK if dark else CREAM,inset))
 	box.add_theme_constant_override("separation", 10)
@@ -93,7 +101,7 @@ func _sprite_style(key: String, fill: Color, inset: int) -> StyleBox:
 func _card(parent: Node, title: String = "") -> VBoxContainer:
 	var frame := PanelContainer.new()
 	frame.size_flags_horizontal = SIZE_EXPAND_FILL
-	frame.add_theme_stylebox_override("panel",_sprite_style("ui_frame_paper",CREAM,16))
+	frame.add_theme_stylebox_override("panel",_sprite_style("ui_frame_paper",CREAM,10 if compact else 16))
 	parent.add_child(frame)
 	var box := _box(frame)
 	box.add_theme_constant_override("separation",8)
@@ -117,6 +125,10 @@ func _art(parent: Node, key: String, dimensions: Vector2) -> TextureRect:
 	return art
 
 func _window(title: String, dimensions: Vector2, closable: bool = true, modal: bool = false) -> VBoxContainer:
+	# 휴대폰: 화면에 맞춰 줄였던 창은 화면을 거의 다 쓴다.
+	if compact and dimensions.y > size.y-110: dimensions.y = size.y-12
+	if compact and dimensions.x > size.x-120: dimensions.x = size.x-16
+	dimensions = dimensions.min(size-Vector2(16,12))
 	var box := _plate(Rect2((size-dimensions)*.5,dimensions),false,24)
 	box.get_parent().name = "DecisionModal" if modal else "ManagementWindow"
 	if title != "":
@@ -131,7 +143,7 @@ func _toggle_fullscreen() -> void:
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED if full else DisplayServer.WINDOW_MODE_FULLSCREEN)
 
 func _title_hub() -> void:
-	var box := _plate(Rect2(48,40,430,size.y-80),true,24)
+	var box := _plate(Rect2(16,8,430,size.y-16) if compact else Rect2(48,40,430,size.y-80),true,24)
 	box.get_parent().name = "TitleHub"
 	_label(box,"영주관",20,TycoonTheme.NAV_TEXT)
 	var title := _label(box,"변경의 신임\n영주가 되었다",36,TycoonTheme.NAV_TEXT)
@@ -186,16 +198,19 @@ func _coach_rect(step: int) -> Rect2:
 	return Rect2(48,190,minf(500,size.x*.42),252) if step == 5 else Rect2(size.x-432,190,380,252)
 
 func _expedition_setup() -> void:
-	var outer := _plate(Rect2(40, 28, size.x - 80, size.y - 56), false, 22)
+	var outer := _plate(_sheet(40,28), false, 22)
 	outer.name = "ExpeditionSetup"
+	if compact: outer.add_theme_constant_override("separation", 6)
 	var heading := _row(outer)
-	_heading(heading, "새 통치 준비", true)
-	_button(heading, "메뉴", func(): _go("menu"), false, "SetupCancel")
-	var steps := _row(outer)
+	if not compact:
+		_heading(heading, "새 통치 준비", true)
+		_button(heading, "메뉴", func(): _go("menu"), false, "SetupCancel")
+	var steps := heading if compact else _row(outer)
 	for i in 3:
 		var pick := _button(steps, ["1  영주", "2  영지", "3  부임 물자"][i], func(): prepare_step = i; _render(), false, "SetupStep%d" % i)
 		pick.size_flags_horizontal = SIZE_EXPAND_FILL
 		if prepare_step == i: _primary(pick)
+	if compact: _button(steps, "메뉴", func(): _go("menu"), false, "SetupCancel")
 	var area := _row(outer)
 	area.size_flags_vertical = SIZE_EXPAND_FILL
 	area.add_theme_constant_override("separation", 22)
@@ -217,7 +232,7 @@ func _expedition_setup() -> void:
 				var candidate: Dictionary = candidates[i]
 				var card := _card(cards)
 				# 초상이 카드의 남는 높이를 채운다.
-				_art(card, "lord_" + candidate.origin, Vector2(96, 160)).size_flags_vertical = SIZE_EXPAND_FILL
+				_art(card, "lord_" + candidate.origin, Vector2(96, 90 if compact else 160)).size_flags_vertical = SIZE_EXPAND_FILL
 				_heading(card, session.content.progression.origins[candidate.origin].name)
 				# 고르기 전에 비교할 수 있게 장점과 약점을 카드에 바로 적는다.
 				for id in candidate.traits:
@@ -284,7 +299,7 @@ func _expedition_setup() -> void:
 			for id in data.relics:
 				var relic: Dictionary = data.relics[id]
 				var chosen: bool = id in draft_relics
-				var button := _button(grid, ("✓ " if chosen else "") + relic.name + "   %d점\n" % relic.cost + relic.description, func():
+				var button := _button(grid, ("● " if chosen else "") + relic.name + "   %d점\n" % relic.cost + relic.description, func():
 					if id in draft_relics: draft_relics.erase(id)
 					else: draft_relics.append(id)
 					_render(), not chosen and _relic_cost() + int(relic.cost) > budget, "relic_" + id)
@@ -292,6 +307,7 @@ func _expedition_setup() -> void:
 				button.size_flags_vertical = SIZE_EXPAND_FILL
 				button.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 				if chosen: _primary(button)
+			if compact: detail = _scroll(detail)
 			_heading(detail, "부임 확인", false)
 			_label(detail, session.content.progression.origins[selected.origin].name + " · " + data.regions[draft_region].name, 20)
 			_rule(detail)
@@ -373,7 +389,7 @@ func _talent_effect(talent: Dictionary, rank: int) -> String:
 	return " · ".join(parts)
 
 func _catalog_screen() -> void:
-	var box := _plate(Rect2(40,28,size.x-80,size.y-56))
+	var box := _plate(_sheet(40,28))
 	var row := _row(box)
 	_heading(row,"발견과 통치 기록",true)
 	_button(row,"가문 강화",func(): _go("archive"))
@@ -489,7 +505,7 @@ func _run_dock() -> void:
 	_primary(next)
 
 func _run_results() -> void:
-	var box := _plate(Rect2(44,36,size.x-88,size.y-72),false,24)
+	var box := _plate(_sheet(44,36),false,24)
 	box.name = "RunResults"
 	var header := _row(box)
 	_heading(header,"통치 결산",true)
@@ -769,7 +785,7 @@ func _boons(parent: Node) -> void:
 	if selected_perk not in ids: selected_perk = "" if ids.is_empty() else str(ids[0])
 	for id in ids:
 		var perk: Dictionary = session.content.progression.perks[id]
-		var button := _button(list,("✓ " if id in session.state.perks else "")+str(perk.name),func(): selected_perk = id; _render(),false,"perk_browse_"+str(id))
+		var button := _button(list,("● " if id in session.state.perks else "")+str(perk.name),func(): selected_perk = id; _render(),false,"perk_browse_"+str(id))
 		button.add_theme_font_size_override("font_size",18)
 		button.alignment = HORIZONTAL_ALIGNMENT_LEFT
 		button.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
@@ -804,7 +820,8 @@ func _decision_popup() -> void:
 	_shade(interface,.72).name = "DecisionBlocker"
 	var s := session.state
 	var height := minf(680,size.y-64) if s.perk_offer.is_empty() and s.active_event != "" else minf(600,size.y-80)
-	var box := _window("이번 통치를 바꿀 특전" if not s.perk_offer.is_empty() else "영주님의 결정",Vector2(minf(1060,size.x-90),height),false,true)
+	# 휴대폰: 사건 창은 제목 줄을 빼고 선택지에 자리를 준다. 사건 제목은 본문에 있다.
+	var box := _window("이번 통치를 바꿀 특전" if not s.perk_offer.is_empty() else "" if compact else "영주님의 결정",Vector2(minf(1060,size.x-90),height),false,true)
 	current_modal = box.get_parent()
 	var lesson := Onboarding.current(s)
 	if lesson.active and lesson.step == 0:
@@ -815,7 +832,9 @@ func _decision_popup() -> void:
 	if not s.perk_offer.is_empty(): _perk_choices(box)
 	elif s.active_event != "": _event_choices(box)
 	else: _contract_choices(box)
-	_quiet(_button(box,"영지 상태 확인",func(): decision_hidden = true; _render(),false,"InspectEstate"))
+	# 휴대폰: 특전 창의 아래 단추 둘을 한 줄에 둬 카드에 자리를 준다.
+	var bottom: Node = box.get_node_or_null("PerkActions")
+	_quiet(_button(bottom if bottom != null else box,"영지 상태 확인",func(): decision_hidden = true; _render(),false,"InspectEstate")).size_flags_horizontal = SIZE_EXPAND_FILL
 	_focus_decision.call_deferred()
 
 func _perk_choices(parent: Node) -> void:
@@ -828,7 +847,7 @@ func _perk_choices(parent: Node) -> void:
 		var card := _card(row)
 		var family: Dictionary = session.content.chronicle.families[perk.family]
 		var head := _row(card)
-		_art(head,"building_"+{"agriculture":"farm","provisions":"storage","industry":"logging","court":"admin"}[perk.family],Vector2(56,56))
+		if not compact: _art(head,"building_"+{"agriculture":"farm","provisions":"storage","industry":"logging","court":"admin"}[perk.family],Vector2(56,56))
 		_label(head,family.name + " 계열",19,GameTheme.MUTED)
 		_heading(card,perk.name)
 		RelicScreens.perk_impact(self,card,str(id))
@@ -849,7 +868,11 @@ func _perk_choices(parent: Node) -> void:
 			banish.custom_minimum_size.y = 32
 			banish.add_theme_font_size_override("font_size",18)
 			banish.tooltip_text = "이 특전은 이번 통치의 후보에서 제외됩니다. 나머지 두 후보를 유지하고 새 후보 하나를 받습니다."
-	_quiet(_button(parent,"후보 새로고침 · %d회 남음" % session.state.refreshes,func(): session.refresh_perks(); _changed("후보를 바꿨습니다."),session.state.refreshes <= 0,"RefreshPerks"))
+	var actions: Node = parent
+	if compact:
+		actions = _row(parent)
+		actions.name = "PerkActions"
+	_quiet(_button(actions,"후보 새로고침 · %d회 남음" % session.state.refreshes,func(): session.refresh_perks(); _changed("후보를 바꿨습니다."),session.state.refreshes <= 0,"RefreshPerks")).size_flags_horizontal = SIZE_EXPAND_FILL
 
 func _banish_house_perk(id: String) -> void:
 	var error := session.banish_perk(id)

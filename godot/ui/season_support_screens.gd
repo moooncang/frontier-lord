@@ -50,7 +50,7 @@ static func _scope(item: Dictionary) -> String:
 
 static func page(ui: Variant) -> void:
 	var view: Dictionary = SeasonalInvestments.overview(ui.session.state,ui.session.content)
-	var frame: VBoxContainer = ui._plate(Rect2(36,28,ui.size.x-72,ui.size.y-56),false,20)
+	var frame: VBoxContainer = ui._plate(ui._sheet(36,28),false,20)
 	frame.name = "SeasonSupportPage"
 	var header: HBoxContainer = ui._row(frame)
 	ui._heading(header,"계절 지원",true)
@@ -143,7 +143,7 @@ static func difficulty_page(ui: Variant) -> void:
 	var view: Dictionary = FrontierDifficulty.overview(ui.session.profile,ui.session.content)
 	var inspected: int = clampi(int(ui.get_meta("frontier_inspect",ui.draft_difficulty)),0,view.levels.size()-1)
 	var current: Dictionary = view.levels[inspected]
-	var frame: VBoxContainer = ui._plate(Rect2(36,28,ui.size.x-72,ui.size.y-56),false,20)
+	var frame: VBoxContainer = ui._plate(ui._sheet(36,28),false,20)
 	frame.name = "FrontierDifficultyPage"
 	var header: HBoxContainer = ui._row(frame)
 	ui._heading(header,"개척 난도",true)

@@ -4,17 +4,28 @@ extends Node
 ## 창 전체 배율과 손가락 스크롤만 맡는다.
 
 const BASE := Vector2(1280, 720)
+## 휴대폰 배치의 최소 크기. 화면이 이보다 낮으면 화면들이 휴대폰 배치로 그려진다(compact).
+const PHONE := Vector2(1120, 540)
 const SLOP := 14.0
 
 var area: ScrollContainer
 var origin := Vector2.ZERO
 var from := Vector2.ZERO
 var dragging := false
+## 목록을 미는 손가락의 번호. 브라우저마다 첫 손가락 번호가 0이 아닐 수 있다.
+var finger := -1
 
 
-## 설계 최소 크기(1280x720)가 항상 화면에 들어가는 배율. 촘촘한 화면에서는 그만큼 키운다.
-static func factor(size: Vector2, density: float) -> float:
+## 설계 최소 크기가 항상 화면에 들어가는 배율. PC·태블릿은 1280x720을 넣되 화면 밀도만큼만 키우고,
+## 휴대폰은 더 작은 540줄 배치를 화면에 꽉 채워 글자와 단추를 키운다.
+static func factor(size: Vector2, density: float, phone: bool = false) -> float:
+	if phone: return clampf(minf(size.x / PHONE.x, size.y / PHONE.y), 0.25, 4.0)
 	return clampf(minf(density, minf(size.x / BASE.x, size.y / BASE.y)), 0.25, 4.0)
+
+
+## 손가락으로 쓰고 짧은 변이 500(CSS 화소)보다 작으면 휴대폰이다.
+static func is_phone(size: Vector2, density: float, touch: bool) -> bool:
+	return touch and minf(size.x, size.y) / maxf(density, 0.1) < 500.0
 
 
 func _ready() -> void:
@@ -26,7 +37,9 @@ func _ready() -> void:
 
 func _fit() -> void:
 	var window := get_window()
-	var wanted := factor(Vector2(window.size), DisplayServer.screen_get_scale())
+	var density := DisplayServer.screen_get_scale()
+	var phone := is_phone(Vector2(window.size), density, DisplayServer.is_touchscreen_available())
+	var wanted := factor(Vector2(window.size), density, phone)
 	if not is_equal_approx(window.content_scale_factor, wanted): window.content_scale_factor = wanted
 
 
@@ -42,12 +55,13 @@ func _scroll_at(point: Vector2) -> ScrollContainer:
 
 func _input(event: InputEvent) -> void:
 	# 버튼과 판은 손가락 끌기를 가로채서 목록이 밀리지 않는다. 여기서 직접 민다.
-	if event is InputEventScreenTouch and event.index == 0:
+	if event is InputEventScreenTouch and (event.index == finger or (event.pressed and finger == -1)):
+		finger = event.index if event.pressed else -1
 		area = _scroll_at(event.position) if event.pressed else null
 		origin = event.position
 		dragging = false
 		if area != null: from = Vector2(area.scroll_horizontal, area.scroll_vertical)
-	elif event is InputEventScreenDrag and event.index == 0 and is_instance_valid(area):
+	elif event is InputEventScreenDrag and event.index == finger and is_instance_valid(area):
 		var moved: Vector2 = event.position - origin
 		if not dragging and moved.length() < SLOP: return
 		if not dragging:

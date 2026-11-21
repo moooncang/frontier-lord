@@ -264,7 +264,7 @@ func _world_objectives() -> void:
 	for id in session.state.goals:
 		var goal: Dictionary = session.state.goals[id]
 		var goal_text: String = {"farms":"농지  %d / 6구획" % session.state.facilities.get("B13", 0), "storage":"곳간  " + goal.status, "food":"식량  %.1f / 13주" % WeekSim.food_weeks(session.state)}[id]
-		_label(box, ("✓  " if goal.done else "□  ") + goal_text, 19, GameTheme.GOOD if goal.done else GameTheme.TEXT)
+		_label(box, ("●  " if goal.done else "□  ") + goal_text, 19, GameTheme.GOOD if goal.done else GameTheme.TEXT)
 	if ChronicleRules.active(session.state):
 		var trial: Dictionary = session.content.chronicle.trials[session.state.trial]
 		_label(box, "겨울 시련 · " + trial.name, 16, GameTheme.WARN)
